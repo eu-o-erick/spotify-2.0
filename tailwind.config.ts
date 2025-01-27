@@ -9,8 +9,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        main: "var(--background-color)",
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
+        white: "var(--white)",
+      },
+      container: {
+        center: true,
+        screens: {
+          sm: "100%",
+          md: "768px",
+          lg: "1024px",
+          xl: "1280px",
+        },
+      },
+      boxShadow: {
+        strong: "4px 4px 4px rgba(0, 0, 0, 0.3)",
       },
     },
   },
