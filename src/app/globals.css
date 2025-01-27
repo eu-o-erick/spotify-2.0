@@ -12,4 +12,12 @@
 body {
   color: var(--white);
   background: var(--background-color);
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
 }

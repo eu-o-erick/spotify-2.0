@@ -38,7 +38,7 @@ export default function ContentDropDown({
         }
       )}
     >
-      <RiArrowDropUpFill className="absolute !-top-7 right-px text-secondary !text-[50px]" />
+      <RiArrowDropUpFill className="absolute !-top-7 right-px text-secondary !text-[50px] pointer-events-none" />
 
       <ul className="flex flex-col gap-4 items-end min-w-28">
         <li className="opacity-50">{state.label}</li>

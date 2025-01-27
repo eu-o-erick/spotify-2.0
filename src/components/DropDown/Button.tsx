@@ -17,10 +17,7 @@ interface Props {
 export default function ButtonDropDown({ isOpen, setIsOpen, state }: Props) {
   return (
     <button
-      onClick={() => {
-        console.log("alou");
-        setIsOpen(!isOpen);
-      }}
+      onClick={() => setIsOpen(!isOpen)}
       className="flex items-center gap-1"
     >
       {" "}

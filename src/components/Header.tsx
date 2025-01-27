@@ -13,7 +13,7 @@ export default function Header() {
     <header className="container py-4 flex justify-between">
       <Image src="/logo.png" width={50} height={50} alt="logo" className="" />
 
-      <div className="flex items-end gap-4">
+      <div className="flex items-end gap-6">
         <DropDown state={language} setState={setLanguage} options={LANGUAGES} />
 
         <BsSearch className="w-6 h-6" />

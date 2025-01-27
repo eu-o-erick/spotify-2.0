@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
 import ButtonDropDown from "./Button";
 import ContentDropDown from "./Content";
+import useClickOutside from "@/hooks/useClickOutside";
 
 export type DropDownItem = {
   value: string;
@@ -16,10 +16,10 @@ interface Props {
 }
 
 export default function DropDown({ state, setState, options }: Props) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen, dropdownRef] = useClickOutside<HTMLDivElement>();
 
   return (
-    <div className="relative">
+    <div className="relative" ref={dropdownRef}>
       <ButtonDropDown isOpen={isOpen} setIsOpen={setIsOpen} state={state} />
 
       <ContentDropDown

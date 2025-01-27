@@ -8,7 +8,7 @@ import Separator from "@/components/Separator";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+  weight: ["300", "600"],
 });
 
 export const metadata: Metadata = {
