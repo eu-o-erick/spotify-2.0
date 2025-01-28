@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/cn";
 import { IoIosArrowDown } from "react-icons/io";
 
 export type DropDownItem = {

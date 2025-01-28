@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import DropDown, { DropDownItem } from "./DropDown";
-import LANGUAGES from "@/constants/languages";
+import { LANGUAGES } from "@/lib/constants";
 
 export default function Header() {
   const [language, setLanguage] = useState<DropDownItem>(LANGUAGES[0]);
