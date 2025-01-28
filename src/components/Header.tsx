@@ -11,7 +11,10 @@ export default function Header() {
 
   return (
     <header className="container py-4 flex justify-between">
-      <Image src="/logo.png" width={50} height={50} alt="logo" className="" />
+      <div className="flex items-center gap-2">
+        <Image src="/logo.png" width={40} height={40} alt="logo" />
+        <Image src="/name.png" width={120} height={50} alt="logo" />
+      </div>
 
       <div className="flex items-end gap-6">
         <DropDown state={language} setState={setLanguage} options={LANGUAGES} />

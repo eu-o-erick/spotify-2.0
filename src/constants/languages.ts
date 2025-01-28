@@ -7,7 +7,7 @@ const LANGUAGES: DropDownItem[] = [
   },
   {
     label: "portuguese",
-    value: "pot",
+    value: "por",
   },
   {
     label: "cuzin",

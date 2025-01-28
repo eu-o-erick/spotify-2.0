@@ -5,6 +5,7 @@ import "./globals.css";
 
 import Header from "@/components/Header";
 import Separator from "@/components/Separator";
+import Footer from "@/components/Footer";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -27,6 +28,8 @@ export default function RootLayout({
         <Header />
         <Separator />
         {children}
+        <Separator />
+        <Footer />
       </body>
     </html>
   );

@@ -21,3 +21,11 @@ h3,
 h4 {
   font-weight: 600;
 }
+
+.bg-gradient {
+  background-image: linear-gradient(
+    150deg,
+    var(--secondary-color),
+    var(--background-color) 70%
+  );
+}
