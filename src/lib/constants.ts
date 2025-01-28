@@ -1,10 +1,5 @@
 import { DropDownItem } from "@/components/DropDown";
 
-export const API_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://spotify-2-0-rho.vercel.app/api/"
-    : "http://localhost:3000/api/";
-
 export const SPOTIFY_API_URL = "https://spotify23.p.rapidapi.com";
 
 export const LANGUAGES: DropDownItem[] = [

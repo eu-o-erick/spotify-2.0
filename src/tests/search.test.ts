@@ -1,13 +1,12 @@
 import { NextRequest } from "next/server";
 import { GET } from "@/app/api/v1/search/route";
-import { API_URL } from "@/lib/constants";
 
 global.fetch = jest.fn();
 
 describe("GET API Tests", () => {
   it("should return albums for an artist", async () => {
     const request = {
-      url: `${API_URL}/v1/search?artist=2w9zwq3AktTeYYMuhMjju8&type=albums&page=0`,
+      url: `http://localhost:3000/api/v1/search?artist=2w9zwq3AktTeYYMuhMjju8&type=albums&page=0`,
     } as NextRequest;
 
     (fetch as jest.Mock).mockResolvedValue({
@@ -24,7 +23,7 @@ describe("GET API Tests", () => {
 
   it("should return error when 'type=albums' is missing", async () => {
     const request = {
-      url: `${API_URL}/v1/search?artist=2w9zwq3AktTeYYMuhMjju8&page=0`,
+      url: `http://localhost:3000/api/v1/search?artist=2w9zwq3AktTeYYMuhMjju8&page=0`,
     } as NextRequest;
 
     (fetch as jest.Mock).mockResolvedValue({
@@ -42,7 +41,7 @@ describe("GET API Tests", () => {
 
   it("should return error when 'q' query parameter is missing", async () => {
     const request = {
-      url: `${API_URL}/v1/search?page=0`,
+      url: `http://localhost:3000/api/v1/search?page=0`,
     } as NextRequest;
 
     (fetch as jest.Mock).mockResolvedValue({
@@ -61,7 +60,7 @@ describe("GET API Tests", () => {
 
   it("should return error when 'artist' query parameter is invalid", async () => {
     const request = {
-      url: `${API_URL}/v1/search?artist=invalidArtist&type=albums&page=0`,
+      url: `http://localhost:3000/api/v1/search?artist=invalidArtist&type=albums&page=0`,
     } as NextRequest;
 
     const response = await GET(request);
@@ -73,7 +72,7 @@ describe("GET API Tests", () => {
 
   it("should return error when 'type' query parameter is invalid", async () => {
     const request = {
-      url: `${API_URL}/v1/search?q=artistName&type=invalidType&page=0`,
+      url: `http://localhost:3000/api/v1/search?q=artistName&type=invalidType&page=0`,
     } as NextRequest;
 
     const response = await GET(request);
@@ -85,7 +84,7 @@ describe("GET API Tests", () => {
 
   it("should return error when 'page' query parameter is invalid", async () => {
     const request = {
-      url: `${API_URL}/v1/search?q=artistName&type=albums&page=-1`,
+      url: `http://localhost:3000/api/v1/search?q=artistName&type=albums&page=-1`,
     } as NextRequest;
 
     const response = await GET(request);
@@ -97,7 +96,7 @@ describe("GET API Tests", () => {
 
   it("should return search results for 'q' with type 'multi'", async () => {
     const request = {
-      url: `${API_URL}/v1/search?q=artistName&type=multi&page=0`,
+      url: `http://localhost:3000/api/v1/search?q=artistName&type=multi&page=0`,
     } as NextRequest;
 
     (fetch as jest.Mock).mockResolvedValue({
