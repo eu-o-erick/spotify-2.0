@@ -11,10 +11,10 @@ export const routing = defineRouting({
       pt: "/",
       es: "/",
     },
-    "/path": {
-      en: "/test",
-      pt: "/teste",
-      es: "/testito",
+    "/privacy-policy": {
+      en: "/privacy-policy",
+      pt: "/politica-de-privacidade",
+      es: "/politica-de-privacidad",
     },
   },
 });

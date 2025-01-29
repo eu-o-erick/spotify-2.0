@@ -1,5 +1,52 @@
 {
   "HomePage": {
     "hello": "hoola"
+  },
+  "PrivacyPage": {
+    "title": "Política de Privacidad",
+    "desc": "Esta Política de Privacidad describe cómo manejamos y protegemos su información personal cuando utiliza nuestro sitio web. Al usar nuestro sitio web, usted acepta la recopilación y el uso de su información de acuerdo con esta política.",
+    "sections": [
+      {
+        "title": "1. Recopilación de Información",
+        "desc": "Actualmente, no recopilamos ninguna información personal de los usuarios. No solicitamos ni almacenamos datos personales, como nombre, correo electrónico u otra información identificable."
+      },
+      {
+        "title": "2. Uso de los Datos",
+        "desc": "Por el momento, no utilizamos ningún dato personal. Cualquier información proporcionada, como evaluaciones, se utiliza únicamente para mejorar su experiencia en nuestra plataforma y no se almacena para otros fines."
+      },
+      {
+        "title": "3. Compartición de Datos",
+        "desc": "No compartimos ningún dato personal con terceros. No divulgamos, vendemos ni alquilamos ninguna información recopilada en este sitio web."
+      },
+      {
+        "title": "4. Cookies",
+        "desc": "Utilizamos cookies para almacenar datos temporales, como guardar sus calificaciones en álbumes. Estas cookies se utilizan para mejorar la experiencia del usuario al interactuar con el sitio."
+      },
+      {
+        "title": "5. Seguridad de los Datos",
+        "desc": "Como no recopilamos datos personales, no hay medidas de seguridad específicas para la protección de datos. Sin embargo, tomamos precauciones generales para garantizar la seguridad e integridad del sitio web."
+      },
+      {
+        "title": "6. Derechos del Usuario",
+        "desc": "Dado que no recopilamos datos personales, no es necesario que los usuarios soliciten acceso, corrección o eliminación de información personal."
+      },
+      {
+        "title": "7. Retención de Datos",
+        "desc": "No almacenamos datos personales ni retenemos información después de que finaliza la sesión del usuario. No existe una política de retención de datos en vigor."
+      },
+      {
+        "title": "8. Transferencia Internacional de Datos",
+        "desc": "No transferimos ningún dato de usuario a otros países o servicios de terceros."
+      },
+      {
+        "title": "9. Consentimiento",
+        "desc": "Dado que no recopilamos datos personales, los usuarios no están obligados a dar su consentimiento para la recopilación de datos. Sin embargo, al utilizar nuestro sitio web, los usuarios aceptan el uso de cookies para almacenar datos temporales."
+      },
+      {
+        "title": "10. Cambios en la Política de Privacidad",
+        "desc": "Si hay cambios en esta Política de Privacidad, los usuarios serán notificados por correo electrónico. Recomendamos que los usuarios revisen esta página regularmente para mantenerse informados de las actualizaciones."
+      }
+    ],
+    "end": "Si tiene alguna pregunta sobre esta Política de Privacidad o sobre cómo manejamos sus datos, no dude en contactarnos a través de [su contacto]."
   }
 }

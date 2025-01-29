@@ -1,5 +1,52 @@
 {
   "HomePage": {
     "hello": "hellou"
+  },
+  "PrivacyPage": {
+    "title": "Privacy Policy",
+    "desc": "This Privacy Policy outlines how we handle and protect your personal information when you use our website. By using our website, you agree to the collection and use of your information in accordance with this policy.",
+    "sections": [
+      {
+        "title": "1. Information Collection",
+        "desc": "Currently, we do not collect any personal information from users. We do not request or store any personal data, such as name, email, or other identifiable information."
+      },
+      {
+        "title": "2. Use of Data",
+        "desc": "As of now, we do not use any personal data. Any information you provide, such as evaluations, is only used to enhance your experience on our platform and is not stored for other purposes."
+      },
+      {
+        "title": "3. Data Sharing",
+        "desc": "We do not share any of your personal data with third parties. We do not disclose, sell, or rent any information collected on this website."
+      },
+      {
+        "title": "4. Cookies",
+        "desc": "We use cookies to store temporary data, such as saving your ratings on albums. These cookies are used to improve the user experience while interacting with the site."
+      },
+      {
+        "title": "5. Data Security",
+        "desc": "As we do not collect personal data, there are no specific security measures in place for data protection. However, we take general precautions to ensure the security and integrity of the website."
+      },
+      {
+        "title": "6. User Rights",
+        "desc": "Since we do not collect personal data, there is no need for users to request access, correction, or deletion of personal information."
+      },
+      {
+        "title": "7. Data Retention",
+        "desc": "We do not store personal data or retain information after the user session ends. There is no data retention policy in place."
+      },
+      {
+        "title": "8. International Data Transfers",
+        "desc": "We do not transfer any user data to other countries or third-party services."
+      },
+      {
+        "title": "9. Consent",
+        "desc": "As we do not collect personal data, users are not required to provide consent for data collection. However, by using our website, users agree to the use of cookies for storing temporary data."
+      },
+      {
+        "title": "10. Changes to the Privacy Policy",
+        "desc": "If there are any changes to this Privacy Policy, users will be notified via email. We encourage users to review this page regularly for any updates."
+      }
+    ],
+    "end": "If you have any questions about this Privacy Policy or the way we handle your data, please feel free to contact us at [your contact information]."
   }
 }

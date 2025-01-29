@@ -36,8 +36,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className={`${dmSans.className} antialiased`}>
+    <html lang={locale} className="min-h-screen">
+      <body
+        className={`${dmSans.className} antialiased min-h-screen flex flex-col`}
+      >
         <NextIntlClientProvider messages={messages}>
           <Header />
           <Separator />

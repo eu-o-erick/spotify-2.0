@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import BgGradient from "./BgGradient";
 import Image from "next/image";
 
@@ -15,7 +15,7 @@ export default function Footer() {
               </li>
               <li className="w-px h-5 bg-secondary" />
               <li className="opacity-80 hover:opacity-100">
-                <Link href={"/search"}>SEARCH</Link>
+                <Link href={"/"}>SEARCH</Link>
               </li>
             </ul>
           </nav>
@@ -23,7 +23,7 @@ export default function Footer() {
           <nav className="mb-16">
             <ul className="flex items-center gap-8 text-sm underline">
               <li className="opacity-60 hover:opacity-80">
-                <Link href={"/terms-and-conditions"}>Terms and Conditions</Link>
+                <Link href={"/"}>Terms and Conditions</Link>
               </li>
               <li className="w-px h-5 bg-secondary" />
               <li className="opacity-60 hover:opacity-80">
