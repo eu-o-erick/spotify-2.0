@@ -31,16 +31,16 @@ export default function ContentDropDown({
   return (
     <div
       className={cn(
-        "absolute bg-secondary px-6 py-3 shadow-strong rounded-md transition-all",
+        "absolute bg-secondary -right-4 px-6 py-3 shadow-strong rounded-md max-lg:px-5 transition-all",
         {
-          "opacity-100 -right-4 top-8": isOpen,
-          "opacity-0 -right-1 pointer-events-none scale-75 top-4": !isOpen,
+          "opacity-100 top-8": isOpen,
+          "opacity-0 -right-8 pointer-events-none scale-75 top-4": !isOpen,
         }
       )}
     >
-      <RiArrowDropUpFill className="absolute !-top-7 right-px text-secondary !text-[50px] pointer-events-none" />
+      <RiArrowDropUpFill className="absolute -top-7 right-px text-secondary text-[50px] max-lg:-top-[22px] max-lg:right-1 max-lg:text-[40px] pointer-events-none" />
 
-      <ul className="flex flex-col gap-4 items-end min-w-28">
+      <ul className="flex flex-col gap-4 items-end min-w-28 max-md:text-xs max-sm:gap-3 max-sm:min-w-20 max-sm:text-xs">
         <li className="opacity-50">{state.label}</li>
 
         {options.map((option, i) => (

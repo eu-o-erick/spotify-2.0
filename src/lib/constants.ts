@@ -5,15 +5,15 @@ export const SPOTIFY_API_URL = "https://spotify23.p.rapidapi.com";
 export const LANGUAGES: DropDownItem[] = [
   {
     label: "english",
-    value: "eng",
+    value: "en",
   },
   {
     label: "portuguese",
-    value: "por",
+    value: "pt",
   },
   {
-    label: "cuzin",
-    value: "cu",
+    label: "español",
+    value: "es",
   },
 ];
 
