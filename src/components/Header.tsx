@@ -1,31 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import DropDown, { DropDownItem } from "./DropDown";
 import { LANGUAGES } from "@/lib/constants";
+
+import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 
 export default function Header() {
   const router = useRouter();
-  const [language, setLanguage] = useState<DropDownItem>(LANGUAGES[0]);
+  const locale = useLocale();
+
+  const [language, setLanguage] = useState<DropDownItem>(() => {
+    const currentLanguage = LANGUAGES.find((lang) => lang.value === locale);
+    return currentLanguage ?? LANGUAGES[0];
+  });
 
   useEffect(() => {
-    const browserLanguage = navigator.language.slice(0, 2);
-    const defaultLanguage = LANGUAGES.find(
-      (lang) => lang.value === browserLanguage
-    );
-    if (defaultLanguage) {
-      setLanguage(defaultLanguage);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (language) {
+    if (locale !== language.value) {
       router.push(`/${language.value}`);
     }
-  }, [language, router]);
+  }, [language, locale, router]);
 
   return (
     <header className="container py-6 flex justify-between max-sm:py-4 max-sm:px-4">
