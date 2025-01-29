@@ -23,7 +23,7 @@ export default function Footer() {
           <nav className="mb-16">
             <ul className="flex items-center gap-8 text-sm underline">
               <li className="opacity-60 hover:opacity-80">
-                <Link href={"/"}>Terms and Conditions</Link>
+                <Link href={"/terms-and-conditions"}>Terms and Conditions</Link>
               </li>
               <li className="w-px h-5 bg-secondary" />
               <li className="opacity-60 hover:opacity-80">

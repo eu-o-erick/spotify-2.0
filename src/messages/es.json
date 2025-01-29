@@ -48,5 +48,48 @@
       }
     ],
     "end": "Si tiene alguna pregunta sobre esta Política de Privacidad o sobre cómo manejamos sus datos, no dude en contactarnos a través de [su contacto]."
+  },
+  "TermsPage": {
+    "title": "Términos y Condiciones",
+    "desc": "¡Bienvenido a [Nombre de su Sitio Web]! Estos Términos y Condiciones regulan el uso de nuestro sitio web. Al acceder o utilizar nuestros servicios, usted acepta cumplir con estos términos. Léalos atentamente.",
+    "sections": [
+      {
+        "title": "1. Uso Permitido",
+        "desc": "Puede utilizar este sitio web para cualquier propósito, ya sea personal o comercial. Sin embargo, es su responsabilidad asegurarse de que su uso cumpla con las leyes aplicables."
+      },
+      {
+        "title": "2. Actualizaciones del Servicio",
+        "desc": "Nos reservamos el derecho de modificar, actualizar o descontinuar cualquier parte de nuestro sitio web o servicios sin previo aviso. Esto incluye cambios en funcionalidades, características o disponibilidad."
+      },
+      {
+        "title": "3. Propiedad del Contenido",
+        "desc": "Todos los rankings e imágenes generados por los usuarios a través de este sitio web pertenecen a los respectivos usuarios. Sin embargo, el diseño, la disposición y la identidad visual del sitio están protegidos por derechos de autor y siguen siendo nuestra propiedad intelectual."
+      },
+      {
+        "title": "4. Exención de Responsabilidad",
+        "desc": "No somos responsables de errores, interrupciones o limitaciones derivadas de la API de Spotify u otros servicios de terceros de los que dependemos. No garantizamos la disponibilidad ininterrumpida o la precisión del sitio web."
+      },
+      {
+        "title": "5. Suspensión de Cuenta",
+        "desc": "Si en el futuro introducimos cuentas de usuario, nos reservamos el derecho de suspender o cancelar cuentas por violaciones de estos Términos o por uso indebido de nuestros servicios."
+      },
+      {
+        "title": "6. Derechos de Autor",
+        "desc": "Todos los elementos visuales y funcionales de este sitio web, incluidos su diseño e identidad visual, están protegidos por derechos de autor. No puede copiar, reproducir ni redistribuir ninguna parte del sitio sin permiso previo."
+      },
+      {
+        "title": "7. Enlaces Externos",
+        "desc": "Nuestro sitio web puede incluir enlaces a servicios externos, como Spotify. No somos responsables del contenido, precisión o confiabilidad de estos sitios web externos."
+      },
+      {
+        "title": "8. Jurisdicción",
+        "desc": "Estos Términos se rigen por las leyes de Brasil. Cualquier disputa legal se resolverá de acuerdo con la legislación brasileña."
+      },
+      {
+        "title": "9. Actualización de Estos Términos",
+        "desc": "Podemos actualizar estos Términos y Condiciones en cualquier momento sin previo aviso. El uso continuado del sitio web después de las actualizaciones constituye la aceptación de los términos revisados."
+      }
+    ],
+    "end": "Si tiene alguna pregunta sobre estos Términos y Condiciones, contáctenos en [su información de contacto]."
   }
 }

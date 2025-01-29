@@ -48,5 +48,48 @@
       }
     ],
     "end": "Se você tiver alguma dúvida sobre esta Política de Privacidade ou sobre a forma como lidamos com seus dados, entre em contato conosco pelo [seu contato]."
+  },
+  "TermsPage": {
+    "title": "Termos e Condições",
+    "desc": "Bem-vindo ao [Nome do Seu Site]! Estes Termos e Condições regulam o uso do nosso site. Ao acessar ou utilizar nossos serviços, você concorda em cumprir estes termos. Leia-os atentamente.",
+    "sections": [
+      {
+        "title": "1. Uso Permitido",
+        "desc": "Você pode usar este site para qualquer finalidade, seja pessoal ou comercial. No entanto, é sua responsabilidade garantir que seu uso esteja em conformidade com as leis aplicáveis."
+      },
+      {
+        "title": "2. Atualizações do Serviço",
+        "desc": "Reservamo-nos o direito de modificar, atualizar ou descontinuar qualquer parte do nosso site ou serviços sem aviso prévio. Isso inclui mudanças em funcionalidades, recursos ou disponibilidade."
+      },
+      {
+        "title": "3. Propriedade do Conteúdo",
+        "desc": "Todos os rankings e imagens gerados pelos usuários através deste site pertencem aos respectivos usuários. No entanto, o design, layout e identidade visual do site são protegidos por direitos autorais e continuam sendo nossa propriedade intelectual."
+      },
+      {
+        "title": "4. Isenção de Responsabilidade",
+        "desc": "Não somos responsáveis por erros, interrupções ou limitações decorrentes da API do Spotify ou de outros serviços de terceiros dos quais dependemos. Não garantimos a disponibilidade contínua ou precisão do site."
+      },
+      {
+        "title": "5. Suspensão de Conta",
+        "desc": "Se introduzirmos contas de usuário no futuro, reservamo-nos o direito de suspender ou encerrar contas por violações destes Termos ou pelo uso indevido dos nossos serviços."
+      },
+      {
+        "title": "6. Direitos Autorais",
+        "desc": "Todos os elementos visuais e funcionais deste site, incluindo seu design e identidade visual, são protegidos por direitos autorais. Você não pode copiar, reproduzir ou redistribuir qualquer parte do site sem permissão prévia."
+      },
+      {
+        "title": "7. Links Externos",
+        "desc": "Nosso site pode incluir links para serviços externos, como o Spotify. Não somos responsáveis pelo conteúdo, precisão ou confiabilidade desses sites externos."
+      },
+      {
+        "title": "8. Jurisdição",
+        "desc": "Estes Termos são regidos pelas leis do Brasil. Quaisquer disputas legais serão resolvidas de acordo com a legislação brasileira."
+      },
+      {
+        "title": "9. Atualizações destes Termos",
+        "desc": "Podemos atualizar estes Termos e Condições a qualquer momento, sem aviso prévio. O uso contínuo do site após atualizações constitui aceitação dos termos revisados."
+      }
+    ],
+    "end": "Se tiver alguma dúvida sobre estes Termos e Condições, entre em contato conosco em [suas informações de contato]."
   }
 }
