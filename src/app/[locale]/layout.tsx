@@ -21,13 +21,12 @@ export const metadata: Metadata = {
   description: "é o spotify 2, desgraça",
 };
 
-export default async function LocaleLayout({
-  children,
-  params,
-}: {
+type LayoutProps = {
   children: React.ReactNode;
-  params: { locale: string };
-}) {
+  params: Promise<{ locale: Locale }>;
+};
+
+export default async function LocaleLayout({ children, params }: LayoutProps) {
   const { locale } = await params;
 
   if (!routing.locales.includes(locale as Locale)) {
