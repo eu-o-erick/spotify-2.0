@@ -110,4 +110,18 @@ describe("GET API Tests", () => {
     const responseBody = await response.json();
     expect(responseBody.results).toEqual(["result1", "result2"]);
   });
+
+  it("should return 500 when Spotify API fails", async () => {
+    const request = {
+      url: `http://localhost:3000/api/v1/search?artist=2w9zwq3AktTeYYMuhMjju8&type=albums&page=0`,
+    } as NextRequest;
+
+    (fetch as jest.Mock).mockRejectedValue(new Error("Spotify API error"));
+
+    const response = await GET(request);
+
+    expect(response.status).toBe(500);
+    const responseBody = await response.json();
+    expect(responseBody).toEqual({ error: "Failed to fetch data" });
+  });
 });
