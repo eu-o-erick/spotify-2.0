@@ -32,20 +32,20 @@ export default function HeaderComponent() {
           width={30}
           height={30}
           alt="logo"
-          className="max-md:w-6 max-md:h-6"
+          className="max-md:w-8 max-md:h-8"
         />
         <Image
           src="/name.png"
           width={100}
           height={30}
           alt="logo"
-          className="max-md:w-20 max-md:h-6"
+          className="max-md:w-24 max-md:h-8"
         />
       </Link>
 
-      <div className="flex items-end gap-6 max-sm:gap-4">
+      <div className="flex items-center gap-6 max-sm:gap-4">
         <DropDown state={language} setState={setLanguage} options={LANGUAGES} />
-        <BsSearch className="w-6 h-6 max-md:w-4 max-md:h-4" />
+        <BsSearch className="w-6 h-6 max-md:w-5 max-md:h-5" />
       </div>
     </header>
   );

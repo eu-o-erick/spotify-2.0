@@ -43,41 +43,56 @@ export default function SearchComponent() {
 
           <p className="opacity-80 mx-4  max-sm:text-sm">{t("desc")}</p>
 
-          <div className="relative flex gap-3 mt-10 max-sm:mt-8  max-sm:gap-2">
-            <BsSearch className="absolute top-2/4 -translate-y-2/4 left-5 opacity-50 w-5 h-5 max-sm:left-2 max-sm:w-3 max-sm:h-3" />
+          <div className="flex gap-3 mt-10 max-sm:mt-8 max-sm:gap-4">
+            <div className="relative w-full flex-1">
+              <BsSearch className="absolute top-2/4 -translate-y-2/4 left-5 opacity-50 w-5 h-5 pointer-events-none max-sm:left-3 max-sm:w-4 max-sm:h-4" />
 
-            <input
-              ref={refInput}
-              type="text"
-              name="searchInput"
-              id="searchInput"
-              onChange={() => setIsError(false)}
-              autoComplete="off"
-              className={cn(
-                "flex-1 bg-secondary border border-primary p-2 text-[14px] pl-14 rounded-[4px] placeholder:opacity-50 focus:outline-none max-sm:rounded-sm max-sm:p-1 max-sm:pl-7",
-                {
-                  "border-red-500": isError,
-                }
-              )}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") handleSearch();
-              }}
-              placeholder={t("placeholder")}
+              <input
+                ref={refInput}
+                type="text"
+                name="searchInput"
+                id="searchInput"
+                onChange={() => setIsError(false)}
+                autoComplete="off"
+                className={cn(
+                  "w-full bg-secondary border border-primary p-2.5 text-[14px] pl-14 rounded-[4px] placeholder:opacity-50 focus:outline-none max-sm:rounded-sm max-sm:p-2 max-sm:pl-10",
+                  {
+                    "border-red-500": isError,
+                  }
+                )}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleSearch();
+                }}
+                placeholder={t("placeholder")}
+              />
+            </div>
+
+            <ButtonComponent
+              label={t("button")}
+              handle={handleSearch}
+              className={"max-sm:hidden"}
             />
-
-            <ButtonComponent label={t("button")} handle={handleSearch} />
           </div>
 
-          <p className="mt-4 text-start text-sm font-extralight opacity-70 text-gray-300 max-sm:text-xs">
-            {t.raw("categories").map((string: string, index: number) => (
-              <span
-                key={index}
-                className={cn("", { "text-white font-light": index % 2 === 1 })}
-              >
-                {string}{" "}
-              </span>
-            ))}
-          </p>
+          <div className="mt-4 flex justify-between max-sm:mt-6">
+            <p className="text-start text-sm font-extralight opacity-70 text-gray-300 max-sm:text-xs">
+              {t.raw("categories").map((string: string, index: number) => (
+                <span
+                  key={index}
+                  className={cn("", {
+                    "text-white font-light": index % 2 === 1,
+                  })}
+                >
+                  {string}{" "}
+                </span>
+              ))}
+            </p>
+            <ButtonComponent
+              label={t("button")}
+              handle={handleSearch}
+              className={""}
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -18,17 +18,14 @@ export default function ButtonDropDown({ isOpen, setIsOpen, state }: Props) {
   return (
     <button
       onClick={() => setIsOpen(!isOpen)}
-      className="flex items-center gap-1 max-lg:text-sm"
+      className="flex items-center gap-1"
     >
       {" "}
       <span>{state.value}</span>
       <IoIosArrowDown
-        className={cn(
-          "w-5 h-5 max-lg:w-4 max-lg:mt-1 max-lg:h-4 transition-all",
-          {
-            "rotate-180": isOpen,
-          }
-        )}
+        className={cn("w-5 h-5 transition-all", {
+          "rotate-180": isOpen,
+        })}
       />
     </button>
   );
