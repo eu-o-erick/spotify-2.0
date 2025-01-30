@@ -2,7 +2,7 @@ import { Link } from "@/i18n/routing";
 import BgGradient from "./BgGradient";
 import Image from "next/image";
 
-export default function Footer() {
+export default function FooterComponent() {
   return (
     <footer className="relative pt-12 max-sm:pt-5">
       <BgGradient />

@@ -15,7 +15,7 @@ interface Props {
   options: DropDownItem[];
 }
 
-export default function DropDown({ state, setState, options }: Props) {
+export default function DropDownComponent({ state, setState, options }: Props) {
   const [isOpen, setIsOpen, dropdownRef] = useClickOutside<HTMLDivElement>();
 
   return (

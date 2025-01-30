@@ -2,6 +2,13 @@
   "HomePage": {
     "hello": "hoola"
   },
+  "SearchComponent": {
+    "title": "Busca un artista o álbum para empezar a clasificar",
+    "desc": "Con la base de datos de Spotify, cada artista y álbum está a solo una búsqueda de distancia",
+    "placeholder": "Busca un álbum o artista",
+    "button": "Explorar Ahora",
+    "categories": ["Categorías:", "Álbumes", "y", "Artistas"]
+  },
   "PrivacyPage": {
     "title": "Política de Privacidad",
     "desc": "Esta Política de Privacidad describe cómo manejamos y protegemos su información personal cuando utiliza nuestro sitio web. Al usar nuestro sitio web, usted acepta la recopilación y el uso de su información de acuerdo con esta política.",

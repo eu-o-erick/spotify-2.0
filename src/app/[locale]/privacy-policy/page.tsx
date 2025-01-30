@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-export default function PrivacyPolicy() {
+export default function PrivacyPolicyPage() {
   const t = useTranslations("PrivacyPage");
 
   return (

@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-export default function TermsAndConditions() {
+export default function TermsAndConditionsPage() {
   const t = useTranslations("TermsPage");
 
   return (

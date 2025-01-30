@@ -1,9 +1,11 @@
+import SearchComponent from "@/components/Search";
 import { useTranslations } from "next-intl";
 
-export default function Home() {
+export default function HomePage() {
   const t = useTranslations("HomePage");
   return (
-    <main className="my-24 container flex-1">
+    <main className="flex-1">
+      <SearchComponent />
       <h1>{t("hello")}</h1>
     </main>
   );

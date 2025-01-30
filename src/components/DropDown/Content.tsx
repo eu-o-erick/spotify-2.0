@@ -31,7 +31,7 @@ export default function ContentDropDown({
   return (
     <div
       className={cn(
-        "absolute bg-secondary -right-4 px-6 py-3 shadow-strong rounded-md max-lg:px-5 transition-all",
+        "absolute z-10 bg-secondary -right-4 px-6 py-3 shadow-strong rounded-md max-lg:px-5 transition-all",
         {
           "opacity-100 top-8": isOpen,
           "opacity-0 -right-8 pointer-events-none scale-75 top-4": !isOpen,

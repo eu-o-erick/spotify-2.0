@@ -2,6 +2,13 @@
   "HomePage": {
     "hello": "alou"
   },
+  "SearchComponent": {
+    "title": "Pesquise um artista ou álbum para começar a ranquear",
+    "desc": "Com o banco de dados do Spotify, cada artista e álbum está a apenas uma busca de distância",
+    "placeholder": "Pesquise por um álbum ou artista",
+    "button": "Explorar Agora",
+    "categories": ["Categorias:", "Álbuns", "e", "Artistas"]
+  },
   "PrivacyPage": {
     "title": "Política de Privacidade",
     "desc": "Esta Política de Privacidade descreve como lidamos e protegemos suas informações pessoais ao usar nosso site. Ao utilizar nosso site, você concorda com a coleta e uso de suas informações de acordo com esta política.",

@@ -2,6 +2,13 @@
   "HomePage": {
     "hello": "hellou"
   },
+  "SearchComponent": {
+    "title": "Look up an rtist or album to start ranking",
+    "desc": "With Spotify's database, every artist and album in just a search away",
+    "placeholder": "Search for an album or artist",
+    "button": "Explore Now",
+    "categories": ["Categories:", "Albums", "and", "Artists"]
+  },
   "PrivacyPage": {
     "title": "Privacy Policy",
     "desc": "This Privacy Policy outlines how we handle and protect your personal information when you use our website. By using our website, you agree to the collection and use of your information in accordance with this policy.",

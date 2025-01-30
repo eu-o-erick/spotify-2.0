@@ -13,7 +13,7 @@ import Footer from "@/components/Footer";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "600"],
+  weight: ["100", "200", "300", "600"],
 });
 
 export const metadata: Metadata = {
