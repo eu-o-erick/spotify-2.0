@@ -1,8 +1,11 @@
 import { Link } from "@/i18n/routing";
 import BgGradient from "./BgGradient";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function FooterComponent() {
+  const t = useTranslations("FooterComponent");
+
   return (
     <footer className="relative pt-12 max-sm:pt-8">
       <BgGradient />
@@ -11,11 +14,11 @@ export default function FooterComponent() {
           <nav className="mb-6">
             <ul className="flex items-center gap-8 text-sm underline max-lg:gap-6 max-sm:text-xs">
               <li className="opacity-80 hover:opacity-100">
-                <Link href={"/"}>HOME</Link>
+                <Link href={"/"}>{t("nav.home")}</Link>
               </li>
               <li className="w-px h-5 bg-secondary" />
               <li className="opacity-80 hover:opacity-100">
-                <Link href={"/search"}>SEARCH</Link>
+                <Link href={"/search"}>{t("nav.search")}</Link>
               </li>
             </ul>
           </nav>
@@ -23,11 +26,13 @@ export default function FooterComponent() {
           <nav className="mb-16 max-sm:mb-14">
             <ul className="flex items-center gap-8 text-sm underline max-lg:gap-6 max-sm:text-xs">
               <li className="opacity-60 hover:opacity-80">
-                <Link href={"/terms-and-conditions"}>Terms and Conditions</Link>
+                <Link href={"/terms-and-conditions"}>
+                  {t("nav.termsAndConditions")}
+                </Link>
               </li>
               <li className="w-px h-5 bg-secondary" />
               <li className="opacity-60 hover:opacity-80">
-                <Link href={"/privacy-policy"}>Privacy Policy</Link>
+                <Link href={"/privacy-policy"}>{t("nav.privacyPolicy")}</Link>
               </li>
             </ul>
           </nav>
@@ -75,10 +80,7 @@ export default function FooterComponent() {
           <ul className="flex items-center gap-8 text-xs max-sm:text-[10px] max-sm:gap-4">
             <li className="max-sm:w-[54px]">© 2025 Abcdefgz</li>
             <li className="w-px h-6 bg-white opacity-20" />
-            <li>
-              Data provided by Spotify. All rights belong to their respective
-              owners.
-            </li>
+            <li>{t("disclaimer")}</li>
           </ul>
         </div>
       </div>

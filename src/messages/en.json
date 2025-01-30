@@ -2,6 +2,15 @@
   "HomePage": {
     "hello": "hellou"
   },
+  "FooterComponent": {
+    "nav": {
+      "home": "HOME",
+      "search": "SEARCH",
+      "termsAndConditions": "Terms and Conditions",
+      "privacyPolicy": "Privacy Policy"
+    },
+    "disclaimer": "Data provided by Spotify. All rights belong to their respective owners."
+  },
   "SearchComponent": {
     "title": "Look up an rtist or album to start ranking",
     "desc": "With Spotify's database, every artist and album in just a search away",

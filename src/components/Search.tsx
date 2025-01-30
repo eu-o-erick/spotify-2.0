@@ -90,7 +90,7 @@ export default function SearchComponent() {
             <ButtonComponent
               label={t("button")}
               handle={handleSearch}
-              className={""}
+              className={"sm:hidden"}
             />
           </div>
         </div>

@@ -2,6 +2,15 @@
   "HomePage": {
     "hello": "alou"
   },
+  "FooterComponent": {
+    "nav": {
+      "home": "INÍCIO",
+      "search": "PESQUISAR",
+      "termsAndConditions": "Termos e Condições",
+      "privacyPolicy": "Política de Privacidade"
+    },
+    "disclaimer": "Dados fornecidos pelo Spotify. Todos os direitos pertencem aos seus respectivos donos."
+  },
   "SearchComponent": {
     "title": "Pesquise um artista ou álbum para começar a ranquear",
     "desc": "Com o banco de dados do Spotify, cada artista e álbum está a apenas uma busca de distância",

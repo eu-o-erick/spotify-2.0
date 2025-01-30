@@ -2,6 +2,15 @@
   "HomePage": {
     "hello": "hoola"
   },
+  "FooterComponent": {
+    "nav": {
+      "home": "INICIO",
+      "search": "BUSCAR",
+      "termsAndConditions": "Términos y Condiciones",
+      "privacyPolicy": "Política de Privacidad"
+    },
+    "disclaimer": "Datos proporcionados por Spotify. Todos los derechos pertenecen a sus respectivos propietarios."
+  },
   "SearchComponent": {
     "title": "Busca un artista o álbum para empezar a clasificar",
     "desc": "Con la base de datos de Spotify, cada artista y álbum está a solo una búsqueda de distancia",
