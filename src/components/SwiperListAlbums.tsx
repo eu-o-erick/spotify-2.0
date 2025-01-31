@@ -48,13 +48,17 @@ export default function SwiperListAlbumsComponent({
 
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
-        slidesPerView={3}
-        spaceBetween={2}
+        slidesPerView={2}
+        spaceBetween={10}
         loop={true}
         breakpoints={{
+          500: {
+            slidesPerView: 3,
+            spaceBetween: 5,
+          },
           640: {
-            slidesPerView: 4,
-            spaceBetween: 20,
+            slidesPerView: 5,
+            spaceBetween: 10,
           },
           1064: {
             slidesPerView: 6,

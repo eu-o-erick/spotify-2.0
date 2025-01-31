@@ -40,11 +40,11 @@ export default function ItemAlbumComponent({
           pathname: `/album`,
           query: { id: album.data.uri.split(":")[2] },
         }}
-        className="mt-2 line-clamp-2 max-md:text-[12px]"
+        className="mt-2 line-clamp-2 max-md:text-[14px]"
       >
         {album.data.name}
       </Link>
-      <span className="text-sm opacity-60 line-clamp-1 max-md:text-[10px]">
+      <span className="text-sm opacity-60 line-clamp-1 max-md:text-[12px]">
         {desc}
       </span>
     </div>

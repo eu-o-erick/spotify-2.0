@@ -19,7 +19,7 @@ export default function ItemArtistComponent({ artist }: { artist: TArtist }) {
           pathname: `/artist`,
           query: { id: artist.data.uri.split(":")[2] },
         }}
-        className="mt-2 line-clamp-1 max-md:text-[12px]"
+        className="mt-2 line-clamp-1 max-md:text-[14px]"
       >
         {artist.data.profile.name}
       </Link>
