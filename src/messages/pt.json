@@ -1,6 +1,8 @@
 {
   "HomePage": {
-    "hello": "alou"
+    "featuredAlbums": "Álbuns em Destaque",
+    "latestAlbums": "Novos Lançamentos",
+    "featuredArtists": "Artistas em Destaque"
   },
   "FooterComponent": {
     "nav": {

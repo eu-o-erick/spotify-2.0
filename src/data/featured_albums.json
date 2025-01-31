@@ -1,0 +1,309 @@
+{
+  "albums": [
+    {
+      "data": {
+        "uri": "spotify:album:6r1lh7fHMB499vGKtIyJLy",
+        "name": "AUSTIN",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:246dkjvS1zLTtiykXe5h60",
+              "profile": {
+                "name": "Post Malone"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e0271cae34ad5a39bdab78af13e",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000485171cae34ad5a39bdab78af13e",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b27371cae34ad5a39bdab78af13e",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 2023
+        }
+      }
+    },
+
+    {
+      "data": {
+        "uri": "spotify:album:3gHZ4w03gbuZtGTEwztrtw",
+        "name": "F-1 Trillion",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:246dkjvS1zLTtiykXe5h60",
+              "profile": {
+                "name": "Post Malone"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e028c420f2cb0d3d82c7936c70f",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d000048518c420f2cb0d3d82c7936c70f",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b2738c420f2cb0d3d82c7936c70f",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 2024
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:5s0rmjP8XOPhP6HhqOhuyC",
+        "name": "Stoney (Deluxe)",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:246dkjvS1zLTtiykXe5h60",
+              "profile": {
+                "name": "Post Malone"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e0255404f712deb84d0650a4b41",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000485155404f712deb84d0650a4b41",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b27355404f712deb84d0650a4b41",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 2016
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:6JlCkqkqobGirPsaleJpFr",
+        "name": "Dangerous: The Double Album",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:4oUHIQIBe0LHzYfvXNW4QM",
+              "profile": {
+                "name": "Morgan Wallen"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e027d6813fd233f3bc4977cceca",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d000048517d6813fd233f3bc4977cceca",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b2737d6813fd233f3bc4977cceca",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 2021
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:6i7mF7whyRJuLJ4ogbH2wh",
+        "name": "One Thing At A Time",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:4oUHIQIBe0LHzYfvXNW4QM",
+              "profile": {
+                "name": "Morgan Wallen"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e02705079df9a25a28b452c1fc9",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00004851705079df9a25a28b452c1fc9",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b273705079df9a25a28b452c1fc9",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 2023
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:4g1ZRSobMefqF6nelkgibi",
+        "name": "Hollywood's Bleeding",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:246dkjvS1zLTtiykXe5h60",
+              "profile": {
+                "name": "Post Malone"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e029478c87599550dd73bfa7e02",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d000048519478c87599550dd73bfa7e02",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b2739478c87599550dd73bfa7e02",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 2019
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:50MzJhO0pMjTsfpeOmZ1so",
+        "name": "Twelve Carat Toothache (Deluxe)",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:246dkjvS1zLTtiykXe5h60",
+              "profile": {
+                "name": "Post Malone"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e0249081408213aac8b6e75e016",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000485149081408213aac8b6e75e016",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b27349081408213aac8b6e75e016",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 2022
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:6trNtQUgC8cgbWcqoMYkOR",
+        "name": "beerbongs & bentleys",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:246dkjvS1zLTtiykXe5h60",
+              "profile": {
+                "name": "Post Malone"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e02b1c4b76e23414c9f20242268",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00004851b1c4b76e23414c9f20242268",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b273b1c4b76e23414c9f20242268",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 2018
+        }
+      }
+    }
+  ]
+}

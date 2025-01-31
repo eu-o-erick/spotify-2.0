@@ -32,7 +32,7 @@ export default function SearchComponent() {
   }
 
   return (
-    <section className="relative pt-24 pb-14">
+    <section className="relative pt-24 pb-14 mb-16">
       <BgGradient />
 
       <div className="container relative">

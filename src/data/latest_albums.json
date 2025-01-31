@@ -1,0 +1,384 @@
+{
+  "albums": [
+    {
+      "data": {
+        "uri": "spotify:album:4LH4d3cOWNNsVw41Gqt2kv",
+        "name": "The Dark Side of the Moon",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:0k17h0D3J5VfsdmQ1iZtE9",
+              "profile": {
+                "name": "Pink Floyd"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e02ea7caaff71dea1051d49b2fe",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00004851ea7caaff71dea1051d49b2fe",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b273ea7caaff71dea1051d49b2fe",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 1973
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:0ETFjACtuP2ADo6LFhL6HN",
+        "name": "Abbey Road (Remastered)",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:3WrFJ7ztbogyGnTHbHJFl2",
+              "profile": {
+                "name": "The Beatles"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e02dc30583ba717007b00cceb25",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00004851dc30583ba717007b00cceb25",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 1969
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:4m2880jivSbbyEGAKfITCa",
+        "name": "Random Access Memories",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:4tZwfgrHOc3mvqYlEYSvVi",
+              "profile": {
+                "name": "Daft Punk"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e029b9b36b0e22870b9f542d937",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d000048519b9b36b0e22870b9f542d937",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b2739b9b36b0e22870b9f542d937",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 2013
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:5Dbax7G8SWrP9xyzkOvy2F",
+        "name": "The Wall",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:0k17h0D3J5VfsdmQ1iZtE9",
+              "profile": {
+                "name": "Pink Floyd"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e025d48e2f56d691f9a4e4b0bdf",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d000048515d48e2f56d691f9a4e4b0bdf",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b2735d48e2f56d691f9a4e4b0bdf",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 1979
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:7HVoV2lgVsmuiHsjbbUJB4",
+        "name": "A Night At The Opera",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:1dfeR4HaWDbWqFHLkxsg1d",
+              "profile": {
+                "name": "Queen"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e023025a441495664948b809537",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d000048513025a441495664948b809537",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b2733025a441495664948b809537",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 1975
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:6mUdeDZCsExyJLMdAfDuwh",
+        "name": "Back In Black",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:711MCceyCBcFnzjGY4Q7Un",
+              "profile": {
+                "name": "AC/DC"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e020b51f8d91f3a21e8426361ae",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d000048510b51f8d91f3a21e8426361ae",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b2730b51f8d91f3a21e8426361ae",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 1980
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:1BZoqf8Zje5nGdwZhOjAtD",
+        "name": "The Miseducation of Lauryn Hill",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:2Mu5NfyYm8n5iTomuKAEHl",
+              "profile": {
+                "name": "Ms. Lauryn Hill"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e02e08b1250db5f75643f1508c9",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00004851e08b1250db5f75643f1508c9",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b273e08b1250db5f75643f1508c9",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 1998
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:2ANVost0y2y52ema1E9xAZ",
+        "name": "Thriller",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:3fMbdgg4jU18AjLCKBhRSm",
+              "profile": {
+                "name": "Michael Jackson"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e02de437d960dda1ac0a3586d97",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00004851de437d960dda1ac0a3586d97",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b273de437d960dda1ac0a3586d97",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 1982
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:2widuo17g5CEC66IbzveRu",
+        "name": "Hotel California (2013 Remaster)",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:0ECwFtbIWEVNwjlrfc6xoL",
+              "profile": {
+                "name": "Eagles"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e024637341b9f507521afa9a778",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d000048514637341b9f507521afa9a778",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b2734637341b9f507521afa9a778",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 1976
+        }
+      }
+    },
+    {
+      "data": {
+        "uri": "spotify:album:43YIoHKSrEw2GJsWmhZIpu",
+        "name": "Born To Run",
+        "artists": {
+          "items": [
+            {
+              "uri": "spotify:artist:3eqjTLE0HfPfh78zjh6TqT",
+              "profile": {
+                "name": "Bruce Springsteen"
+              }
+            }
+          ]
+        },
+        "coverArt": {
+          "sources": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e02503143a281a3f30268dcd9f9",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00004851503143a281a3f30268dcd9f9",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b273503143a281a3f30268dcd9f9",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "date": {
+          "year": 1975
+        }
+      }
+    }
+  ]
+}

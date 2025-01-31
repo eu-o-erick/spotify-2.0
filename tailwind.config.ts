@@ -25,7 +25,7 @@ export default {
         },
       },
       boxShadow: {
-        strong: "4px 4px 4px rgba(0, 0, 0, 0.3)",
+        strong: "4px 4px 4px rgba(0, 0, 0, 0.2)",
       },
     },
   },

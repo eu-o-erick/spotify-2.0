@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 
 import "./globals.css";
+import "swiper/css";
 
 import Header from "@/components/Header";
 import Separator from "@/components/Separator";
@@ -13,7 +14,7 @@ import Footer from "@/components/Footer";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "600"],
+  weight: ["100", "200", "300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
