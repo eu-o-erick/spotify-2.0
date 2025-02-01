@@ -4,6 +4,16 @@
     "latestAlbums": "Novos Lançamentos",
     "featuredArtists": "Artistas em Destaque"
   },
+  "SearchPage": {
+    "nothingYet": "Nada por aqui ainda... Pesquise por um álbum ou artista!",
+    "nothingFound": "Nenhum resultado encontrado para",
+    "tryAgain": "Tente outra busca!",
+    "artistsFound": "Artistas encontrados",
+    "albumsFound": "Álbuns encontrados",
+    "loading": "carregando",
+    "seeAllArtists": "ver todos os artistas",
+    "seeAllAlbums": "ver todos os álbuns"
+  },
   "FooterComponent": {
     "nav": {
       "home": "INÍCIO",

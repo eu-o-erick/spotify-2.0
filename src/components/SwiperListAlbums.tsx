@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import SwiperTypes from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { MdNavigateNext } from "react-icons/md";
@@ -13,19 +13,45 @@ export default function SwiperListAlbumsComponent({
   title: string;
 }) {
   const swiperRef = useRef<null | SwiperTypes>(null);
+  const [isDisabled, setIsDisabled] = useState(true);
 
   function handlerPrev() {
+    if (isDisabled) return;
+
     swiperRef.current?.slidePrev();
   }
 
   function handlerNext() {
+    if (isDisabled) return;
+
     swiperRef.current?.slideNext();
   }
 
+  useEffect(() => {
+    const swiper = swiperRef.current;
+    if (!swiper) return;
+
+    const updateButtonState = () => {
+      const slidesPerView =
+        typeof swiper.params.slidesPerView === "number"
+          ? swiper.params.slidesPerView
+          : 1;
+
+      setIsDisabled(children.length <= slidesPerView);
+    };
+
+    updateButtonState();
+    swiper.on("resize", updateButtonState);
+
+    return () => {
+      swiper.off("resize", updateButtonState);
+    };
+  }, [children.length]);
+
   return (
     <section className="container mb-16 max-md:mb-10">
-      <div className="flex justify-between mb-7 max-md:mb-4">
-        <h2 className="text-2xl  max-md:text-xl">{title}</h2>
+      <div className="flex justify-between mb-7 max-md:mb-4 max-[500px]:px-2">
+        <h2 className="text-2xl max-md:text-xl">{title}</h2>
 
         <div className="flex gap-2">
           <button
@@ -56,11 +82,11 @@ export default function SwiperListAlbumsComponent({
             slidesPerView: 3,
             spaceBetween: 5,
           },
-          640: {
-            slidesPerView: 5,
+          768: {
+            slidesPerView: 4,
             spaceBetween: 10,
           },
-          1064: {
+          1024: {
             slidesPerView: 6,
             spaceBetween: 34,
           },

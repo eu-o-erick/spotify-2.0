@@ -16,12 +16,11 @@ export default {
       },
       container: {
         center: true,
-        padding: "10px",
         screens: {
           sm: "100%",
-          md: "808px",
-          lg: "1064px",
-          xl: "1320px",
+          md: "768px",
+          lg: "1024px",
+          xl: "1280px",
         },
       },
       boxShadow: {

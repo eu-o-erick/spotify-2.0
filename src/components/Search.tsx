@@ -22,6 +22,8 @@ export default function SearchComponent() {
     if (!query || query.trim() === "" || query.trim().length < 3)
       return setIsError(true);
 
+    refInput.current!.value = "";
+
     redirect({
       href: {
         pathname: "/search",
@@ -32,7 +34,7 @@ export default function SearchComponent() {
   }
 
   return (
-    <section className="relative pt-24 pb-14 mb-16">
+    <section className="relative pt-24 pb-14 mb-16 max-[500px]:px-2">
       <BgGradient />
 
       <div className="container relative">

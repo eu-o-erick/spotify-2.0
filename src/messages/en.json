@@ -4,6 +4,16 @@
     "latestAlbums": "New Releases",
     "featuredArtists": "Featured Artists"
   },
+  "SearchPage": {
+    "nothingYet": "Nothing here yet... Search for an album or artist!",
+    "nothingFound": "No results found for",
+    "tryAgain": "Try another search!",
+    "artistsFound": "Artists Found",
+    "albumsFound": "Albums Found",
+    "loading": "loading",
+    "seeAllArtists": "see all artists",
+    "seeAllAlbums": "see all albums"
+  },
   "FooterComponent": {
     "nav": {
       "home": "HOME",
@@ -14,7 +24,7 @@
     "disclaimer": "Data provided by Spotify. All rights belong to their respective owners."
   },
   "SearchComponent": {
-    "title": "Look up an rtist or album to start ranking",
+    "title": "Look up an artist or album to start ranking",
     "desc": "With Spotify's database, every artist and album in just a search away",
     "placeholder": "Search for an album or artist",
     "button": "Explore Now",

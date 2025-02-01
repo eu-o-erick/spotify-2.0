@@ -2,6 +2,7 @@ export type TAlbum = {
   data: {
     uri: string;
     name: string;
+    type: "ALBUM" | "SINGLE";
     artists: {
       items: {
         uri: string;

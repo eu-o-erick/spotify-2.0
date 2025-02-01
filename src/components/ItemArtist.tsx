@@ -8,9 +8,11 @@ export default function ItemArtistComponent({ artist }: { artist: TArtist }) {
   return (
     <div className="select-none flex flex-col px-1.5">
       <Image
-        src={artist.data.visuals.avatarImage.sources[0].url}
-        width={200}
-        height={200}
+        src={
+          artist.data.visuals.avatarImage?.sources?.[0].url || "/no-image.webp"
+        }
+        width={400}
+        height={400}
         alt="cover album"
         className="rounded-full shadow-strong aspect-square"
       />

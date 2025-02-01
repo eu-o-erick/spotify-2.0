@@ -15,19 +15,19 @@ export default function HomePage() {
       <SearchComponent />
 
       <SwiperListAlbumsComponent title={t("featuredAlbums")}>
-        {featuredAlbums.albums.map((album, i) => (
+        {featuredAlbums.items.map((album, i) => (
           <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
         ))}
       </SwiperListAlbumsComponent>
 
       <SwiperListAlbumsComponent title={t("latestAlbums")}>
-        {latestAlbums.albums.map((album, i) => (
+        {latestAlbums.items.map((album, i) => (
           <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
         ))}
       </SwiperListAlbumsComponent>
 
       <SwiperListAlbumsComponent title={t("featuredArtists")}>
-        {featuredArtists.artists.map((artist, i) => (
+        {featuredArtists.items.map((artist, i) => (
           <ItemArtistComponent key={i} artist={artist} />
         ))}
       </SwiperListAlbumsComponent>
