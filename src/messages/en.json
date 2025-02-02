@@ -5,6 +5,7 @@
     "featuredArtists": "Featured Artists"
   },
   "SearchPage": {
+    "response": "We found these results for",
     "nothingYet": "Nothing here yet... Search for an album or artist!",
     "nothingFound": "No results found for",
     "tryAgain": "Try another search!",

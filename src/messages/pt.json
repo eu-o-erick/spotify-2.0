@@ -5,6 +5,7 @@
     "featuredArtists": "Artistas em Destaque"
   },
   "SearchPage": {
+    "response": "Encontramos estes resultados para",
     "nothingYet": "Nada por aqui ainda... Pesquise por um álbum ou artista!",
     "nothingFound": "Nenhum resultado encontrado para",
     "tryAgain": "Tente outra busca!",

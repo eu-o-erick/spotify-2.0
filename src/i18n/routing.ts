@@ -21,6 +21,16 @@ export const routing = defineRouting({
       pt: "/pesquisar",
       es: "/buscar",
     },
+    "/search/artists": {
+      en: "/search/artists",
+      pt: "/pesquisar/artistas",
+      es: "/buscar/artistas",
+    },
+    "/search/albums": {
+      en: "/search/albums",
+      pt: "/pesquisar/albuns",
+      es: "/buscar/albumes",
+    },
     "/album": "/album",
     "/artist": {
       en: "/artist",
