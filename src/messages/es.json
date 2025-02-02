@@ -6,8 +6,12 @@
   },
   "SearchPage": {
     "response": "Encontramos estos resultados para",
+    "albumsResponse": "Encontramos estos álbumes para",
+    "artistsResponse": "Encontramos estos artistas para",
     "nothingYet": "Aún no hay nada aquí... ¡Busca un álbum o artista!",
     "nothingFound": "No se encontraron resultados para",
+    "nothingFoundAlbums": "No se encontraron albumes para",
+    "nothingFoundArtists": "No se encontraron artistas para",
     "tryAgain": "¡Intenta otra búsqueda!",
     "artistsFound": "Artistas encontrados",
     "albumsFound": "Álbumes encontrados",

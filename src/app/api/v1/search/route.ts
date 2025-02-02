@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
 
   const page = parseInt(pageParam, 10);
 
-  const LIMIT = 12;
+  const LIMIT = type !== "multi" ? 24 : 12;
 
   if (
     (!query && !artist) ||

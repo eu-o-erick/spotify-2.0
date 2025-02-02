@@ -1,11 +1,11 @@
 "use client";
 
 import SearchComponent from "@/components/Search";
-import LoadingSearchComponent from "@/components/Search/Loading";
-import NoResultsSearchComponent from "@/components/Search/NoResults";
+import LoadingSearchArtistsComponent from "@/components/Search/Artists/Loading";
+import NoResultsSearchArtistsComponent from "@/components/Search/Artists/NoResults";
+import ResultsSearchArtistsComponent from "@/components/Search/Artists/ResultsSearch";
 import NothingYetSearchComponent from "@/components/Search/NothingYet";
-import ResultsSearchComponent from "@/components/Search/ResultsSearch";
-import { TAlbum, TArtist } from "@/types";
+import { TArtist } from "@/types";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -13,14 +13,12 @@ export default function SearchPage() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q");
 
-  const [dataAlbums, setDataAlbums] = useState<TAlbum[]>([]);
   const [dataArtists, setDataArtists] = useState<TArtist[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const noResults = query && !dataAlbums.length && !dataArtists.length;
+  const noResults = query && !dataArtists.length;
 
   useEffect(() => {
-    setDataAlbums([]);
     setDataArtists([]);
 
     if (!query) return;
@@ -29,10 +27,9 @@ export default function SearchPage() {
       setLoading(true);
 
       try {
-        const response = await fetch(`/api/v1/search?q=${query}&type=multi`);
+        const response = await fetch(`/api/v1/search?q=${query}&type=artists`);
         if (!response.ok) throw new Error("Error to fetch data");
         const data = await response.json();
-        setDataAlbums(data.albums?.items || []);
         setDataArtists(data.artists?.items || []);
       } catch (err) {
         console.error("Error fetch data:", err);
@@ -50,15 +47,16 @@ export default function SearchPage() {
 
       {!query && <NothingYetSearchComponent />}
 
-      {loading && <LoadingSearchComponent />}
+      {loading && <LoadingSearchArtistsComponent />}
 
-      {noResults && !loading && <NoResultsSearchComponent query={query} />}
+      {noResults && !loading && (
+        <NoResultsSearchArtistsComponent query={query} />
+      )}
 
       {!noResults && (
-        <ResultsSearchComponent
+        <ResultsSearchArtistsComponent
           query={query!}
           dataArtists={dataArtists}
-          dataAlbums={dataAlbums}
         />
       )}
     </main>
