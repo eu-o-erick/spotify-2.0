@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
 
   const query = searchParams.get("q");
   const type = searchParams.get("type");
-  const artist = searchParams.get("artist");
+  const artistId = searchParams.get("artistId");
   const pageParam = searchParams.get("page") || "0";
 
   const page = parseInt(pageParam, 10);
@@ -14,9 +14,9 @@ export async function GET(req: NextRequest) {
   const LIMIT = type !== "multi" ? 24 : 12;
 
   if (
-    (!query && !artist) ||
-    (artist && type !== "albums") ||
-    (!query && artist?.length !== 22) ||
+    (!query && !artistId) ||
+    (artistId && type !== "albums") ||
+    (!query && artistId?.length !== 22) ||
     (query &&
       type !== "artists" &&
       type !== "albums" &&
@@ -32,8 +32,8 @@ export async function GET(req: NextRequest) {
     let response: Response | null = null;
     let url = "";
 
-    if (artist) {
-      url = `${SPOTIFY_API_URL}/artist_albums/?id=${artist}`;
+    if (artistId) {
+      url = `${SPOTIFY_API_URL}/artist_albums/?id=${artistId}`;
     } else {
       url = `${SPOTIFY_API_URL}/search/?q=${query}&type=${type}`;
     }

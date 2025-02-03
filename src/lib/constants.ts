@@ -1,7 +1,5 @@
 import { DropDownItem } from "@/components/DropDown";
 
-export const SPOTIFY_API_URL = "https://spotify23.p.rapidapi.com";
-
 export const LANGUAGES: DropDownItem[] = [
   {
     label: "english",
@@ -18,6 +16,8 @@ export const LANGUAGES: DropDownItem[] = [
 ];
 
 const API_KEY = process.env.SPOTIFY_API_KEY || "";
+
+export const SPOTIFY_API_URL = "https://spotify23.p.rapidapi.com";
 
 export const FETCH_OPTIONS: RequestInit = {
   method: "GET",

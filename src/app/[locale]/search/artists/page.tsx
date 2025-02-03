@@ -5,6 +5,7 @@ import LoadingSearchArtistsComponent from "@/components/Search/Artists/Loading";
 import NoResultsSearchArtistsComponent from "@/components/Search/Artists/NoResults";
 import ResultsSearchArtistsComponent from "@/components/Search/Artists/ResultsSearch";
 import NothingYetSearchComponent from "@/components/Search/NothingYet";
+import { fetchSpotifySearch } from "@/services/spotifyService";
 import { TArtist } from "@/types";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -14,7 +15,7 @@ export default function SearchPage() {
   const query = searchParams.get("q");
 
   const [dataArtists, setDataArtists] = useState<TArtist[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const noResults = query && !dataArtists.length;
 
@@ -26,16 +27,11 @@ export default function SearchPage() {
     const fetchResults = async () => {
       setLoading(true);
 
-      try {
-        const response = await fetch(`/api/v1/search?q=${query}&type=artists`);
-        if (!response.ok) throw new Error("Error to fetch data");
-        const data = await response.json();
-        setDataArtists(data.artists?.items || []);
-      } catch (err) {
-        console.error("Error fetch data:", err);
-      } finally {
-        setLoading(false);
-      }
+      const { artists } = await fetchSpotifySearch("artists", query, null);
+
+      setDataArtists(artists);
+
+      setLoading(false);
     };
 
     fetchResults();
@@ -53,7 +49,7 @@ export default function SearchPage() {
         <NoResultsSearchArtistsComponent query={query} />
       )}
 
-      {!noResults && (
+      {query && !noResults && (
         <ResultsSearchArtistsComponent
           query={query!}
           dataArtists={dataArtists}
