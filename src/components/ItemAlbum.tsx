@@ -20,7 +20,7 @@ export default function ItemAlbumComponent({
         }}
       >
         <Image
-          src={album.data.coverArt?.sources?.[0].url || "/no-image.webp"}
+          src={album.data.coverArt?.sources?.[0]?.url ?? "/no-image.webp"}
           width={400}
           height={400}
           alt="cover album"

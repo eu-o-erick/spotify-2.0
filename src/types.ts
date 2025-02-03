@@ -39,3 +39,12 @@ export type TArtist = {
     };
   };
 };
+
+export type TDataSearch = {
+  albums: {
+    items: TAlbum[];
+  };
+  artists: {
+    items: TArtist[];
+  };
+};

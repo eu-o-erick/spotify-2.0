@@ -16,7 +16,7 @@ export default function ItemArtistComponent({ artist }: { artist: TArtist }) {
       >
         <Image
           src={
-            artist.data.visuals.avatarImage?.sources?.[0].url ||
+            artist.data.visuals.avatarImage?.sources?.[0]?.url ??
             "/no-image.webp"
           }
           width={400}

@@ -20,10 +20,6 @@ export default function CarouselSkelotonComponent({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    console.log("aaaaaa", itemsToShow);
-  }, [itemsToShow]);
-
   return (
     <div className="animate-pulse mb-16 max-md:mb-10">
       <div className="flex justify-between items-center mb-7 max-md:mb-4 max-[500px]:px-2">
