@@ -16,14 +16,15 @@ export default function SearchPage() {
   const artistId = searchParams.get("artistId");
 
   const [dataAlbums, setDataAlbums] = useState<TAlbum[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const noResults = query && !dataAlbums.length;
 
   useEffect(() => {
+    setLoading(true);
     setDataAlbums([]);
 
-    if (!query && !artistId) return;
+    if (!query && !artistId) return setLoading(false);
 
     const fetchResults = async () => {
       setLoading(true);

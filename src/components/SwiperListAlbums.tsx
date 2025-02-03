@@ -88,7 +88,7 @@ export default function SwiperListAlbumsComponent({
           },
           1024: {
             slidesPerView: 6,
-            spaceBetween: 34,
+            spaceBetween: 20,
           },
         }}
       >

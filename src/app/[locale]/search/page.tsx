@@ -16,19 +16,18 @@ export default function SearchPage() {
 
   const [dataAlbums, setDataAlbums] = useState<TAlbum[]>([]);
   const [dataArtists, setDataArtists] = useState<TArtist[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const noResults = query && !dataAlbums.length && !dataArtists.length;
 
   useEffect(() => {
+    setLoading(true);
     setDataAlbums([]);
     setDataArtists([]);
 
-    if (!query) return;
+    if (!query) return setLoading(false);
 
     const fetchResults = async () => {
-      setLoading(true);
-
       const { albums, artists } = await fetchSpotifySearch(
         "multi",
         query,

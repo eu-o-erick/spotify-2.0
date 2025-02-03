@@ -15,14 +15,15 @@ export default function SearchPage() {
   const query = searchParams.get("q");
 
   const [dataArtists, setDataArtists] = useState<TArtist[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const noResults = query && !dataArtists.length;
 
   useEffect(() => {
+    setLoading(true);
     setDataArtists([]);
 
-    if (!query) return;
+    if (!query) return setLoading(false);
 
     const fetchResults = async () => {
       setLoading(true);

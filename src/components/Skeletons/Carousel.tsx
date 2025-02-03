@@ -20,6 +20,10 @@ export default function CarouselSkelotonComponent({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    console.log("aaaaaa", itemsToShow);
+  }, [itemsToShow]);
+
   return (
     <div className="animate-pulse mb-16 max-md:mb-10">
       <div className="flex justify-between items-center mb-7 max-md:mb-4 max-[500px]:px-2">
@@ -32,7 +36,11 @@ export default function CarouselSkelotonComponent({
       </div>
 
       <ul
-        className={`grid grid-cols-${itemsToShow} grid-rows-1 gap-[34px] max-lg:gap-2.5 max-md:gap-[5px] max-[500px]:gap-2.5`}
+        className={`gap-[20px] max-lg:gap-2.5 max-md:gap-[5px] max-[500px]:gap-2.5`}
+        style={{
+          display: "grid",
+          gridTemplateColumns: new Array(itemsToShow).fill("1fr").join(" "),
+        }}
       >
         {new Array(itemsToShow).fill(0).map((_, i) => (
           <li className="px-1.5" key={i}>
