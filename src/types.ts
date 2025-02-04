@@ -43,8 +43,16 @@ export type TArtist = {
 export type TDataSearch = {
   albums: {
     items: TAlbum[];
+    totalCount: number;
+    pagingInfo: {
+      limit: number;
+    };
   };
   artists: {
     items: TArtist[];
+    totalCount: number;
+    pagingInfo: {
+      limit: number;
+    };
   };
 };

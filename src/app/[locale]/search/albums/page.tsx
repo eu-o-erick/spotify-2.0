@@ -9,13 +9,16 @@ import { useEffect, useState } from "react";
 import LoadingSearchAlbumComponent from "@/components/Search/Albums/Loading";
 import NoResultsSearchAlbumComponent from "@/components/Search/Albums/NoResults";
 import { fetchSpotifySearch } from "@/services/spotifyService";
+import PaginationComponent from "@/components/Pagination";
 
 export default function SearchPage() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q");
   const artistId = searchParams.get("artistId");
+  const page = searchParams.get("page");
 
   const [dataAlbums, setDataAlbums] = useState<TAlbum[]>([]);
+  const [pagesAlbums, setPagesAlbums] = useState(0);
   const [loading, setLoading] = useState(true);
 
   const noResults = query && !dataAlbums.length;
@@ -29,15 +32,21 @@ export default function SearchPage() {
     const fetchResults = async () => {
       setLoading(true);
 
-      const { albums } = await fetchSpotifySearch("albums", query, artistId);
+      const { albums, tatalPagesAlbums } = await fetchSpotifySearch(
+        "albums",
+        query,
+        artistId,
+        page
+      );
 
       setDataAlbums(albums);
+      setPagesAlbums(tatalPagesAlbums);
 
       setLoading(false);
     };
 
     fetchResults();
-  }, [query, artistId]);
+  }, [query, artistId, page]);
 
   return (
     <main className="flex-1 mb-28">
@@ -50,7 +59,18 @@ export default function SearchPage() {
       {noResults && !loading && <NoResultsSearchAlbumComponent query={query} />}
 
       {(artistId || query) && !noResults && (
-        <ResultsSearchAlbumsComponent query={query!} dataAlbums={dataAlbums} />
+        <>
+          <ResultsSearchAlbumsComponent
+            query={query!}
+            dataAlbums={dataAlbums}
+          />
+          <PaginationComponent
+            query={query}
+            artistId={artistId}
+            page={page}
+            totalPages={pagesAlbums}
+          />
+        </>
       )}
     </main>
   );

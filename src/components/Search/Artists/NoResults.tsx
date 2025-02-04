@@ -11,7 +11,8 @@ export default function NoResultsSearchArtistsComponent({
 
   return (
     <h2 className="container text-zinc-500 text-xl mt-20 mb-80 font-light">
-      {t("nothingFoundArtists")} <span className="font-semibold">{query}</span>
+      {t("nothingFoundArtists")}{" "}
+      <span className="font-semibold">{decodeURIComponent(query)}</span>
       {". "}
       {t("tryAgain")}
     </h2>

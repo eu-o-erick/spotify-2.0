@@ -1,5 +1,6 @@
 "use client";
 
+import PaginationComponent from "@/components/Pagination";
 import SearchComponent from "@/components/Search";
 import LoadingSearchArtistsComponent from "@/components/Search/Artists/Loading";
 import NoResultsSearchArtistsComponent from "@/components/Search/Artists/NoResults";
@@ -13,8 +14,10 @@ import { useEffect, useState } from "react";
 export default function SearchPage() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q");
+  const page = searchParams.get("page");
 
   const [dataArtists, setDataArtists] = useState<TArtist[]>([]);
+  const [pagesArtists, setPagesArtists] = useState(0);
   const [loading, setLoading] = useState(true);
 
   const noResults = query && !dataArtists.length;
@@ -28,15 +31,21 @@ export default function SearchPage() {
     const fetchResults = async () => {
       setLoading(true);
 
-      const { artists } = await fetchSpotifySearch("artists", query, null);
+      const { artists, tatalPagesArtists } = await fetchSpotifySearch(
+        "artists",
+        query,
+        null,
+        page
+      );
 
       setDataArtists(artists);
+      setPagesArtists(tatalPagesArtists);
 
       setLoading(false);
     };
 
     fetchResults();
-  }, [query]);
+  }, [query, page]);
 
   return (
     <main className="flex-1 mb-28">
@@ -51,10 +60,18 @@ export default function SearchPage() {
       )}
 
       {query && !noResults && (
-        <ResultsSearchArtistsComponent
-          query={query!}
-          dataArtists={dataArtists}
-        />
+        <>
+          <ResultsSearchArtistsComponent
+            query={query!}
+            dataArtists={dataArtists}
+          />
+          <PaginationComponent
+            page={page}
+            query={query}
+            artistId={null}
+            totalPages={pagesArtists}
+          />
+        </>
       )}
     </main>
   );

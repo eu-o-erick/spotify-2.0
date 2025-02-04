@@ -8,7 +8,7 @@ export const saveToCache = (
   type: "multi" | "albums" | "artists",
   query: string | null,
   artistId: string | null,
-  page?: string
+  page: string
 ) => {
   const data = simplifyDataSearch(results);
   const key = `${type}_${query ?? artistId}_${page}`;
@@ -20,7 +20,7 @@ export const getFromCache = (
   type: string,
   query: string | null,
   artistId: string | null,
-  page?: string
+  page: string
 ): TDataSearch | null => {
   const key = `${type}_${query ?? artistId}_${page}`;
 

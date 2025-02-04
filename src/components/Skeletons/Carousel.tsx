@@ -32,9 +32,8 @@ export default function CarouselSkelotonComponent({
       </div>
 
       <ul
-        className={`gap-[20px] max-lg:gap-2.5 max-md:gap-[5px] max-[500px]:gap-2.5`}
+        className={`grid gap-[20px] max-lg:gap-2.5 max-md:gap-[5px] max-[500px]:gap-2.5`}
         style={{
-          display: "grid",
           gridTemplateColumns: new Array(itemsToShow).fill("1fr").join(" "),
         }}
       >

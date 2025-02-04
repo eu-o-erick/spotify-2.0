@@ -13,9 +13,13 @@ import { useEffect, useState } from "react";
 export default function SearchPage() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q");
+  const page = searchParams.get("page");
 
   const [dataAlbums, setDataAlbums] = useState<TAlbum[]>([]);
   const [dataArtists, setDataArtists] = useState<TArtist[]>([]);
+  const [pagesAlbums, setPagesAlbums] = useState(0);
+  const [pagesArtists, setPagesArtists] = useState(0);
+
   const [loading, setLoading] = useState(true);
 
   const noResults = query && !dataAlbums.length && !dataArtists.length;
@@ -28,20 +32,20 @@ export default function SearchPage() {
     if (!query) return setLoading(false);
 
     const fetchResults = async () => {
-      const { albums, artists } = await fetchSpotifySearch(
-        "multi",
-        query,
-        null
-      );
+      const { albums, artists, tatalPagesAlbums, tatalPagesArtists } =
+        await fetchSpotifySearch("multi", query, null, page);
 
       setDataAlbums(albums);
       setDataArtists(artists);
+
+      setPagesAlbums(tatalPagesAlbums);
+      setPagesArtists(tatalPagesArtists);
 
       setLoading(false);
     };
 
     fetchResults();
-  }, [query]);
+  }, [query, page]);
 
   return (
     <main className="flex-1 mb-28">
@@ -58,6 +62,8 @@ export default function SearchPage() {
           query={query!}
           dataArtists={dataArtists}
           dataAlbums={dataAlbums}
+          pagesAlbums={pagesAlbums}
+          pagesArtists={pagesArtists}
         />
       )}
     </main>

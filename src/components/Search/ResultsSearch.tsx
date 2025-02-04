@@ -3,7 +3,7 @@
 import ItemAlbumComponent from "@/components/ItemAlbum";
 import ItemArtistComponent from "@/components/ItemArtist";
 import ListAlbumsComponent from "@/components/ListItems";
-import SwiperListAlbumsComponent from "@/components/SwiperListAlbums";
+import SwiperListComponent from "@/components/SwiperList";
 import { Link } from "@/i18n/routing";
 import { TAlbum, TArtist } from "@/types";
 import { useTranslations } from "next-intl";
@@ -12,10 +12,14 @@ export default function ResultsSearchComponent({
   query,
   dataArtists,
   dataAlbums,
+  pagesAlbums,
+  pagesArtists,
 }: {
   query: string;
   dataArtists: TArtist[];
   dataAlbums: TAlbum[];
+  pagesAlbums: number;
+  pagesArtists: number;
 }) {
   const t = useTranslations("SearchPage");
 
@@ -27,18 +31,20 @@ export default function ResultsSearchComponent({
       </h2>
 
       <section className="container pb-10 flex flex-col items-end">
-        <SwiperListAlbumsComponent title={t("artistsFound")}>
+        <SwiperListComponent title={t("artistsFound")}>
           {dataArtists.map((artist, i) => (
             <ItemArtistComponent key={i} artist={artist} />
           ))}
-        </SwiperListAlbumsComponent>
+        </SwiperListComponent>
 
-        <Link
-          className="underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
-          href={{ pathname: "/search/artists", query: { q: query } }}
-        >
-          {t("seeAllArtists")}
-        </Link>
+        {pagesArtists > 1 && (
+          <Link
+            className="underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
+            href={{ pathname: "/search/artists", query: { q: query } }}
+          >
+            {t("seeAllArtists")}
+          </Link>
+        )}
       </section>
 
       <section className="container py-10 flex flex-col items-end">
@@ -51,12 +57,14 @@ export default function ResultsSearchComponent({
           ))}
         </ListAlbumsComponent>
 
-        <Link
-          className="underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
-          href={{ pathname: "/search/albums", query: { q: query } }}
-        >
-          {t("seeAllAlbums")}
-        </Link>
+        {pagesAlbums > 1 && (
+          <Link
+            className="underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
+            href={{ pathname: "/search/albums", query: { q: query } }}
+          >
+            {t("seeAllAlbums")}
+          </Link>
+        )}
       </section>
     </>
   );

@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import SearchComponent from "@/components/Search";
-import SwiperListAlbumsComponent from "@/components/SwiperListAlbums";
+import SwiperListAlbumsComponent from "@/components/SwiperList";
 import ItemAlbumComponent from "@/components/ItemAlbum";
 
 import featuredAlbums from "@/data/featured_albums.json";

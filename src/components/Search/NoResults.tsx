@@ -7,7 +7,8 @@ export default function NoResultsSearchComponent({ query }: { query: string }) {
 
   return (
     <h2 className="container text-zinc-500 text-xl mt-20 mb-80 font-light">
-      {t("nothingFound")} <span className="font-semibold">{query}</span>
+      {t("nothingFound")}{" "}
+      <span className="font-semibold">{decodeURIComponent(query)}</span>
       {". "}
       {t("tryAgain")}
     </h2>

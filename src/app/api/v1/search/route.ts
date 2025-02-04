@@ -22,8 +22,7 @@ export async function GET(req: NextRequest) {
       type !== "albums" &&
       type !== "multi" &&
       type) ||
-    isNaN(page) ||
-    page < 0
+    isNaN(page)
   ) {
     return NextResponse.json({ error: "Invalid parameters" }, { status: 400 });
   }
@@ -39,7 +38,7 @@ export async function GET(req: NextRequest) {
     }
 
     response = await fetch(
-      `${url}&offset=${Number(page) * LIMIT}&limit=${LIMIT}`,
+      `${url}&offset=${Math.max(page - 1, 0) * LIMIT}&limit=${LIMIT}`,
       FETCH_OPTIONS
     );
 
