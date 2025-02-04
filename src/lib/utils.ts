@@ -5,14 +5,14 @@ export const simplifyDataSearch = (data: any): TDataSearch => ({
     items: data.albums?.items.map(simplifyAlbum) ?? [],
     totalCount: data.albums?.totalCount ?? 0,
     pagingInfo: {
-      limit: data.albums?.pagingInfo.limit ?? 0,
+      limit: data.albums?.pagingInfo?.limit ?? 0,
     },
   },
   artists: {
     items: data.artists?.items.map(simplifyArtist) ?? [],
     totalCount: data.artists?.totalCount ?? 0,
     pagingInfo: {
-      limit: data.artists?.pagingInfo.limit ?? 0,
+      limit: data.artists?.pagingInfo?.limit ?? 0,
     },
   },
 });
