@@ -7,12 +7,21 @@ export default function CarouselSkelotonComponent({
   children: React.ReactNode;
 }) {
   const [itemsToShow, setItemsToShow] = useState(
-    getItemsToShowByWidth(window.innerWidth)
+    getItemsToShowByWidth(getWindowWidth())
   );
+
+  function getWindowWidth() {
+    try {
+      const width = window.innerWidth;
+      return width;
+    } catch {
+      return 0;
+    }
+  }
 
   useEffect(() => {
     const handleResize = () => {
-      setItemsToShow(getItemsToShowByWidth(window.innerWidth));
+      setItemsToShow(getItemsToShowByWidth(getWindowWidth()));
     };
 
     window.addEventListener("resize", handleResize);
