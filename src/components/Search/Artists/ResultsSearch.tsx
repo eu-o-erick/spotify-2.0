@@ -2,7 +2,7 @@
 
 import ItemArtistComponent from "@/components/ItemArtist";
 import ListAlbumsComponent from "@/components/ListItems";
-import { TArtist } from "@/types";
+import { TSearchArtist } from "@/types";
 import { useTranslations } from "next-intl";
 
 export default function ResultsSearchArtistsComponent({
@@ -10,7 +10,7 @@ export default function ResultsSearchArtistsComponent({
   dataArtists,
 }: {
   query: string;
-  dataArtists: TArtist[];
+  dataArtists: TSearchArtist[];
 }) {
   const t = useTranslations("SearchPage");
 

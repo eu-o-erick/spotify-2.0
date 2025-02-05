@@ -3,7 +3,7 @@
 import SearchComponent from "@/components/Search";
 import NothingYetSearchComponent from "@/components/Search/NothingYet";
 import ResultsSearchAlbumsComponent from "@/components/Search/Albums/ResultsSearch";
-import { TAlbum } from "@/types";
+import { TSearchAlbum } from "@/types";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import LoadingSearchAlbumComponent from "@/components/Search/Albums/Loading";
@@ -17,7 +17,7 @@ export default function SearchPage() {
   const artistId = searchParams.get("artistId");
   const page = searchParams.get("page");
 
-  const [dataAlbums, setDataAlbums] = useState<TAlbum[]>([]);
+  const [dataAlbums, setDataAlbums] = useState<TSearchAlbum[]>([]);
   const [pagesAlbums, setPagesAlbums] = useState(0);
   const [loading, setLoading] = useState(true);
 

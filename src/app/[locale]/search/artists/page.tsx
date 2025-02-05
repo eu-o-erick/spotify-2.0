@@ -7,7 +7,7 @@ import NoResultsSearchArtistsComponent from "@/components/Search/Artists/NoResul
 import ResultsSearchArtistsComponent from "@/components/Search/Artists/ResultsSearch";
 import NothingYetSearchComponent from "@/components/Search/NothingYet";
 import { fetchSpotifySearch } from "@/services/spotifySearch";
-import { TArtist } from "@/types";
+import { TSearchArtist } from "@/types";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -16,7 +16,7 @@ export default function SearchPage() {
   const query = searchParams.get("q");
   const page = searchParams.get("page");
 
-  const [dataArtists, setDataArtists] = useState<TArtist[]>([]);
+  const [dataArtists, setDataArtists] = useState<TSearchArtist[]>([]);
   const [pagesArtists, setPagesArtists] = useState(0);
   const [loading, setLoading] = useState(true);
 

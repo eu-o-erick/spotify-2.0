@@ -2,7 +2,7 @@
 
 import ItemAlbumComponent from "@/components/ItemAlbum";
 import ListAlbumsComponent from "@/components/ListItems";
-import { TAlbum } from "@/types";
+import { TSearchAlbum } from "@/types";
 import { useTranslations } from "next-intl";
 
 export default function ResultsSearchAlbumsComponent({
@@ -10,7 +10,7 @@ export default function ResultsSearchAlbumsComponent({
   dataAlbums,
 }: {
   query: string;
-  dataAlbums: TAlbum[];
+  dataAlbums: TSearchAlbum[];
 }) {
   const t = useTranslations("SearchPage");
 
