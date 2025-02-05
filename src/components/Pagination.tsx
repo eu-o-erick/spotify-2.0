@@ -43,9 +43,8 @@ export default function PaginationComponent({
     <nav className="container flex justify-center gap-4 max-sm:gap-3">
       <div className="w-40 flex justify-end max-sm:w-32">
         <div
-          className={cn("bg-secondary border border-[#fff1]", {
-            "opacity-50 cursor-not-allowed border border-secondary":
-              currentPage <= 1,
+          className={cn("", {
+            "opacity-50 cursor-not-allowed": currentPage <= 1,
           })}
         >
           {currentPage <= 1 ? (
@@ -66,11 +65,11 @@ export default function PaginationComponent({
         </div>
       </div>
 
-      <ul className="flex border border-[#fff2]">
+      <ul className="flex">
         {pages.map((i) => (
           <li
-            className={cn("bg-secondary ", {
-              "bg-primary": i === Number(currentPage),
+            className={cn("rounded-[4px] max-sm:rounded-sm", {
+              "bg-secondary": i === Number(currentPage),
             })}
             key={i}
           >
@@ -86,9 +85,8 @@ export default function PaginationComponent({
 
       <div className="w-40 flex justify-start max-sm:w-32">
         <div
-          className={cn("bg-secondary border border-[#fff1]", {
-            "opacity-50 cursor-not-allowed border border-secondary":
-              totalPages <= currentPage,
+          className={cn("", {
+            "opacity-50 cursor-not-allowed": totalPages <= currentPage,
           })}
         >
           {totalPages <= currentPage ? (

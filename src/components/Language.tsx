@@ -43,33 +43,34 @@ export default function SwitchLanguages() {
       <button
         type="button"
         className={cn(
-          "flex justify-between items-center gap-4  py-3 px-5 transition-all",
+          "flex justify-between items-center gap-4 py-3 px-5 max-sm:px-3",
           {
             "bg-secondary": isOpen,
           }
         )}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <div className="flex justify-center items-center gap-3">
+        <div className="flex justify-center items-center gap-2">
           <Image
+            className="max-sm:w-4"
             src={`/flags/${language.value}.png`}
             width={20}
             height={20}
             alt={`${language.label} flag`}
           />
 
-          <span className="text-sm">{language.label}</span>
+          <span className="text-sm max-sm:text-xs">{language.label}</span>
         </div>
 
         <IoIosArrowDown
-          className={cn("w-4 h-4 transition-all float-right", {
+          className={cn("w-4 h-4 transition-all", {
             "rotate-180": isOpen,
           })}
         />
       </button>
       <nav
         className={cn(
-          "absolute right-0 top-full z-10 bg-secondary shadow-sm w-full transition-all",
+          "absolute right-0 top-full z-10 bg-secondary shadow-sm w-full transition-all min-w-28",
           {
             "opacity-0 pointer-events-none": !isOpen,
           }
@@ -77,16 +78,17 @@ export default function SwitchLanguages() {
       >
         <SeparatorComponent className="bg-primary" />
 
-        <ul className="flex flex-col py-1 gap-1">
+        <ul className="flex flex-col py-1 gap-1 max-sm:gap-0">
           {LANGUAGES.map((option, i) => (
-            <li key={i} className="text-sm">
+            <li key={i} className="text-sm max-sm:text-xs">
               {option.value !== language.value && (
                 <button
                   type="button"
                   onClick={() => setLanguage(option)}
-                  className="flex items-center w-full py-2 px-5 gap-2 hover:bg-primary"
+                  className="flex items-center w-full py-2 px-5 gap-2 hover:bg-primary max-sm:px-3"
                 >
                   <Image
+                    className="max-sm:w-4"
                     src={`/flags/${option.value}.png`}
                     width={20}
                     height={20}
