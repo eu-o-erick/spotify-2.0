@@ -20,8 +20,8 @@ export async function GET(req: NextRequest) {
     );
 
     if (response) {
-      const data = await response.json();
-      return NextResponse.json(data);
+      const { albums } = await response.json();
+      return NextResponse.json(albums[0]);
     } else {
       throw new Error("No response from API");
     }

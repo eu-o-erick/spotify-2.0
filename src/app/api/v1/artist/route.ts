@@ -20,8 +20,9 @@ export async function GET(req: NextRequest) {
     );
 
     if (response) {
-      const data = await response.json();
-      return NextResponse.json(data);
+      const { data } = await response.json();
+
+      return NextResponse.json(data.artist);
     } else {
       throw new Error("No response from API");
     }

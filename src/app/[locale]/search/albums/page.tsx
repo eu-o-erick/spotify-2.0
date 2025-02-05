@@ -8,7 +8,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import LoadingSearchAlbumComponent from "@/components/Search/Albums/Loading";
 import NoResultsSearchAlbumComponent from "@/components/Search/Albums/NoResults";
-import { fetchSpotifySearch } from "@/services/spotifyService";
+import { fetchSpotifySearch } from "@/services/spotifySearch";
 import PaginationComponent from "@/components/Pagination";
 
 export default function SearchPage() {

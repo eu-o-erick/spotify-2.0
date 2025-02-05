@@ -30,3 +30,5 @@ export const FETCH_OPTIONS: RequestInit = {
     "x-rapidapi-key": API_KEY,
   },
 };
+
+export const CACHE_TIME = 10 * 60 * 1000;

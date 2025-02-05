@@ -6,7 +6,7 @@ import LoadingSearchArtistsComponent from "@/components/Search/Artists/Loading";
 import NoResultsSearchArtistsComponent from "@/components/Search/Artists/NoResults";
 import ResultsSearchArtistsComponent from "@/components/Search/Artists/ResultsSearch";
 import NothingYetSearchComponent from "@/components/Search/NothingYet";
-import { fetchSpotifySearch } from "@/services/spotifyService";
+import { fetchSpotifySearch } from "@/services/spotifySearch";
 import { TArtist } from "@/types";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";

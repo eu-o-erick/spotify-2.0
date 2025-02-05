@@ -5,7 +5,7 @@ import ItemArtistComponent from "@/components/ItemArtist";
 import ListAlbumsComponent from "@/components/ListItems";
 import SwiperListComponent from "@/components/SwiperList";
 import { Link } from "@/i18n/routing";
-import { TAlbum, TArtist } from "@/types";
+import { TSearchAlbum, TSearchArtist } from "@/types";
 import { useTranslations } from "next-intl";
 
 export default function ResultsSearchComponent({
@@ -16,8 +16,8 @@ export default function ResultsSearchComponent({
   pagesArtists,
 }: {
   query: string;
-  dataArtists: TArtist[];
-  dataAlbums: TAlbum[];
+  dataArtists: TSearchArtist[];
+  dataAlbums: TSearchAlbum[];
   pagesAlbums: number;
   pagesArtists: number;
 }) {

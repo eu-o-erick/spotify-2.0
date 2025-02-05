@@ -1,9 +1,8 @@
 import { TDataSearch } from "@/types";
-import { simplifyDataSearch } from "./utils";
+import { simplifyDataSearch } from "../simplify/simplifyDataSearch";
+import { CACHE_TIME } from "../constants";
 
-const CACHE_TIME = 10 * 60 * 1000;
-
-export const saveToCache = (
+export const saveSearchToCache = (
   results: TDataSearch,
   type: "multi" | "albums" | "artists",
   query: string | null,
@@ -16,7 +15,7 @@ export const saveToCache = (
   localStorage.setItem(key, JSON.stringify({ data, timestamp: Date.now() }));
 };
 
-export const getFromCache = (
+export const getSearchFromCache = (
   type: string,
   query: string | null,
   artistId: string | null,
@@ -37,25 +36,4 @@ export const getFromCache = (
   }
 
   return data as TDataSearch;
-};
-
-export const clearExpiredCache = () => {
-  const now = Date.now();
-
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-
-    if (!key) continue;
-
-    const cached = localStorage.getItem(key);
-    if (!cached) continue;
-
-    try {
-      const { timestamp } = JSON.parse(cached);
-
-      if (now - timestamp > CACHE_TIME) localStorage.removeItem(key);
-    } catch (err) {
-      console.error(err);
-    }
-  }
 };

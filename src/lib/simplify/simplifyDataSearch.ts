@@ -1,4 +1,4 @@
-import { TAlbum, TArtist, TDataSearch } from "@/types";
+import { TDataSearch, TSearchAlbum, TSearchArtist } from "@/types";
 
 export const simplifyDataSearch = (data: any): TDataSearch => ({
   albums: {
@@ -17,11 +17,10 @@ export const simplifyDataSearch = (data: any): TDataSearch => ({
   },
 });
 
-const simplifyAlbum = ({ data: album }: TAlbum): TAlbum => ({
+const simplifyAlbum = ({ data: album }: TSearchAlbum): TSearchAlbum => ({
   data: {
     uri: album.uri,
     name: album.name,
-    type: album.type,
     artists: {
       items:
         album.artists.items?.map((artist: any) => ({
@@ -44,7 +43,7 @@ const simplifyAlbum = ({ data: album }: TAlbum): TAlbum => ({
   },
 });
 
-const simplifyArtist = ({ data: artist }: TArtist): TArtist => ({
+const simplifyArtist = ({ data: artist }: TSearchArtist): TSearchArtist => ({
   data: {
     uri: artist.uri,
     profile: {

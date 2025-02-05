@@ -1,10 +1,14 @@
 "use client";
 
 import { Link } from "@/i18n/routing";
-import { TArtist } from "@/types";
+import { TSearchArtist } from "@/types";
 import Image from "next/image";
 
-export default function ItemArtistComponent({ artist }: { artist: TArtist }) {
+export default function ItemArtistComponent({
+  artist,
+}: {
+  artist: TSearchArtist;
+}) {
   return (
     <div className="select-none flex flex-col px-3 pt-3 pb-5 rounded-md group hover:bg-[#ffffff05] transition-all">
       <Link

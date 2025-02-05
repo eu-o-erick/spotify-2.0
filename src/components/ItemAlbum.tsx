@@ -1,14 +1,14 @@
 "use client";
 
 import { Link } from "@/i18n/routing";
-import { TAlbum } from "@/types";
+import { TSearchAlbum } from "@/types";
 import Image from "next/image";
 
 export default function ItemAlbumComponent({
   album,
   isPageArtist,
 }: {
-  album: TAlbum;
+  album: TSearchAlbum;
   isPageArtist: boolean;
 }) {
   return (

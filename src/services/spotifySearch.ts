@@ -1,6 +1,6 @@
-import { getFromCache, saveToCache } from "@/lib/spotifyCache";
+import { getSearchFromCache, saveSearchToCache } from "@/lib/cache/search";
 import { TDataSearch } from "@/types";
-import { clearExpiredCache } from "@/lib/spotifyCache";
+import { clearExpiredCache } from "@/lib/cache/clear";
 
 export const fetchSpotifySearch = async (
   type: "multi" | "albums" | "artists",
@@ -20,7 +20,7 @@ export const fetchSpotifySearch = async (
     throw new Error();
   }
 
-  const cachedData = getFromCache(type, query, artistId, page);
+  const cachedData = getSearchFromCache(type, query, artistId, page);
 
   if (cachedData) {
     console.log("pesquisa salve em cache, não fez a requisição +++++++");
@@ -50,10 +50,13 @@ export const fetchSpotifySearch = async (
 
     const data: TDataSearch = await response.json();
 
-    saveToCache(data, type, query, artistId, page);
+    console.log("data: ", data);
+
+    clearExpiredCache();
+
+    saveSearchToCache(data, type, query, artistId, page);
 
     console.log("pesquisa não salve em cache, fez a requisição -------");
-    clearExpiredCache();
 
     return {
       albums: data.albums?.items || [],
