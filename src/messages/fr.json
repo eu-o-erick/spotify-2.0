@@ -1,0 +1,128 @@
+{
+  "HomePage": {
+    "featuredAlbums": "Albums en vedette",
+    "latestAlbums": "Nouveautés",
+    "featuredArtists": "Artistes en vedette"
+  },
+  "SearchPage": {
+    "response": "Nous avons trouvé ces résultats pour",
+    "albumsResponse": "Nous avons trouvé ces albums pour",
+    "artistsResponse": "Nous avons trouvé ces artistes pour",
+    "nothingYet": "Rien ici pour l'instant... Recherchez un album ou un artiste !",
+    "nothingFound": "Aucun résultat trouvé pour",
+    "nothingFoundAlbums": "Aucun album trouvé pour",
+    "nothingFoundArtists": "Aucun artiste trouvé pour",
+    "tryAgain": "Essayez une autre recherche !",
+    "artistsFound": "Artistes trouvés",
+    "albumsFound": "Albums trouvés",
+    "loading": "Chargement",
+    "seeAllArtists": "Voir tous les artistes",
+    "seeAllAlbums": "Voir tous les albums"
+  },
+  "FooterComponent": {
+    "nav": {
+      "home": "ACCUEIL",
+      "search": "RECHERCHE",
+      "termsAndConditions": "Termes et Conditions",
+      "privacyPolicy": "Politique de confidentialité"
+    },
+    "disclaimer": "Données fournies par Spotify. Tous les droits appartiennent à leurs propriétaires respectifs."
+  },
+  "SearchComponent": {
+    "title": "Recherchez un artiste ou un album pour commencer à classer",
+    "desc": "Avec la base de données de Spotify, chaque artiste et album est à portée de recherche",
+    "placeholder": "Recherchez un album ou un artiste",
+    "button": "Explorer maintenant",
+    "categories": ["Catégories :", "Albums", "et", "Artistes"]
+  },
+  "PrivacyPage": {
+    "title": "Politique de confidentialité",
+    "desc": "Cette politique de confidentialité décrit comment nous traitons et protégeons vos informations personnelles lorsque vous utilisez notre site web. En utilisant notre site web, vous acceptez la collecte et l'utilisation de vos informations conformément à cette politique.",
+    "sections": [
+      {
+        "title": "1. Collecte d'informations",
+        "desc": "Actuellement, nous ne collectons aucune information personnelle des utilisateurs. Nous ne demandons ni ne stockons aucune donnée personnelle, comme le nom, l'email ou toute autre information identifiable."
+      },
+      {
+        "title": "2. Utilisation des données",
+        "desc": "À ce jour, nous n'utilisons aucune donnée personnelle. Toute information que vous fournissez, comme les évaluations, est uniquement utilisée pour améliorer votre expérience sur notre plateforme et n'est pas stockée à d'autres fins."
+      },
+      {
+        "title": "3. Partage des données",
+        "desc": "Nous ne partageons aucune de vos données personnelles avec des tiers. Nous ne divulgons, vendons ni louons aucune information collectée sur ce site."
+      },
+      {
+        "title": "4. Cookies",
+        "desc": "Nous utilisons des cookies pour stocker des données temporaires, comme la sauvegarde de vos évaluations sur les albums. Ces cookies sont utilisés pour améliorer l'expérience utilisateur lors de l'interaction avec le site."
+      },
+      {
+        "title": "5. Sécurité des données",
+        "desc": "Étant donné que nous ne collectons pas de données personnelles, il n'y a pas de mesures de sécurité spécifiques pour la protection des données. Cependant, nous prenons des précautions générales pour garantir la sécurité et l'intégrité du site."
+      },
+      {
+        "title": "6. Droits des utilisateurs",
+        "desc": "Puisque nous ne collectons pas de données personnelles, il n'est pas nécessaire pour les utilisateurs de demander l'accès, la correction ou la suppression des informations personnelles."
+      },
+      {
+        "title": "7. Conservation des données",
+        "desc": "Nous ne stockons pas de données personnelles ni ne retenons d'informations après la fin de la session utilisateur. Il n'y a pas de politique de conservation des données en place."
+      },
+      {
+        "title": "8. Transferts internationaux de données",
+        "desc": "Nous ne transférons aucune donnée utilisateur vers d'autres pays ou services tiers."
+      },
+      {
+        "title": "9. Consentement",
+        "desc": "Puisque nous ne collectons pas de données personnelles, les utilisateurs ne sont pas tenus de fournir leur consentement pour la collecte de données. Cependant, en utilisant notre site web, les utilisateurs acceptent l'utilisation de cookies pour stocker des données temporaires."
+      },
+      {
+        "title": "10. Modifications de la politique de confidentialité",
+        "desc": "Si des modifications sont apportées à cette politique de confidentialité, les utilisateurs seront notifiés par email. Nous encourageons les utilisateurs à consulter régulièrement cette page pour toute mise à jour."
+      }
+    ],
+    "end": "Si vous avez des questions sur cette politique de confidentialité ou sur la manière dont nous traitons vos données, n'hésitez pas à nous contacter à [vos coordonnées]."
+  },
+  "TermsPage": {
+    "title": "Termes et conditions",
+    "desc": "Bienvenue sur [Nom de votre site web] ! Ces termes et conditions régissent l'utilisation de notre site web. En accédant ou en utilisant nos services, vous acceptez de vous conformer à ces termes. Veuillez les lire attentivement.",
+    "sections": [
+      {
+        "title": "1. Utilisation autorisée",
+        "desc": "Vous êtes libre d'utiliser ce site pour toute fin, qu'elle soit personnelle ou commerciale. Cependant, vous êtes responsable de veiller à ce que votre utilisation respecte les lois applicables."
+      },
+      {
+        "title": "2. Mises à jour du service",
+        "desc": "Nous nous réservons le droit de modifier, mettre à jour ou interrompre toute partie de notre site web ou de nos services sans préavis. Cela inclut les modifications des fonctionnalités, de la disponibilité ou de la fonctionnalité."
+      },
+      {
+        "title": "3. Propriété du contenu",
+        "desc": "Tous les classements et images générés par les utilisateurs sur ce site appartiennent aux utilisateurs respectifs. Cependant, la conception, la mise en page et la marque du site web sont protégées par des droits d'auteur et restent notre propriété intellectuelle."
+      },
+      {
+        "title": "4. Exonération de responsabilité",
+        "desc": "Nous ne sommes pas responsables des erreurs, des interruptions ou des limitations résultant de l'API Spotify ou d'autres services tiers sur lesquels nous comptons. Nous ne garantissons pas la disponibilité continue ou l'exactitude du site web."
+      },
+      {
+        "title": "5. Suspension de compte",
+        "desc": "Si nous introduisons des comptes utilisateurs à l'avenir, nous nous réservons le droit de suspendre ou de résilier des comptes pour violation de ces termes ou utilisation abusive de nos services."
+      },
+      {
+        "title": "6. Droit d'auteur",
+        "desc": "Tous les éléments visuels et fonctionnels de ce site web, y compris sa conception et sa marque, sont protégés par des droits d'auteur. Vous ne pouvez pas copier, reproduire ou redistribuer une partie du site sans autorisation préalable."
+      },
+      {
+        "title": "7. Liens externes",
+        "desc": "Notre site web peut inclure des liens vers des services externes, tels que Spotify. Nous ne sommes pas responsables du contenu, de l'exactitude ou de la fiabilité de ces sites externes."
+      },
+      {
+        "title": "8. Juridiction",
+        "desc": "Ces termes sont régis par les lois du Brésil. Tout litige juridique sera résolu conformément à la législation brésilienne."
+      },
+      {
+        "title": "9. Mises à jour de ces termes",
+        "desc": "Nous pouvons mettre à jour ces termes et conditions à tout moment sans préavis. L'utilisation continue du site après les mises à jour constitue une acceptation des termes révisés."
+      }
+    ],
+    "end": "Si vous avez des questions concernant ces termes et conditions, veuillez nous contacter à [vos coordonnées]."
+  }
+}

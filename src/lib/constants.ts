@@ -2,16 +2,20 @@ import { DropDownItem } from "@/components/DropDown";
 
 export const LANGUAGES: DropDownItem[] = [
   {
-    label: "english",
+    label: "English",
     value: "en",
   },
   {
-    label: "portuguese",
-    value: "pt",
+    label: "Español",
+    value: "es",
   },
   {
-    label: "español",
-    value: "es",
+    label: "Français",
+    value: "fr",
+  },
+  {
+    label: "Português",
+    value: "pt",
   },
 ];
 
