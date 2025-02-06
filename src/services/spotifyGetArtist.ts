@@ -8,8 +8,6 @@ export const fetchSpotifyArtist = async (artistId: string) => {
   const cachedArtist = getArtistFromCache(artistId);
 
   if (cachedArtist) {
-    console.log("ARTISTA salve em cache, não fez a requisição +++++++");
-
     return cachedArtist;
   }
 
@@ -22,13 +20,9 @@ export const fetchSpotifyArtist = async (artistId: string) => {
 
     const data: TArtist = await response.json();
 
-    console.log("data: ", data);
-
     clearExpiredCache();
 
     saveArtistToCache(data, artistId);
-
-    console.log("ARTISTA não salve em cache, fez a requisição -------");
 
     return data;
   } catch (err) {

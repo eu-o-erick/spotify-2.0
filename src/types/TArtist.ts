@@ -34,6 +34,20 @@ export type TArtist = {
         };
       }[];
     };
+    singles: {
+      items: {
+        releases: {
+          items: TAlbumArtist[];
+        };
+      }[];
+    };
+    albums: {
+      items: {
+        releases: {
+          items: TAlbumArtist[];
+        };
+      }[];
+    };
   };
   relatedContent: {
     relatedArtists: {

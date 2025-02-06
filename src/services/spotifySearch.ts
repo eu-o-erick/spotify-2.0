@@ -23,8 +23,6 @@ export const fetchSpotifySearch = async (
   const cachedData = getSearchFromCache(type, query, artistId, page);
 
   if (cachedData) {
-    console.log("pesquisa salve em cache, não fez a requisição +++++++");
-
     return {
       albums: cachedData.albums?.items || [],
       artists: cachedData.artists?.items || [],
@@ -50,13 +48,9 @@ export const fetchSpotifySearch = async (
 
     const data: TDataSearch = await response.json();
 
-    console.log("data: ", data);
-
     clearExpiredCache();
 
     saveSearchToCache(data, type, query, artistId, page);
-
-    console.log("pesquisa não salve em cache, fez a requisição -------");
 
     return {
       albums: data.albums?.items || [],

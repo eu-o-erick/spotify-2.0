@@ -33,6 +33,22 @@ export const simplifyArtist = (artist: TArtist): TArtist => ({
           },
         })) ?? [],
     },
+    singles: {
+      items:
+        artist.discography.singles?.items?.map(({ releases }) => ({
+          releases: {
+            items: [simplifyArtistAlbum(releases.items?.[0])],
+          },
+        })) ?? [],
+    },
+    albums: {
+      items:
+        artist.discography.albums?.items?.map(({ releases }) => ({
+          releases: {
+            items: [simplifyArtistAlbum(releases.items?.[0])],
+          },
+        })) ?? [],
+    },
   },
   relatedContent: {
     relatedArtists: {

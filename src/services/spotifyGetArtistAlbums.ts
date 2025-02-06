@@ -20,8 +20,6 @@ export const fetchSpotifyArtistAlbums = async (
   const cachedArtistAlbums = getArtistAlbumsFromCache(artistId, type, page);
 
   if (cachedArtistAlbums) {
-    console.log("ARTISTA ALBUMS salve em cache, não fez a requisição +++++++");
-
     return {
       albums: cachedArtistAlbums.data.artist.discography.albums?.items || [],
       singles: cachedArtistAlbums.data.artist.discography.singles?.items || [],
@@ -50,8 +48,6 @@ export const fetchSpotifyArtistAlbums = async (
     clearExpiredCache();
 
     saveArtistAlbumsToCache(data, type, artistId, page);
-
-    console.log("ARTISTA ALBUMS não salve em cache, fez a requisição -------");
 
     return {
       albums: data.data.artist.discography.albums?.items || [],

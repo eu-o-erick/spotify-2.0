@@ -8,8 +8,6 @@ export const fetchSpotifyAlbum = async (albumId: string) => {
   const cachedAlbum = getAlbumFromCache(albumId);
 
   if (cachedAlbum) {
-    console.log("ALBUM salve em cache, não fez a requisição +++++++");
-
     return cachedAlbum;
   }
 
@@ -25,8 +23,6 @@ export const fetchSpotifyAlbum = async (albumId: string) => {
     clearExpiredCache();
 
     saveAlbumToCache(data, albumId);
-
-    console.log("ALBUM não salve em cache, fez a requisição -------");
 
     return data;
   } catch (err) {
