@@ -17,15 +17,15 @@ export default function ButtonDropDown({ isOpen, setIsOpen, state }: Props) {
     <button
       onClick={() => setIsOpen(!isOpen)}
       className={cn(
-        "flex items-center justify-end gap-4 py-3 px-5 max-sm:px-3 min-w-32",
+        "flex items-center justify-end gap-4 py-3 px-5 max-sm:px-3 min-w-32 text-zinc-400",
         {
           "bg-secondary": isOpen,
         }
       )}
     >
-      <span className="font-extralight text-sm text-zinc-400">{t(state)}</span>
+      <span className="font-extralight text-sm">{t(state)}</span>
       <IoIosArrowDown
-        className={cn("w-4 h-4 transition-all text-zinc-300", {
+        className={cn("w-4 h-4 transition-all", {
           "rotate-180": isOpen,
         })}
       />

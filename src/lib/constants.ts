@@ -1,4 +1,7 @@
-import { DropDownItem } from "@/components/DropDown";
+type DropDownItem = {
+  label: string;
+  value: string;
+};
 
 export const LANGUAGES: DropDownItem[] = [
   {
