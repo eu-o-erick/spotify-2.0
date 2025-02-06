@@ -17,7 +17,8 @@
     "albumsFound": "Álbuns encontrados",
     "loading": "carregando",
     "seeAllArtists": "ver todos os artistas",
-    "seeAllAlbums": "ver todos os álbuns"
+    "seeAllAlbums": "ver todos os álbuns",
+    "browseAlbumsAndSingles": "Navegue pelos álbuns e singles de"
   },
   "DropDown": {
     "popularReleases": "Populares",

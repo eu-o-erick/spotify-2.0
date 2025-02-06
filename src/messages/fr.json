@@ -17,7 +17,8 @@
     "albumsFound": "Albums trouvés",
     "loading": "Chargement",
     "seeAllArtists": "Voir tous les artistes",
-    "seeAllAlbums": "Voir tous les albums"
+    "seeAllAlbums": "Voir tous les albums",
+    "browseAlbumsAndSingles": "Parcourez les albums et singles de"
   },
   "DropDown": {
     "popularReleases": "Populaires",

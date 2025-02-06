@@ -41,7 +41,11 @@ export default function ContentArtist({ dataArtist }: { dataArtist: TArtist }) {
           className="hover:underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
           href={{
             pathname: "/artist/albums",
-            query: { artistId, type: "albums" },
+            query: {
+              artistId,
+              type: "albums",
+              name: encodeURIComponent(dataArtist.profile.name),
+            },
           }}
         >
           {t("seeAllResulst")}

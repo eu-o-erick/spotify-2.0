@@ -3,16 +3,18 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import PaginationComponent from "@/components/Pagination";
 import { fetchSpotifyArtistAlbums } from "@/services/spotifyGetArtistAlbums";
 import { TReleasesArtistAlbums } from "@/types/TDataArtistAlbums";
-import ListAlbumsComponent from "@/components/Items/ListItems";
-import ItemAlbumComponent from "@/components/Items/ItemAlbum";
+import TitleArtistAlbums from "@/components/Search/Artists/Albums/Title";
+import ListArtistAlbums from "@/components/Search/Artists/Albums/ListArtistAlbums";
+import FilterAlbums from "@/components/Search/Artists/Albums/ChangeType";
 
 export default function SearchPage() {
   const searchParams = useSearchParams();
+
   const type = searchParams.get("type");
   const artistId = searchParams.get("artistId");
+  const name = searchParams.get("name");
   const page = searchParams.get("page");
 
   const [dataAlbums, setDataAlbums] = useState<
@@ -53,35 +55,29 @@ export default function SearchPage() {
     fetchResults();
   }, [type, artistId, page]);
 
+  if (loading) {
+    return <h1 className="container py-24 flex-1">carregando</h1>;
+  }
+
+  if (noResults) {
+    return (
+      <h1 className="container py-24 flex-1">nenhum artista encontrado</h1>
+    );
+  }
+
   return (
-    <main className="flex-1 my-28 container">
-      {loading && <h1>carregando</h1>}
+    <main className="flex-1 my-28 container max-sm:my-16">
+      <TitleArtistAlbums artistId={artistId!} name={name ?? ""} />
 
-      {noResults && !loading && <h1>nenhum artista encontrado</h1>}
+      <FilterAlbums artistId={artistId!} type={type ?? ""} name={name ?? ""} />
 
-      {!loading && !noResults && (
-        <ListAlbumsComponent>
-          {" "}
-          {dataAlbums?.map(({ releases }, i) => (
-            <ItemAlbumComponent
-              key={i}
-              album={releases.items[0]}
-              isPageArtist={true}
-            />
-          ))}
-        </ListAlbumsComponent>
-      )}
-
-      {totalPages > 1 ? (
-        <PaginationComponent
-          artistId={artistId}
-          type={type}
-          page={page}
-          totalPages={totalPages}
-        />
-      ) : (
-        <></>
-      )}
+      <ListArtistAlbums
+        artistId={artistId!}
+        type={type ?? ""}
+        dataAlbums={dataAlbums!}
+        page={page ?? "1"}
+        totalPages={totalPages}
+      />
     </main>
   );
 }

@@ -17,7 +17,8 @@
     "albumsFound": "Albums Found",
     "loading": "loading",
     "seeAllArtists": "see all artists",
-    "seeAllAlbums": "see all albums"
+    "seeAllAlbums": "see all albums",
+    "browseAlbumsAndSingles": "Browse Albums & Singles by"
   },
   "DropDown": {
     "popularReleases": "Popular",
