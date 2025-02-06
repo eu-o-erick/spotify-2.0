@@ -6,7 +6,8 @@ import NoResultsSearchComponent from "@/components/Search/NoResults";
 import NothingYetSearchComponent from "@/components/Search/NothingYet";
 import ResultsSearchComponent from "@/components/Search/ResultsSearch";
 import { fetchSpotifySearch } from "@/services/spotifySearch";
-import { TSearchAlbum, TSearchArtist } from "@/types";
+import { TSearchAlbum } from "@/types/TAlbum";
+import { TSearchArtist } from "@/types/TArtist";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -32,13 +33,13 @@ export default function SearchPage() {
     if (!query) return setLoading(false);
 
     const fetchResults = async () => {
-      const { albums, artists, tatalPagesAlbums, tatalPagesArtists } =
+      const { albums, artists, totalPagesAlbums, tatalPagesArtists } =
         await fetchSpotifySearch("multi", query, null, page);
 
       setDataAlbums(albums);
       setDataArtists(artists);
 
-      setPagesAlbums(tatalPagesAlbums);
+      setPagesAlbums(totalPagesAlbums);
       setPagesArtists(tatalPagesArtists);
 
       setLoading(false);

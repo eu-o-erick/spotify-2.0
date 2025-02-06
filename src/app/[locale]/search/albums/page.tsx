@@ -3,13 +3,13 @@
 import SearchComponent from "@/components/Search";
 import NothingYetSearchComponent from "@/components/Search/NothingYet";
 import ResultsSearchAlbumsComponent from "@/components/Search/Albums/ResultsSearch";
-import { TSearchAlbum } from "@/types";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import LoadingSearchAlbumComponent from "@/components/Search/Albums/Loading";
 import NoResultsSearchAlbumComponent from "@/components/Search/Albums/NoResults";
 import { fetchSpotifySearch } from "@/services/spotifySearch";
 import PaginationComponent from "@/components/Pagination";
+import { TSearchAlbum } from "@/types/TAlbum";
 
 export default function SearchPage() {
   const searchParams = useSearchParams();
@@ -32,7 +32,7 @@ export default function SearchPage() {
     const fetchResults = async () => {
       setLoading(true);
 
-      const { albums, tatalPagesAlbums } = await fetchSpotifySearch(
+      const { albums, totalPagesAlbums } = await fetchSpotifySearch(
         "albums",
         query,
         artistId,
@@ -40,7 +40,7 @@ export default function SearchPage() {
       );
 
       setDataAlbums(albums);
-      setPagesAlbums(tatalPagesAlbums);
+      setPagesAlbums(totalPagesAlbums);
 
       setLoading(false);
     };

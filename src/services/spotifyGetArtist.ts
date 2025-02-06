@@ -1,6 +1,6 @@
-import { TArtist } from "@/types";
 import { clearExpiredCache } from "@/lib/cache/clear";
 import { getArtistFromCache, saveArtistToCache } from "@/lib/cache/artist";
+import { TArtist } from "@/types/TArtist";
 
 export const fetchSpotifyArtist = async (artistId: string) => {
   const url = `/api/v1/artist?id=${artistId}`;

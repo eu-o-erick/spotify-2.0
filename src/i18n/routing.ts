@@ -43,6 +43,12 @@ export const routing = defineRouting({
       es: "/artista",
       fr: "/artiste",
     },
+    "/artist/albums": {
+      en: "/artist/albums",
+      pt: "/artista/albuns",
+      es: "/artista/albumes",
+      fr: "/artiste/albums",
+    },
   },
 });
 

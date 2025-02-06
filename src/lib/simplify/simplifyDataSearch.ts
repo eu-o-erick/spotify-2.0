@@ -1,4 +1,6 @@
-import { TDataSearch, TSearchAlbum, TSearchArtist } from "@/types";
+import { TSearchAlbum } from "@/types/TAlbum";
+import { TSearchArtist } from "@/types/TArtist";
+import { TDataSearch } from "@/types/TDataSearch";
 
 export const simplifyDataSearch = (data: any): TDataSearch => ({
   albums: {

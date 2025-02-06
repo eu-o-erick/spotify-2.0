@@ -1,8 +1,8 @@
 "use client";
 
-import ItemArtistComponent from "@/components/ItemArtist";
-import ListAlbumsComponent from "@/components/ListItems";
-import { TSearchArtist } from "@/types";
+import ItemArtistComponent from "@/components/Items/ItemArtist";
+import ListAlbumsComponent from "@/components/Items/ListItems";
+import { TSearchArtist } from "@/types/TArtist";
 import { useTranslations } from "next-intl";
 
 export default function ResultsSearchArtistsComponent({

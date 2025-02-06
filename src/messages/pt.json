@@ -19,6 +19,17 @@
     "seeAllArtists": "ver todos os artistas",
     "seeAllAlbums": "ver todos os álbuns"
   },
+  "ArtistPage": {
+    "ArtistAlbums": "Álbuns do Artista",
+    "similarArtists": "Artistas Semelhantes",
+    "seeAllAlbums": "ver todos os álbuns",
+    "albums": "Álbuns",
+    "singles": "Singles"
+  },
+  "PaginationComponent": {
+    "next": "Próximo",
+    "prev": "Anterior"
+  },
   "FooterComponent": {
     "nav": {
       "home": "INÍCIO",

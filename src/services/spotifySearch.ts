@@ -1,13 +1,13 @@
 import { getSearchFromCache, saveSearchToCache } from "@/lib/cache/search";
-import { TDataSearch } from "@/types";
 import { clearExpiredCache } from "@/lib/cache/clear";
+import { TDataSearch, TResultsSearch } from "@/types/TDataSearch";
 
 export const fetchSpotifySearch = async (
   type: "multi" | "albums" | "artists",
   query: string | null,
   artistId: string | null,
   page: string | null
-) => {
+): Promise<TResultsSearch> => {
   let url = "";
 
   page = page ?? "1";
@@ -28,13 +28,13 @@ export const fetchSpotifySearch = async (
     return {
       albums: cachedData.albums?.items || [],
       artists: cachedData.artists?.items || [],
-      tatalPagesAlbums:
-        Math.floor(
+      totalPagesAlbums:
+        Math.ceil(
           (cachedData.albums?.totalCount ?? 0) /
             (cachedData.albums?.pagingInfo?.limit ?? 0)
         ) ?? 0,
       tatalPagesArtists:
-        Math.floor(
+        Math.ceil(
           (cachedData.artists?.totalCount ?? 0) /
             (cachedData.artists?.pagingInfo?.limit ?? 0)
         ) ?? 0,
@@ -61,12 +61,12 @@ export const fetchSpotifySearch = async (
     return {
       albums: data.albums?.items || [],
       artists: data.artists?.items || [],
-      tatalPagesAlbums:
-        Math.floor(
+      totalPagesAlbums:
+        Math.ceil(
           (data.albums?.totalCount ?? 0) / (data.albums?.pagingInfo?.limit ?? 0)
         ) ?? 0,
       tatalPagesArtists:
-        Math.floor(
+        Math.ceil(
           (data.artists?.totalCount ?? 0) /
             (data.artists?.pagingInfo?.limit ?? 0)
         ) ?? 0,
@@ -77,7 +77,7 @@ export const fetchSpotifySearch = async (
     return {
       albums: [],
       artists: [],
-      tatalPagesAlbums: 0,
+      totalPagesAlbums: 0,
       tatalPagesArtists: 0,
     };
   }

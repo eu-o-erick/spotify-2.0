@@ -1,11 +1,12 @@
 "use client";
 
-import ItemAlbumComponent from "@/components/ItemAlbum";
-import ItemArtistComponent from "@/components/ItemArtist";
-import ListAlbumsComponent from "@/components/ListItems";
-import SwiperListComponent from "@/components/SwiperList";
+import ItemAlbumComponent from "@/components/Items/ItemAlbum";
+import ItemArtistComponent from "@/components/Items/ItemArtist";
+import ListAlbumsComponent from "@/components/Items/ListItems";
+import SwiperListComponent from "@/components/Items/SwiperList";
 import { Link } from "@/i18n/routing";
-import { TSearchAlbum, TSearchArtist } from "@/types";
+import { TSearchAlbum } from "@/types/TAlbum";
+import { TSearchArtist } from "@/types/TArtist";
 import { useTranslations } from "next-intl";
 
 export default function ResultsSearchComponent({

@@ -1,6 +1,6 @@
-import { TDataSearch } from "@/types";
 import { simplifyDataSearch } from "../simplify/simplifyDataSearch";
 import { CACHE_TIME } from "../constants";
+import { TDataSearch } from "@/types/TDataSearch";
 
 export const saveSearchToCache = (
   results: TDataSearch,

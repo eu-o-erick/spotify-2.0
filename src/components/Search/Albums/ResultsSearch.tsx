@@ -1,8 +1,8 @@
 "use client";
 
-import ItemAlbumComponent from "@/components/ItemAlbum";
-import ListAlbumsComponent from "@/components/ListItems";
-import { TSearchAlbum } from "@/types";
+import ItemAlbumComponent from "@/components/Items/ItemAlbum";
+import ListAlbumsComponent from "@/components/Items/ListItems";
+import { TSearchAlbum } from "@/types/TAlbum";
 import { useTranslations } from "next-intl";
 
 export default function ResultsSearchAlbumsComponent({

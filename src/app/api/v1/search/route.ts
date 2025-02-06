@@ -15,12 +15,13 @@ export async function GET(req: NextRequest) {
 
   if (
     (!query && !artistId) ||
-    (artistId && type !== "albums") ||
+    (artistId && type !== "albums" && type !== "singles") ||
     (!query && artistId?.length !== 22) ||
     (query &&
       type !== "artists" &&
       type !== "albums" &&
       type !== "multi" &&
+      type !== "singles" &&
       type) ||
     isNaN(page)
   ) {
@@ -32,7 +33,7 @@ export async function GET(req: NextRequest) {
     let url = "";
 
     if (artistId) {
-      url = `${SPOTIFY_API_URL}/artist_albums/?id=${artistId}`;
+      url = `${SPOTIFY_API_URL}/artist_${type}/?id=${artistId}`;
     } else {
       url = `${SPOTIFY_API_URL}/search/?q=${query}&type=${type}`;
     }

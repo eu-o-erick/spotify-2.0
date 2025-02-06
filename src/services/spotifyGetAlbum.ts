@@ -1,6 +1,6 @@
-import { TAlbum } from "@/types";
 import { clearExpiredCache } from "@/lib/cache/clear";
 import { getAlbumFromCache, saveAlbumToCache } from "@/lib/cache/album";
+import { TAlbum } from "@/types/TAlbum";
 
 export const fetchSpotifyAlbum = async (albumId: string) => {
   const url = `/api/v1/album?id=${albumId}`;

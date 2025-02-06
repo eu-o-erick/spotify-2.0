@@ -1,8 +1,8 @@
 "use client";
 
+import ContentArtist from "@/components/Artist/ContentArtist";
 import { fetchSpotifyArtist } from "@/services/spotifyGetArtist";
-import { TArtist } from "@/types";
-import Image from "next/image";
+import { TArtist } from "@/types/TArtist";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -37,26 +37,7 @@ export default function ArtistPage() {
 
       {!dataArtist && !loading && <h1>nenhum album encontrado</h1>}
 
-      {dataArtist && !loading && (
-        <>
-          <h1>{dataArtist.profile.name}</h1>
-          <Image
-            src={
-              dataArtist.visuals.avatarImage?.sources?.[0]?.url ??
-              "/no-image.webp"
-            }
-            width={400}
-            height={400}
-            alt="cover album"
-          />
-
-          <ul className="flex flex-col">
-            {dataArtist.discography.popularReleases.items.map((album, i) => (
-              <li key={i}>{album.releases.items[0].name}</li>
-            ))}
-          </ul>
-        </>
-      )}
+      {dataArtist && !loading && <ContentArtist dataArtist={dataArtist} />}
     </main>
   );
 }

@@ -35,6 +35,17 @@
     "button": "Explorar Ahora",
     "categories": ["Categorías:", "Álbumes", "y", "Artistas"]
   },
+  "ArtistPage": {
+    "ArtistAlbums": "Álbumes del Artista",
+    "similarArtists": "Artistas Similares",
+    "seeAllAlbums": "ver todos los álbumes",
+    "albums": "Álbumes",
+    "singles": "Sencillos"
+  },
+  "PaginationComponent": {
+    "next": "Siguiente",
+    "prev": "Anterior"
+  },
   "PrivacyPage": {
     "title": "Política de Privacidad",
     "desc": "Esta Política de Privacidad describe cómo manejamos y protegemos su información personal cuando utiliza nuestro sitio web. Al usar nuestro sitio web, usted acepta la recopilación y el uso de su información de acuerdo con esta política.",

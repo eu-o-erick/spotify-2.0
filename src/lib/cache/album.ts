@@ -1,4 +1,4 @@
-import { TAlbum } from "@/types";
+import { TAlbum } from "@/types/TAlbum";
 import { CACHE_TIME } from "../constants";
 import { simplifyAlbum } from "../simplify/simplifyAlbum";
 

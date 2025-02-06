@@ -2,17 +2,20 @@
 
 import { Link, usePathname } from "@/i18n/routing";
 import { cn } from "@/lib/cn";
+import { useTranslations } from "next-intl";
 import { MdNavigateNext } from "react-icons/md";
 
 export default function PaginationComponent({
   page,
   query,
   artistId,
+  type,
   totalPages,
 }: {
   page: string | null;
-  query: string | null;
-  artistId: string | null;
+  query?: string | null;
+  artistId?: string | null;
+  type?: string | null;
   totalPages: number;
 }) {
   const pathname = usePathname();
@@ -34,8 +37,9 @@ export default function PaginationComponent({
   );
 
   const buildQuery = (pageNumber: number) => ({
-    q: query,
     page: pageNumber.toString(),
+    ...(type ? { type } : {}),
+    ...(query ? { q: query } : {}),
     ...(artistId ? { artistId } : {}),
   });
 
@@ -111,18 +115,24 @@ export default function PaginationComponent({
 }
 
 function PrevButtonContent() {
+  const t = useTranslations("PaginationComponent");
+
   return (
     <>
       <MdNavigateNext className="w-6 h-6 rotate-180 max-sm:w-5 max-sm:h-5 text-primary" />
-      <span className="text-sm max-sm:hidden">PREVIOUS</span>
+      <span className="text-sm max-sm:hidden uppercase">{t("prev")}</span>
     </>
   );
 }
 
 function NextButtonContent() {
+  const t = useTranslations("PaginationComponent");
+
   return (
     <>
-      <span className="text-sm max-sm:text-xs max-sm:hidden">NEXT</span>
+      <span className="text-sm max-sm:text-xs max-sm:hidden uppercase">
+        {t("prev")}
+      </span>
       <MdNavigateNext className="w-6 h-6 max-sm:w-5 max-sm:h-5 text-primary" />
     </>
   );

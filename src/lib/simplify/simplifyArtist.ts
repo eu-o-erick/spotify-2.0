@@ -1,4 +1,5 @@
-import { TArtist } from "@/types";
+import { TArtist } from "@/types/TArtist";
+import { simplifyArtistAlbum } from "./simplifyArtistAlbum";
 
 export const simplifyArtist = (artist: TArtist): TArtist => ({
   sharingInfo: {
@@ -28,20 +29,7 @@ export const simplifyArtist = (artist: TArtist): TArtist => ({
       items:
         artist.discography.popularReleases?.items?.map(({ releases }) => ({
           releases: {
-            items: [
-              {
-                uri: releases.items?.[0].uri ?? "",
-                name: releases.items?.[0].name ?? "",
-                type: releases.items?.[0].type ?? "",
-                coverArt: {
-                  sources: [
-                    {
-                      url: releases.items?.[0].coverArt.sources?.[0].url ?? "",
-                    },
-                  ],
-                },
-              },
-            ],
+            items: [simplifyArtistAlbum(releases.items?.[0])],
           },
         })) ?? [],
     },
@@ -66,5 +54,8 @@ export const simplifyArtist = (artist: TArtist): TArtist => ({
         })
       ),
     },
+  },
+  stats: {
+    followers: artist.stats.followers,
   },
 });

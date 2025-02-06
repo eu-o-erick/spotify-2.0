@@ -1,4 +1,4 @@
-import { TArtist } from "@/types";
+import { TArtist } from "@/types/TArtist";
 import { CACHE_TIME } from "../constants";
 import { simplifyArtist } from "../simplify/simplifyArtist";
 

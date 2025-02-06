@@ -2,13 +2,13 @@
 
 import { useTranslations } from "next-intl";
 import SearchComponent from "@/components/Search";
-import SwiperListAlbumsComponent from "@/components/SwiperList";
-import ItemAlbumComponent from "@/components/ItemAlbum";
+import SwiperListComponent from "@/components/Items/SwiperList";
+import ItemAlbumComponent from "@/components/Items/ItemAlbum";
 
 import featuredAlbums from "@/data/featured_albums.json";
 import latestAlbums from "@/data/latest_albums.json";
 import featuredArtists from "@/data/featured_artists.json";
-import ItemArtistComponent from "@/components/ItemArtist";
+import ItemArtistComponent from "@/components/Items/ItemArtist";
 import { useEffect, useState } from "react";
 import CarouselSkelotonComponent from "@/components/Skeletons/Carousel";
 import ArtistSkelotonComponent from "@/components/Skeletons/ArtistItem";
@@ -45,23 +45,23 @@ export default function HomePage() {
         </div>
       ) : (
         <>
-          <SwiperListAlbumsComponent title={t("featuredAlbums")}>
+          <SwiperListComponent title={t("featuredAlbums")}>
             {featuredAlbums.items.map((album, i) => (
               <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
             ))}
-          </SwiperListAlbumsComponent>
+          </SwiperListComponent>
 
-          <SwiperListAlbumsComponent title={t("latestAlbums")}>
+          <SwiperListComponent title={t("latestAlbums")}>
             {latestAlbums.items.map((album, i) => (
               <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
             ))}
-          </SwiperListAlbumsComponent>
+          </SwiperListComponent>
 
-          <SwiperListAlbumsComponent title={t("featuredArtists")}>
+          <SwiperListComponent title={t("featuredArtists")}>
             {featuredArtists.items.map((artist, i) => (
               <ItemArtistComponent key={i} artist={artist} />
             ))}
-          </SwiperListAlbumsComponent>
+          </SwiperListComponent>
         </>
       )}
     </main>

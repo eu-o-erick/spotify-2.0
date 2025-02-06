@@ -1,4 +1,4 @@
-import { TAlbum } from "@/types";
+import { TAlbum } from "@/types/TAlbum";
 
 export const simplifyAlbum = (album: TAlbum): TAlbum => ({
   album_type: album.album_type,

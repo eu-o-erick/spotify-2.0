@@ -5,7 +5,7 @@ import SwiperTypes from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { MdNavigateNext } from "react-icons/md";
 
-export default function SwiperListAlbumsComponent({
+export default function SwiperListComponent({
   children,
   title,
 }: {

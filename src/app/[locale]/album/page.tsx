@@ -1,7 +1,7 @@
 "use client";
 
 import { fetchSpotifyAlbum } from "@/services/spotifyGetAlbum";
-import { TAlbum } from "@/types";
+import { TAlbum } from "@/types/TAlbum";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
