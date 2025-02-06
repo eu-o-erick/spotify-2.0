@@ -4,15 +4,10 @@ import ButtonDropDown from "./Button";
 import ContentDropDown from "./Content";
 import useClickOutside from "@/hooks/useClickOutside";
 
-export type DropDownItem = {
-  value: string;
-  label: string;
-};
-
 interface Props {
-  state: DropDownItem;
-  setState: React.Dispatch<React.SetStateAction<DropDownItem>>;
-  options: DropDownItem[];
+  state: string;
+  setState: React.Dispatch<React.SetStateAction<string>>;
+  options: string[];
 }
 
 export default function DropDownComponent({ state, setState, options }: Props) {

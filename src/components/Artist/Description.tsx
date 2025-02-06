@@ -23,8 +23,8 @@ export default function DescriptionArtist({
             dataArtist.visuals.avatarImage?.sources?.[0]?.url ??
             "/no-image.webp"
           }
-          width={370}
-          height={370}
+          width={300}
+          height={300}
           className="shadow-strong rounded-[4px]"
           alt={`${dataArtist.profile.name} image`}
         />

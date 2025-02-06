@@ -40,7 +40,7 @@ export default function ResultsSearchComponent({
 
         {pagesArtists > 1 && (
           <Link
-            className="underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
+            className="hover:underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
             href={{ pathname: "/search/artists", query: { q: query } }}
           >
             {t("seeAllArtists")}
@@ -60,7 +60,7 @@ export default function ResultsSearchComponent({
 
         {pagesAlbums > 1 && (
           <Link
-            className="underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
+            className="hover:underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
             href={{ pathname: "/search/albums", query: { q: query } }}
           >
             {t("seeAllAlbums")}

@@ -1,19 +1,15 @@
 "use client";
 
 import { cn } from "@/lib/cn";
-import { RiArrowDropUpFill } from "react-icons/ri";
-
-export type DropDownItem = {
-  value: string;
-  label: string;
-};
+import { useTranslations } from "next-intl";
+import SeparatorComponent from "../Separator";
 
 interface Props {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  state: DropDownItem;
-  setState: React.Dispatch<React.SetStateAction<DropDownItem>>;
-  options: DropDownItem[];
+  state: string;
+  setState: React.Dispatch<React.SetStateAction<string>>;
+  options: string[];
 }
 
 export default function ContentDropDown({
@@ -23,7 +19,9 @@ export default function ContentDropDown({
   setState,
   options,
 }: Props) {
-  function handlerClick(option: DropDownItem) {
+  const t = useTranslations("DropDown");
+
+  function handlerClick(option: string) {
     setIsOpen(false);
     setState(option);
   }
@@ -31,24 +29,25 @@ export default function ContentDropDown({
   return (
     <div
       className={cn(
-        "absolute z-10 bg-secondary -right-4 px-6 py-3 shadow-strong rounded-md transition-all max-md:shadow-lg",
+        "absolute right-0 top-full z-10 bg-secondary shadow-sm w-full transition-all min-w-32",
         {
-          "opacity-100 top-8": isOpen,
-          "opacity-0 -right-8 pointer-events-none scale-75 top-4": !isOpen,
+          "opacity-0 pointer-events-none": !isOpen,
         }
       )}
     >
-      <RiArrowDropUpFill className="absolute -top-7 right-px text-secondary text-[50px] max-lg:-top-[22px] max-lg:right-1 max-lg:text-[40px] pointer-events-none" />
-
-      <ul className="flex flex-col gap-4 items-end min-w-28 max-sm:gap-3 max-sm:min-w-24 max-sm:text-sm">
+      <SeparatorComponent className="bg-primary" />
+      <ul className="flex flex-col py-1 max-sm:gap-0">
         {options.map((option, i) => (
-          <li
-            key={i}
-            className={cn("", { "opacity-50": option.value === state.value })}
-          >
-            <button onClick={() => handlerClick(option)} className="">
-              {option.label}
-            </button>
+          <li key={i} className="text-sm max-sm:text-xs">
+            {option !== state && (
+              <button
+                type="button"
+                onClick={() => handlerClick(option)}
+                className="text-end w-full py-2 px-5 hover:bg-primary max-sm:px-3 font-extralight"
+              >
+                <span>{t(option)}</span>
+              </button>
+            )}
           </li>
         ))}
       </ul>

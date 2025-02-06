@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { DropDownItem } from "./DropDown";
 import { LANGUAGES } from "@/lib/constants";
 import { redirect, usePathname } from "@/i18n/routing";
 import { useLocale } from "next-intl";
@@ -11,6 +10,11 @@ import useClickOutside from "@/hooks/useClickOutside";
 import Image from "next/image";
 import { IoIosArrowDown } from "react-icons/io";
 import SeparatorComponent from "./Separator";
+
+type DropDownItem = {
+  value: string;
+  label: string;
+};
 
 export default function SwitchLanguages() {
   const locale = useLocale();

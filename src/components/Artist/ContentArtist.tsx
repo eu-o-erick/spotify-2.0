@@ -1,6 +1,5 @@
 "use client";
 
-import DescriptionArtist from "./Description";
 import SwiperListComponent from "../Items/SwiperList";
 import ItemAlbumComponent from "../Items/ItemAlbum";
 import ItemArtistComponent from "../Items/ItemArtist";
@@ -8,19 +7,27 @@ import { Link } from "@/i18n/routing";
 import { useSearchParams } from "next/navigation";
 import { TArtist } from "@/types/TArtist";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+
+const options = ["popularReleases", "singles", "albums"];
 
 export default function ContentArtist({ dataArtist }: { dataArtist: TArtist }) {
   const searchParams = useSearchParams();
   const artistId = searchParams.get("id");
 
+  const [type, setType] = useState("popularReleases");
+
   const t = useTranslations("ArtistPage");
 
   return (
-    <>
-      <DescriptionArtist dataArtist={dataArtist} />
-
-      <SwiperListComponent title={t("ArtistAlbums")}>
-        {dataArtist.discography.popularReleases.items.map(({ releases }, i) => (
+    <section className="container">
+      <SwiperListComponent
+        title={t("ArtistAlbums")}
+        dropDownOptions={{ state: type, setState: setType, options }}
+      >
+        {dataArtist.discography?.[
+          type as "popularReleases" | "singles" | "albums"
+        ].items.map(({ releases }, i) => (
           <ItemAlbumComponent
             key={i}
             album={releases.items[0]}
@@ -29,15 +36,15 @@ export default function ContentArtist({ dataArtist }: { dataArtist: TArtist }) {
         ))}
       </SwiperListComponent>
 
-      <div className="container -mt-10 pb-16 flex flex-col items-end">
+      <div className="container -mt-6 pb-24 flex flex-col items-end">
         <Link
-          className="underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
+          className="hover:underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
           href={{
             pathname: "/artist/albums",
             query: { artistId, type: "albums" },
           }}
         >
-          {t("seeAllAlbums")}
+          {t("seeAllResulst")}
         </Link>
       </div>
 
@@ -46,6 +53,6 @@ export default function ContentArtist({ dataArtist }: { dataArtist: TArtist }) {
           <ItemArtistComponent key={i} artist={artist} isPageArtist={true} />
         ))}
       </SwiperListComponent>
-    </>
+    </section>
   );
 }

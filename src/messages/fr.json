@@ -19,6 +19,11 @@
     "seeAllArtists": "Voir tous les artistes",
     "seeAllAlbums": "Voir tous les albums"
   },
+  "DropDown": {
+    "popularReleases": "Populaires",
+    "singles": "Singles",
+    "albums": "Albums"
+  },
   "FooterComponent": {
     "nav": {
       "home": "ACCUEIL",
@@ -38,7 +43,7 @@
   "ArtistPage": {
     "ArtistAlbums": "Albums de l'Artiste",
     "similarArtists": "Artistes Similaires",
-    "seeAllAlbums": "voir tous les albums",
+    "seeAllResulst": "voir tous les résultats",
     "albums": "Albums",
     "singles": "Singles"
   },

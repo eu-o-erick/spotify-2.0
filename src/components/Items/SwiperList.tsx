@@ -1,52 +1,33 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import SwiperTypes from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { MdNavigateNext } from "react-icons/md";
+import DropDownComponent from "../DropDown";
 
 export default function SwiperListComponent({
   children,
   title,
+  dropDownOptions,
 }: {
   children: React.ReactNode[];
   title: string;
+  dropDownOptions?: {
+    state: string;
+    setState: React.Dispatch<React.SetStateAction<string>>;
+    options: string[];
+  };
 }) {
   const swiperRef = useRef<null | SwiperTypes>(null);
-  const [isDisabled, setIsDisabled] = useState(true);
 
   function handlerPrev() {
-    if (isDisabled) return;
-
     swiperRef.current?.slidePrev();
   }
 
   function handlerNext() {
-    if (isDisabled) return;
-
     swiperRef.current?.slideNext();
   }
-
-  useEffect(() => {
-    const swiper = swiperRef.current;
-    if (!swiper) return;
-
-    const updateButtonState = () => {
-      const slidesPerView =
-        typeof swiper.params.slidesPerView === "number"
-          ? swiper.params.slidesPerView
-          : 1;
-
-      setIsDisabled(children.length <= slidesPerView);
-    };
-
-    updateButtonState();
-    swiper.on("resize", updateButtonState);
-
-    return () => {
-      swiper.off("resize", updateButtonState);
-    };
-  }, [children.length]);
 
   return (
     <section className="container mb-16 max-md:mb-10">
@@ -54,10 +35,18 @@ export default function SwiperListComponent({
         <h2 className="text-2xl max-md:text-xl">{title}</h2>
 
         <div className="flex gap-2">
+          {dropDownOptions && (
+            <DropDownComponent
+              state={dropDownOptions.state}
+              setState={dropDownOptions.setState}
+              options={dropDownOptions.options}
+            />
+          )}
+
           <button
             type="button"
             onClick={handlerPrev}
-            className="text-primary active:text-secondary transition-colors"
+            className="text-primary active:text-secondary transition-colors ml-8"
           >
             <MdNavigateNext className="w-8 h-8 rotate-180 max-md:w-5 max-md:h-5" />
           </button>
@@ -76,7 +65,6 @@ export default function SwiperListComponent({
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         slidesPerView={2}
         spaceBetween={0}
-        loop={true}
         breakpoints={{
           500: {
             slidesPerView: 3,

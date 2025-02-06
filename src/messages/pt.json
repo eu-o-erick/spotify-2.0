@@ -19,10 +19,15 @@
     "seeAllArtists": "ver todos os artistas",
     "seeAllAlbums": "ver todos os álbuns"
   },
+  "DropDown": {
+    "popularReleases": "Populares",
+    "singles": "Singles",
+    "albums": "Álbuns"
+  },
   "ArtistPage": {
     "ArtistAlbums": "Álbuns do Artista",
     "similarArtists": "Artistas Semelhantes",
-    "seeAllAlbums": "ver todos os álbuns",
+    "seeAllResulst": "ver todos os resultados",
     "albums": "Álbuns",
     "singles": "Singles"
   },
