@@ -1,7 +1,9 @@
 "use client";
 
-import ContentArtist from "@/components/Artist/ContentArtist";
+import ArtistContent from "@/components/Artist/ArtistContent";
 import DescriptionArtist from "@/components/Artist/Description";
+import ArtistContentSkeleton from "@/components/Skeletons/ArtistComponent";
+import SkeletonDescriptionArtist from "@/components/Skeletons/ArtistDescription";
 import { fetchSpotifyArtist } from "@/services/spotifyGetArtist";
 import { TArtist } from "@/types/TArtist";
 import { useSearchParams } from "next/navigation";
@@ -26,14 +28,26 @@ export default function ArtistPage() {
 
       setDataArtist(data);
 
-      setLoading(false);
+      // setLoading(false);
     };
 
     fetchResults();
   }, [id]);
 
   if (loading) {
-    return <h1 className="container py-20 flex-1">carregando</h1>;
+    return (
+      <main className="flex-1 mb-28">
+        <SkeletonDescriptionArtist />
+        <ArtistContentSkeleton />
+
+        <button
+          onClick={() => setLoading(false)}
+          className="fixed top-14 right-2/4 bg-green-400 px-10 py-4"
+        >
+          mudar
+        </button>
+      </main>
+    );
   }
 
   if (!dataArtist) {
@@ -44,7 +58,7 @@ export default function ArtistPage() {
     <main className="flex-1 mb-28">
       <DescriptionArtist dataArtist={dataArtist} />
 
-      <ContentArtist dataArtist={dataArtist} />
+      <ArtistContent dataArtist={dataArtist} />
     </main>
   );
 }

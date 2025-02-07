@@ -20,7 +20,7 @@ export default function LinksArtist({
 }) {
   return (
     <nav>
-      <ul className="flex items-start gap-3">
+      <ul className="flex items-start gap-3 max-sm:gap-2">
         {links.map(({ name, url }) => {
           const Icon = iconMap[name];
           return (
@@ -32,7 +32,7 @@ export default function LinksArtist({
                 rel="noopener noreferrer"
               >
                 {Icon && (
-                  <Icon className="w-5 h-5 text-zinc-500 hover:text-zinc-400 max-lg:w-4" />
+                  <Icon className="w-5 h-5 text-zinc-500 hover:text-zinc-400 max-lg:w-4 max-lg:h-4" />
                 )}
               </a>
             </li>

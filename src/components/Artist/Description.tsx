@@ -4,7 +4,7 @@ import Image from "next/image";
 import BgGradient from "../BgGradient";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import formatNumber from "@/lib/formatNumber";
-import LinksArtist from "../LinksArtist";
+import LinksArtist from "./LinksArtist";
 import SpotifyButton from "../SpotifyButton";
 import { TArtist } from "@/types/TArtist";
 

@@ -11,7 +11,7 @@ import { useState } from "react";
 
 const options = ["popularReleases", "singles", "albums"];
 
-export default function ContentArtist({ dataArtist }: { dataArtist: TArtist }) {
+export default function ArtistContent({ dataArtist }: { dataArtist: TArtist }) {
   const searchParams = useSearchParams();
   const artistId = searchParams.get("id");
 
