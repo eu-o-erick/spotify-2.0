@@ -32,7 +32,7 @@ export default function LinksArtist({
                 rel="noopener noreferrer"
               >
                 {Icon && (
-                  <Icon className="w-5 h-5 text-zinc-500 hover:text-zinc-400" />
+                  <Icon className="w-5 h-5 text-zinc-500 hover:text-zinc-400 max-lg:w-4" />
                 )}
               </a>
             </li>

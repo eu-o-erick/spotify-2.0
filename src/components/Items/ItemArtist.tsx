@@ -22,7 +22,7 @@ export default function ItemArtistComponent({
           pathname: `/artist`,
           query: { id: data.uri.split(":")[2] },
         }}
-        className="relative w-full rounded-full shadow-strong aspect-square overflow-hidden group-hover:shadow-none"
+        className="relative w-full rounded-full shadow-strong aspect-square overflow-hidden group-hover:shadow-none max-md:shadow-sm"
       >
         <Image
           src={data.visuals.avatarImage?.sources?.[0]?.url ?? "/no-image.webp"}

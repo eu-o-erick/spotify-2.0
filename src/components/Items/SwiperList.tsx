@@ -31,10 +31,10 @@ export default function SwiperListComponent({
 
   return (
     <section className="container mb-16 max-md:mb-10">
-      <div className="flex justify-between mb-7 max-md:mb-4 max-[500px]:px-2">
+      <div className="flex justify-between items-end mb-7 max-md:mb-4 max-[500px]:px-2">
         <h2 className="text-2xl max-md:text-xl">{title}</h2>
 
-        <div className="flex gap-2">
+        <div className="flex items-end gap-x-6 gap-y-2 max-sm:flex-col ">
           {dropDownOptions && (
             <DropDownComponent
               state={dropDownOptions.state}
@@ -43,21 +43,23 @@ export default function SwiperListComponent({
             />
           )}
 
-          <button
-            type="button"
-            onClick={handlerPrev}
-            className="text-primary active:text-secondary transition-colors ml-8"
-          >
-            <MdNavigateNext className="w-8 h-8 rotate-180 max-md:w-5 max-md:h-5" />
-          </button>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={handlerPrev}
+              className="text-primary active:text-secondary transition-colors"
+            >
+              <MdNavigateNext className="w-8 h-8 rotate-180 max-md:w-5 max-md:h-5" />
+            </button>
 
-          <button
-            type="button"
-            onClick={handlerNext}
-            className="text-primary active:text-secondary transition-colors"
-          >
-            <MdNavigateNext className="w-8 h-8 max-md:w-5 max-md:h-5" />
-          </button>
+            <button
+              type="button"
+              onClick={handlerNext}
+              className="text-primary active:text-secondary transition-colors"
+            >
+              <MdNavigateNext className="w-8 h-8 max-md:w-5 max-md:h-5" />
+            </button>
+          </div>
         </div>
       </div>
 

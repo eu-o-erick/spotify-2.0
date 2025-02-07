@@ -10,11 +10,13 @@ export default function ListArtistAlbums({
   artistId,
   page,
   dataAlbums,
+  name,
   totalPages,
 }: {
   type: string;
   artistId: string;
   page: string;
+  name: string;
   dataAlbums: TReleasesArtistAlbums[];
   totalPages: number;
 }) {
@@ -36,6 +38,7 @@ export default function ListArtistAlbums({
           artistId={artistId}
           type={type}
           page={page}
+          name={name}
           totalPages={totalPages}
         />
       ) : (

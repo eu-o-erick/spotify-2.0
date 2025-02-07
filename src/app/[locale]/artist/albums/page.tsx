@@ -77,6 +77,7 @@ export default function SearchPage() {
         dataAlbums={dataAlbums!}
         page={page ?? "1"}
         totalPages={totalPages}
+        name={name ?? ""}
       />
     </main>
   );

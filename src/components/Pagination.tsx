@@ -10,12 +10,14 @@ export default function PaginationComponent({
   query,
   artistId,
   type,
+  name,
   totalPages,
 }: {
   page: string | null;
   query?: string | null;
   artistId?: string | null;
   type?: string | null;
+  name?: string | null;
   totalPages: number;
 }) {
   const pathname = usePathname();
@@ -41,6 +43,7 @@ export default function PaginationComponent({
     ...(type ? { type } : {}),
     ...(query ? { q: query } : {}),
     ...(artistId ? { artistId } : {}),
+    ...(name ? { name } : {}),
   });
 
   return (

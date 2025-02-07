@@ -28,7 +28,7 @@ export default function ItemAlbumComponent({
           width={400}
           height={400}
           alt="cover album"
-          className="rounded-[4px] shadow-strong group-hover:shadow-none max-md:rounded-sm"
+          className="rounded-[4px] shadow-strong group-hover:shadow-none max-md:rounded-sm max-md:shadow-sm"
         />
       </Link>
 

@@ -24,8 +24,8 @@ h4 {
 
 .bg-gradient {
   background-image: linear-gradient(
-    150deg,
-    var(--secondary-color),
-    var(--background-color) 70%
+    135deg,
+    var(--secondary-color) 10%,
+    var(--background-color) 90%
   );
 }
