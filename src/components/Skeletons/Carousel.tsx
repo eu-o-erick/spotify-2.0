@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function CarouselSkelotonComponent({
+export default function CarouselComponentSkeleton({
   children,
 }: {
   children: React.ReactNode;

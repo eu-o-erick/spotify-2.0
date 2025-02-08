@@ -1,6 +1,6 @@
 import BgGradient from "../BgGradient";
 
-export default function SkeletonDescriptionArtist() {
+export default function DescriptionArtistSkeleton() {
   return (
     <section className="relative mb-20">
       <BgGradient />

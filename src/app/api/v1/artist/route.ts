@@ -19,13 +19,17 @@ export async function GET(req: NextRequest) {
       FETCH_OPTIONS
     );
 
-    if (response) {
-      const { data } = await response.json();
-
-      return NextResponse.json(data.artist);
-    } else {
-      throw new Error("No response from API");
+    if (!response.ok) {
+      const errorData = await response.json();
+      return NextResponse.json(
+        { error: errorData?.message || "Failed to fetch artist data" },
+        { status: response.status }
+      );
     }
+
+    const { data } = await response.json();
+
+    return NextResponse.json({ artist: data.artist });
   } catch (error) {
     console.error(error);
     return NextResponse.json(

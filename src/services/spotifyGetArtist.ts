@@ -12,19 +12,18 @@ export const fetchSpotifyArtist = async (artistId: string) => {
   }
 
   try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error("Error fetching data from Spotify");
-    }
-
-    const data: TArtist = await response.json();
-
     clearExpiredCache();
 
-    saveArtistToCache(data, artistId);
+    const response = await fetch(url);
 
-    return data;
+    const { artist, error }: { artist: TArtist; error: string | undefined } =
+      await response.json();
+
+    if (error) return null;
+
+    saveArtistToCache(artist, artistId);
+
+    return artist;
   } catch (err) {
     console.error("Error fetching data:", err);
 

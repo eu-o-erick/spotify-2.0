@@ -42,13 +42,18 @@ export const fetchSpotifySearch = async (
   try {
     const response = await fetch(url);
 
-    if (!response.ok) {
-      throw new Error("Error fetching data from Spotify");
-    }
-
-    const data: TDataSearch = await response.json();
-
     clearExpiredCache();
+
+    const { data, error }: { data: TDataSearch; error: string | undefined } =
+      await response.json();
+
+    if (error)
+      return {
+        albums: [],
+        artists: [],
+        totalPagesAlbums: 0,
+        tatalPagesArtists: 0,
+      };
 
     saveSearchToCache(data, type, query, artistId, page);
 

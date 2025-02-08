@@ -3,7 +3,7 @@
 import ArtistContent from "@/components/Artist/ArtistContent";
 import DescriptionArtist from "@/components/Artist/Description";
 import ArtistContentSkeleton from "@/components/Skeletons/ArtistComponent";
-import SkeletonDescriptionArtist from "@/components/Skeletons/ArtistDescription";
+import DescriptionArtistSkeleton from "@/components/Skeletons/ArtistDescription";
 import { fetchSpotifyArtist } from "@/services/spotifyGetArtist";
 import { TArtist } from "@/types/TArtist";
 import { useSearchParams } from "next/navigation";
@@ -28,37 +28,34 @@ export default function ArtistPage() {
 
       setDataArtist(data);
 
-      // setLoading(false);
+      setLoading(false);
     };
 
     fetchResults();
   }, [id]);
 
-  if (loading) {
-    return (
-      <main className="flex-1 mb-28">
-        <SkeletonDescriptionArtist />
-        <ArtistContentSkeleton />
-
-        <button
-          onClick={() => setLoading(false)}
-          className="fixed top-14 right-2/4 bg-green-400 px-10 py-4"
-        >
-          mudar
-        </button>
-      </main>
-    );
-  }
-
-  if (!dataArtist) {
-    return <h1 className="container py-20 flex-1">nenhum album encontrado</h1>;
-  }
+  const notFind = !loading && !dataArtist;
 
   return (
     <main className="flex-1 mb-28">
-      <DescriptionArtist dataArtist={dataArtist} />
-
-      <ArtistContent dataArtist={dataArtist} />
+      {" "}
+      {loading && (
+        <>
+          <DescriptionArtistSkeleton />
+          <ArtistContentSkeleton />
+        </>
+      )}
+      {notFind && (
+        <>
+          <h1 className="container py-20 flex-1">nenhum artista encontrado</h1>
+        </>
+      )}
+      {!loading && dataArtist && (
+        <>
+          <DescriptionArtist dataArtist={dataArtist} />
+          <ArtistContent dataArtist={dataArtist} />
+        </>
+      )}
     </main>
   );
 }

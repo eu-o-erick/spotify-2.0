@@ -1,4 +1,4 @@
-export default function ListItemsSkelotonComponent({
+export default function ListItemsComponentSkeleton({
   children,
 }: {
   children: React.ReactNode;

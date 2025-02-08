@@ -39,13 +39,15 @@ export const fetchSpotifyArtistAlbums = async (
   try {
     const response = await fetch(url);
 
-    if (!response.ok) {
-      throw new Error("Error fetching data from Spotify");
-    }
-
-    const data: TDataArtistAlbums = await response.json();
-
     clearExpiredCache();
+
+    const {
+      data,
+      error,
+    }: { data: TDataArtistAlbums; error: string | undefined } =
+      await response.json();
+
+    if (error) return null;
 
     saveArtistAlbumsToCache(data, type, artistId, page);
 

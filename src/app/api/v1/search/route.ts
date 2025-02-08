@@ -7,52 +7,49 @@ export async function GET(req: NextRequest) {
   const query = searchParams.get("q");
   const type = searchParams.get("type");
   const artistId = searchParams.get("artistId");
-  const pageParam = searchParams.get("page") || "0";
+  const pageParam = searchParams.get("page") || "1"; // Padrão para 1ª página
 
   const page = parseInt(pageParam, 10);
-
   const LIMIT = type !== "multi" ? 24 : 12;
 
   if (
     (!query && !artistId) ||
     (artistId && type !== "albums" && type !== "singles") ||
-    (!query && artistId?.length !== 22) ||
+    (artistId && artistId.length !== 22) ||
     (query &&
-      type !== "artists" &&
-      type !== "albums" &&
-      type !== "multi" &&
-      type !== "singles" &&
-      type) ||
-    isNaN(page)
+      !["artists", "albums", "multi", "singles"].includes(type || "")) ||
+    isNaN(page) ||
+    page < 1
   ) {
     return NextResponse.json({ error: "Invalid parameters" }, { status: 400 });
   }
 
   try {
-    let response: Response | null = null;
-    let url = "";
+    const url = artistId
+      ? `${SPOTIFY_API_URL}/artist_${type}/?id=${artistId}`
+      : `${SPOTIFY_API_URL}/search/?q=${encodeURIComponent(
+          query!
+        )}&type=${type}`;
 
-    if (artistId) {
-      url = `${SPOTIFY_API_URL}/artist_${type}/?id=${artistId}`;
-    } else {
-      url = `${SPOTIFY_API_URL}/search/?q=${query}&type=${type}`;
-    }
-
-    response = await fetch(
-      `${url}&offset=${Math.max(page - 1, 0) * LIMIT}&limit=${LIMIT}`,
+    const response = await fetch(
+      `${url}&offset=${(page - 1) * LIMIT}&limit=${LIMIT}`,
       FETCH_OPTIONS
     );
 
-    if (response) {
-      const data = await response.json();
-      return NextResponse.json(data);
-    } else {
-      throw new Error("No response from API");
+    if (!response.ok) {
+      const errorData = await response.json();
+      return NextResponse.json(
+        { error: errorData?.message || "Failed to fetch data" },
+        { status: response.status }
+      );
     }
+
+    const data = await response.json();
+    return NextResponse.json({ data });
   } catch (error) {
-    console.error(error);
+    console.error("API Fetch Error:", error);
     return NextResponse.json(
-      { error: "Failed to fetch data" },
+      { error: "Internal server error" },
       { status: 500 }
     );
   }

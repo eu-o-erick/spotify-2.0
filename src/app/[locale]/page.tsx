@@ -10,9 +10,9 @@ import latestAlbums from "@/data/latest_albums.json";
 import featuredArtists from "@/data/featured_artists.json";
 import ItemArtistComponent from "@/components/Items/ItemArtist";
 import { useEffect, useState } from "react";
-import CarouselSkelotonComponent from "@/components/Skeletons/Carousel";
-import ArtistSkelotonComponent from "@/components/Skeletons/ArtistItem";
-import AlbumSkelotonComponent from "@/components/Skeletons/AlbumItem";
+import CarouselComponentSkeleton from "@/components/Skeletons/Carousel";
+import ArtistComponentSkeleton from "@/components/Skeletons/ArtistItem";
+import AlbumComponentSkeleton from "@/components/Skeletons/AlbumItem";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
@@ -31,17 +31,17 @@ export default function HomePage() {
 
       {loading ? (
         <div className="container flex flex-col gap-4">
-          <CarouselSkelotonComponent>
-            <AlbumSkelotonComponent />
-          </CarouselSkelotonComponent>
+          <CarouselComponentSkeleton>
+            <AlbumComponentSkeleton />
+          </CarouselComponentSkeleton>
 
-          <CarouselSkelotonComponent>
-            <AlbumSkelotonComponent />
-          </CarouselSkelotonComponent>
+          <CarouselComponentSkeleton>
+            <AlbumComponentSkeleton />
+          </CarouselComponentSkeleton>
 
-          <CarouselSkelotonComponent>
-            <ArtistSkelotonComponent />
-          </CarouselSkelotonComponent>
+          <CarouselComponentSkeleton>
+            <ArtistComponentSkeleton />
+          </CarouselComponentSkeleton>
         </div>
       ) : (
         <>
