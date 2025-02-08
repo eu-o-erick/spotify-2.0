@@ -2,7 +2,7 @@
 
 import { Link } from "@/i18n/routing";
 import { TAlbumArtist, TSearchAlbum } from "@/types/TAlbum";
-import Image from "next/image";
+import ImageLoader from "../ImageLoader";
 
 export default function ItemAlbumComponent({
   album,
@@ -23,11 +23,9 @@ export default function ItemAlbumComponent({
           query: { id: data.uri.split(":")[2] },
         }}
       >
-        <Image
+        <ImageLoader
+          alt={`cover '${data.name}' album`}
           src={data.coverArt?.sources?.[0]?.url ?? "/no-image.webp"}
-          width={400}
-          height={400}
-          alt="cover album"
           className="rounded-[4px] shadow-strong group-hover:shadow-none max-md:rounded-sm max-md:shadow-sm"
         />
       </Link>

@@ -40,6 +40,7 @@ export default function AlbumPage() {
       {dataAlbum && !loading && (
         <>
           <h1>{dataAlbum.name}</h1>
+
           <Image
             src={dataAlbum.images?.[0]?.url ?? "/no-image.webp"}
             width={400}

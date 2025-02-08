@@ -2,7 +2,7 @@
 
 import { Link } from "@/i18n/routing";
 import { TArtistRelated, TSearchArtist } from "@/types/TArtist";
-import Image from "next/image";
+import ImageLoader from "../ImageLoader";
 
 export default function ItemArtistComponent({
   artist,
@@ -24,11 +24,9 @@ export default function ItemArtistComponent({
         }}
         className="relative w-full rounded-full shadow-strong aspect-square overflow-hidden group-hover:shadow-none max-md:shadow-sm"
       >
-        <Image
+        <ImageLoader
+          alt={`cover '${data.profile.name}'`}
           src={data.visuals.avatarImage?.sources?.[0]?.url ?? "/no-image.webp"}
-          width={400}
-          height={400}
-          alt="cover album"
           className="pointer-events-none transform transition-all"
         />
       </Link>

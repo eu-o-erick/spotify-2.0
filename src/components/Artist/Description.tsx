@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import BgGradient from "../BgGradient";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import formatNumber from "@/lib/formatNumber";
 import LinksArtist from "./LinksArtist";
 import SpotifyButton from "../SpotifyButton";
 import { TArtist } from "@/types/TArtist";
+import ImageLoader from "../ImageLoader";
 
 export default function DescriptionArtist({
   dataArtist,
@@ -19,15 +19,13 @@ export default function DescriptionArtist({
 
       <div className="relative z-[2] container pt-24 pb-11 flex gap-6 max-lg:pt-16 max-sm:px-3 max-sm:py-8 max-sm:flex-col max-sm:gap-4">
         <div className="flex justify-between items-start">
-          <Image
+          <ImageLoader
+            alt={`${dataArtist.profile.name} image`}
             src={
               dataArtist.visuals.avatarImage?.sources?.[0]?.url ??
               "/no-image.webp"
             }
-            width={300}
-            height={300}
-            className="shadow-strong rounded-[4px] max-lg:w-48 max-lg:h-48 max-lg:rounded-sm"
-            alt={`${dataArtist.profile.name} image`}
+            className="shadow-strong rounded-[4px] w-[500px] h-[500px] max-lg:w-48 max-lg:h-48 max-lg:rounded-sm"
           />
 
           <SpotifyButton
