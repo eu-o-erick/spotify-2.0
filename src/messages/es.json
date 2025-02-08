@@ -56,6 +56,10 @@
     "artistNotFound": {
       "title": "Artista No Encontrado",
       "description": "No pudimos encontrar a este artista. Verifica el nombre o intenta otra búsqueda."
+    },
+    "albumsNotFound": {
+      "title": "Álbumes No Encontrados",
+      "description": "No pudimos encontrar álbumes de este artista. Intenta otra búsqueda o revisa nuevamente más tarde."
     }
   },
   "PaginationComponent": {

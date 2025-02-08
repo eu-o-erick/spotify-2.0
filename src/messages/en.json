@@ -56,6 +56,10 @@
     "artistNotFound": {
       "title": "Artist Not Found",
       "description": "We couldn't find this artist. Please check the name or try another search."
+    },
+    "albumsNotFound": {
+      "title": "Albums Not Found",
+      "description": "We couldn't find any albums for this artist. Please try another search or check back later."
     }
   },
   "PaginationComponent": {

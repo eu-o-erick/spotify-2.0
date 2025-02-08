@@ -8,8 +8,14 @@ import { TReleasesArtistAlbums } from "@/types/TDataArtistAlbums";
 import TitleArtistAlbums from "@/components/Search/Artists/Albums/Title";
 import ListArtistAlbums from "@/components/Search/Artists/Albums/ListArtistAlbums";
 import FilterAlbums from "@/components/Search/Artists/Albums/ChangeType";
+import NotFoundComponent from "@/components/NotFound";
+import { useTranslations } from "next-intl";
+import ListItemsComponentSkeleton from "@/components/Skeletons/List";
+import AlbumComponentSkeleton from "@/components/Skeletons/AlbumItem";
 
 export default function SearchPage() {
+  const t = useTranslations("ArtistPage.albumsNotFound");
+
   const searchParams = useSearchParams();
 
   const type = searchParams.get("type");
@@ -55,30 +61,28 @@ export default function SearchPage() {
     fetchResults();
   }, [type, artistId, page]);
 
-  if (loading) {
-    return <h1 className="container py-24 flex-1">carregando</h1>;
-  }
-
-  if (noResults) {
-    return (
-      <h1 className="container py-24 flex-1">nenhum artista encontrado</h1>
-    );
-  }
-
   return (
     <main className="flex-1 my-28 container max-sm:my-16">
       <TitleArtistAlbums artistId={artistId!} name={name ?? ""} />
 
       <FilterAlbums artistId={artistId!} type={type ?? ""} name={name ?? ""} />
 
-      <ListArtistAlbums
-        artistId={artistId!}
-        type={type ?? ""}
-        dataAlbums={dataAlbums!}
-        page={page ?? "1"}
-        totalPages={totalPages}
-        name={name ?? ""}
-      />
+      {loading ? (
+        <ListItemsComponentSkeleton>
+          <AlbumComponentSkeleton />
+        </ListItemsComponentSkeleton>
+      ) : noResults ? (
+        <NotFoundComponent title={t("title")} description={t("description")} />
+      ) : (
+        <ListArtistAlbums
+          artistId={artistId!}
+          type={type ?? ""}
+          dataAlbums={dataAlbums!}
+          page={page ?? "1"}
+          totalPages={totalPages}
+          name={name ?? ""}
+        />
+      )}
     </main>
   );
 }

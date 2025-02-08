@@ -55,6 +55,10 @@
     "artistNotFound": {
       "title": "Artiste Introuvable",
       "description": "Nous n'avons pas pu trouver cet artiste. Vérifiez le nom ou essayez une autre recherche."
+    },
+    "albumsNotFound": {
+      "title": "Albums Introuvables",
+      "description": "Nous n'avons pas pu trouver d'albums pour cet artiste. Essayez une nouvelle recherche ou revenez plus tard."
     }
   },
   "PaginationComponent": {
