@@ -25,6 +25,11 @@
     "singles": "Sencillos",
     "albums": "Álbumes"
   },
+  "error404": {
+    "title": "Página No Encontrada",
+    "description": "Lo sentimos, no pudimos encontrar lo que buscabas. Intenta buscar de nuevo o vuelve a la página de inicio.",
+    "button": "Volver a la Página de Inicio"
+  },
   "FooterComponent": {
     "nav": {
       "home": "INICIO",
@@ -46,7 +51,12 @@
     "similarArtists": "Artistas Similares",
     "seeAllResulst": "ver todos los resultados",
     "albums": "Álbumes",
-    "singles": "Sencillos"
+    "singles": "Sencillos",
+    "compilations": "Compilaciones",
+    "artistNotFound": {
+      "title": "Artista No Encontrado",
+      "description": "No pudimos encontrar a este artista. Verifica el nombre o intenta otra búsqueda."
+    }
   },
   "PaginationComponent": {
     "next": "Siguiente",

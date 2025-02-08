@@ -2,14 +2,17 @@
 
 import ArtistContent from "@/components/Artist/ArtistContent";
 import DescriptionArtist from "@/components/Artist/Description";
+import NotFoundComponent from "@/components/NotFound";
 import ArtistContentSkeleton from "@/components/Skeletons/ArtistComponent";
 import DescriptionArtistSkeleton from "@/components/Skeletons/ArtistDescription";
 import { fetchSpotifyArtist } from "@/services/spotifyGetArtist";
 import { TArtist } from "@/types/TArtist";
+import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function ArtistPage() {
+  const t = useTranslations("ArtistPage.artistNotFound");
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
 
@@ -46,9 +49,7 @@ export default function ArtistPage() {
         </>
       )}
       {notFind && (
-        <>
-          <h1 className="container py-20 flex-1">nenhum artista encontrado</h1>
-        </>
+        <NotFoundComponent title={t("title")} description={t("description")} />
       )}
       {!loading && dataArtist && (
         <>

@@ -25,6 +25,11 @@
     "singles": "Singles",
     "albums": "Albums"
   },
+  "error404": {
+    "title": "Page Introuvable",
+    "description": "Désolé, nous n'avons pas trouvé ce que vous cherchiez. Essayez une nouvelle recherche ou retournez à la page d'accueil.",
+    "button": "Retour à l'Accueil"
+  },
   "FooterComponent": {
     "nav": {
       "home": "ACCUEIL",
@@ -46,7 +51,11 @@
     "similarArtists": "Artistes Similaires",
     "seeAllResulst": "voir tous les résultats",
     "albums": "Albums",
-    "singles": "Singles"
+    "singles": "Singles",
+    "artistNotFound": {
+      "title": "Artiste Introuvable",
+      "description": "Nous n'avons pas pu trouver cet artiste. Vérifiez le nom ou essayez une autre recherche."
+    }
   },
   "PaginationComponent": {
     "next": "Suivant",

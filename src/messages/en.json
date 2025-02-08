@@ -25,6 +25,11 @@
     "singles": "Singles",
     "albums": "Albums"
   },
+  "error404": {
+    "title": "Page Not Found",
+    "description": "Sorry, we couldn't find what you were looking for. Try searching again or go back to the homepage.",
+    "button": "Go to Homepage"
+  },
   "FooterComponent": {
     "nav": {
       "home": "HOME",
@@ -46,7 +51,12 @@
     "similarArtists": "Similar Artists",
     "seeAllResulst": "see all results",
     "albums": "Albums",
-    "singles": "Singles"
+    "singles": "Singles",
+    "compilations": "Compilations",
+    "artistNotFound": {
+      "title": "Artist Not Found",
+      "description": "We couldn't find this artist. Please check the name or try another search."
+    }
   },
   "PaginationComponent": {
     "next": "next",
