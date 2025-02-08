@@ -25,7 +25,7 @@ export default function DescriptionArtist({
               dataArtist.visuals.avatarImage?.sources?.[0]?.url ??
               "/no-image.webp"
             }
-            className="shadow-strong rounded-[4px] w-[500px] h-[500px] max-lg:w-48 max-lg:h-48 max-lg:rounded-sm"
+            className="shadow-strong rounded-[4px] w-[300px] h-[300px] max-lg:w-48 max-lg:h-48 max-lg:rounded-sm"
           />
 
           <SpotifyButton
