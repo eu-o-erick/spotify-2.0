@@ -29,7 +29,7 @@ export async function GET(req: NextRequest) {
 
     const { data } = await response.json();
 
-    if (!data || data.artist?.length === 0) {
+    if (!data || !data.artist) {
       return NextResponse.json({ error: "Artist not found" }, { status: 404 });
     }
 
