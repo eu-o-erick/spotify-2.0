@@ -22,7 +22,7 @@ export default function NotFoundComponent({
   }
 
   return (
-    <div className="flex flex-col items-center py-20">
+    <div className="flex flex-1 flex-col items-center py-20">
       <span className="text-[200px] leading-[1] font-bold text-secondary max-lg:text-9xl max-sm:text-7xl">
         404
       </span>
