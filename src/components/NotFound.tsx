@@ -23,11 +23,11 @@ export default function NotFoundComponent({
 
   return (
     <div className="flex flex-1 flex-col items-center py-20">
-      <span className="text-[200px] leading-[1] font-bold text-secondary max-lg:text-9xl max-sm:text-7xl">
+      <span className="text-[160px] leading-[1] font-bold text-secondary max-lg:text-8xl max-md:text-6xl">
         404
       </span>
 
-      <h2 className="pt-6 pb-2 text-3xl font-light text-zinc-300 max-lg:pt-2 max-lg:text-lg">
+      <h2 className="pt-6 pb-2 text-xl font-light text-zinc-300 max-md:pt-2 max-md:text-xm">
         {title ?? t("title")}
       </h2>
       <p className="pb-10 font-light text-zinc-400 max-w-[500px] text-center max-md:text-xs max-sm:max-w-[320px] max-sm:pb-6">
@@ -37,7 +37,7 @@ export default function NotFoundComponent({
       <ButtonComponent
         label={t("button")}
         handle={goToHome}
-        className="text-lg px-10 max-sm:!px-6"
+        className="px-10 max-sm:!px-6"
       />
     </div>
   );
