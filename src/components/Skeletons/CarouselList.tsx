@@ -9,7 +9,7 @@ export default function CarouselListComponentSkeleton({
   className?: string;
 }) {
   return (
-    <div>
+    <div className="w-full">
       <ul className={cn(`grid grid-cols-6 gap-0 max-lg:hidden`, className)}>
         {new Array(6).fill(0).map((_, i) => (
           <li key={i}>{children}</li>

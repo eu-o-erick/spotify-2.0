@@ -12,8 +12,8 @@ export default function HeaderComponent() {
           <Image src="/logo.png" width={30} height={30} alt="logo" />
         </div>
 
-        <div className="w-24 h-7 max-md:w-24 max-md:h-8">
-          <Image src="/name.png" width={200} height={200} alt="logo" />
+        <div className="w-24 h-8 max-md:w-24 max-md:h-8">
+          <Image src="/name.png" width={96} height={32} alt="logo" />
         </div>
       </Link>
 

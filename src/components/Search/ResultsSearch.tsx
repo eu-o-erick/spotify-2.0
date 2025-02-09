@@ -15,64 +15,61 @@ export default function ResultsSearchComponent({
   dataAlbums,
   pagesAlbums,
   pagesArtists,
+  isLoading,
 }: {
   query: string;
   dataArtists: TSearchArtist[];
   dataAlbums: TSearchAlbum[];
   pagesAlbums: number;
   pagesArtists: number;
+  isLoading: boolean;
 }) {
   const t = useTranslations("SearchPage");
 
-  console.log("pagesArtists:", pagesArtists);
-  console.log("pagesAlbums:", pagesAlbums);
-
   return (
-    <>
-      {dataArtists.length > 0 && (
-        <section className="container pb-10 flex flex-col items-end">
-          <SwiperListComponent
-            title={t("artistsFound")}
-            isArtistComponent={true}
-            titleNotFound="artistsFound"
+    <section>
+      <div className="container pb-10 flex flex-col items-end">
+        <SwiperListComponent
+          title={t("artistsFound")}
+          isArtistComponent={true}
+          titleNotFound="artistsFound"
+          isLoading={isLoading}
+        >
+          {dataArtists.map((artist, i) => (
+            <ItemArtistComponent key={i} artist={artist} />
+          ))}
+        </SwiperListComponent>
+
+        {pagesArtists > 1 && (
+          <Link
+            className="hover:underline opacity-60 hover:opacity-90 transition-all max-sm:px-2"
+            href={{ pathname: "/search/artists", query: { q: query } }}
           >
-            {dataArtists.map((artist, i) => (
-              <ItemArtistComponent key={i} artist={artist} />
-            ))}
-          </SwiperListComponent>
+            {t("seeAllArtists")}
+          </Link>
+        )}
+      </div>
 
-          {pagesArtists > 1 && (
-            <Link
-              className="hover:underline opacity-60 hover:opacity-90 transition-all max-sm:px-2"
-              href={{ pathname: "/search/artists", query: { q: query } }}
-            >
-              {t("seeAllArtists")}
-            </Link>
-          )}
-        </section>
-      )}
+      <div className="container py-10 flex flex-col items-end">
+        <h2 className="container text-2xl max-md:text-xl mb-7 max-sm:px-2">
+          {t("albumsFound")}
+        </h2>
 
-      {dataAlbums.length > 0 && (
-        <section className="container py-10 flex flex-col items-end">
-          <h2 className="container text-2xl max-md:text-xl mb-7 max-sm:px-2">
-            {t("albumsFound")}
-          </h2>
-          <ListAlbumsComponent>
-            {dataAlbums.map((album, i) => (
-              <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
-            ))}
-          </ListAlbumsComponent>
+        <ListAlbumsComponent isLoading={isLoading}>
+          {dataAlbums.map((album, i) => (
+            <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
+          ))}
+        </ListAlbumsComponent>
 
-          {pagesAlbums > 1 && (
-            <Link
-              className="hover:underline opacity-60 hover:opacity-90 transition-all max-sm:px-2"
-              href={{ pathname: "/search/albums", query: { q: query } }}
-            >
-              {t("seeAllAlbums")}
-            </Link>
-          )}
-        </section>
-      )}
-    </>
+        {pagesAlbums > 1 && (
+          <Link
+            className="hover:underline opacity-60 hover:opacity-90 transition-all max-sm:px-2"
+            href={{ pathname: "/search/albums", query: { q: query } }}
+          >
+            {t("seeAllAlbums")}
+          </Link>
+        )}
+      </div>
+    </section>
   );
 }

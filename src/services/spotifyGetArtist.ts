@@ -16,14 +16,14 @@ export const fetchSpotifyArtist = async (artistId: string) => {
 
     const response = await fetch(url);
 
-    const { artist, error }: { artist: TArtist; error: string | undefined } =
+    const data: { artist: TArtist; error: string | undefined } =
       await response.json();
 
-    if (error) return null;
+    if (data.error) return null;
 
-    saveArtistToCache(artist, artistId);
+    saveArtistToCache(data.artist, artistId);
 
-    return artist;
+    return data.artist;
   } catch (err) {
     console.error("Error fetching data:", err);
 

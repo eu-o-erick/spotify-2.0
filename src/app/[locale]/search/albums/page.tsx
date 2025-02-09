@@ -5,8 +5,6 @@ import NothingYetSearchComponent from "@/components/Search/NothingYet";
 import ResultsSearchAlbumsComponent from "@/components/Search/Albums/ResultsSearch";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import LoadingSearchAlbumComponent from "@/components/Search/Albums/Loading";
-import NoResultsSearchAlbumComponent from "@/components/Search/Albums/NoResults";
 import { fetchSpotifySearch } from "@/services/spotifySearch";
 import PaginationComponent from "@/components/Pagination";
 import { TSearchAlbum } from "@/types/TAlbum";
@@ -19,18 +17,16 @@ export default function SearchPage() {
 
   const [dataAlbums, setDataAlbums] = useState<TSearchAlbum[]>([]);
   const [pagesAlbums, setPagesAlbums] = useState(0);
-  const [loading, setLoading] = useState(true);
-
-  const noResults = query && !dataAlbums.length;
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    setIsLoading(true);
     setDataAlbums([]);
 
-    if (!query && !artistId) return setLoading(false);
+    if (!query && !artistId) return setIsLoading(false);
 
     const fetchResults = async () => {
-      setLoading(true);
+      setIsLoading(true);
 
       const { albums, totalPagesAlbums } = await fetchSpotifySearch(
         "albums",
@@ -42,7 +38,7 @@ export default function SearchPage() {
       setDataAlbums(albums);
       setPagesAlbums(totalPagesAlbums);
 
-      setLoading(false);
+      setIsLoading(false);
     };
 
     fetchResults();
@@ -52,17 +48,14 @@ export default function SearchPage() {
     <main className="flex-1 mb-28">
       <SearchComponent />
 
-      {!query && !artistId && <NothingYetSearchComponent />}
-
-      {loading && <LoadingSearchAlbumComponent />}
-
-      {noResults && !loading && <NoResultsSearchAlbumComponent query={query} />}
-
-      {(artistId || query) && !noResults && (
+      {!query ? (
+        <NothingYetSearchComponent />
+      ) : (
         <>
           <ResultsSearchAlbumsComponent
             query={query!}
             dataAlbums={dataAlbums}
+            isLoading={isLoading}
           />
           <PaginationComponent
             query={query}

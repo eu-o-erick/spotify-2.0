@@ -27,7 +27,7 @@ export default function ItemArtistComponent({
         <ImageLoader
           alt={`cover '${data.profile.name}'`}
           src={data.visuals.avatarImage?.sources?.[0]?.url ?? "/no-image.webp"}
-          className="pointer-events-none transform transition-all"
+          className="aspect-square object-cover pointer-events-none transform transition-all"
         />
       </Link>
 

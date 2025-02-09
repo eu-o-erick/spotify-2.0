@@ -51,8 +51,6 @@ export const fetchSpotifySearch = async (
     const { data, error }: { data: TDataSearch; error: string | undefined } =
       await response.json();
 
-    console.log("data: ", data);
-
     if (error)
       return {
         albums: [],

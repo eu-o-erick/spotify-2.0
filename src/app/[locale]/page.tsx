@@ -10,18 +10,15 @@ import latestAlbums from "@/data/latest_albums.json";
 import featuredArtists from "@/data/featured_artists.json";
 import ItemArtistComponent from "@/components/Items/ItemArtist";
 import { useEffect, useState } from "react";
-import CarouselComponentSkeleton from "@/components/Skeletons/Carousel";
-import ArtistComponentSkeleton from "@/components/Skeletons/ArtistItem";
-import AlbumComponentSkeleton from "@/components/Skeletons/AlbumItem";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
 
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false);
+      setIsLoading(false);
     }, 1000);
   }, []);
 
@@ -29,55 +26,46 @@ export default function HomePage() {
     <main className="flex-1 mb-20">
       <SearchComponent />
 
-      {loading ? (
-        <div className="container flex flex-col gap-4">
-          <CarouselComponentSkeleton>
-            <AlbumComponentSkeleton />
-          </CarouselComponentSkeleton>
+      <SwiperListComponent
+        title={t("featuredAlbums")}
+        titleNotFound="featuredAlbums"
+        isLoading={isLoading}
+      >
+        {featuredAlbums.items.map((album, i) => (
+          <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
+        ))}
+      </SwiperListComponent>
 
-          <CarouselComponentSkeleton>
-            <AlbumComponentSkeleton />
-          </CarouselComponentSkeleton>
+      <SwiperListComponent
+        title={t("featuredAlbums")}
+        titleNotFound="featuredAlbums"
+        isLoading={isLoading}
+      >
+        {featuredAlbums.items.map((album, i) => (
+          <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
+        ))}
+      </SwiperListComponent>
 
-          <CarouselComponentSkeleton>
-            <ArtistComponentSkeleton />
-          </CarouselComponentSkeleton>
-        </div>
-      ) : (
-        <>
-          <SwiperListComponent
-            title={t("featuredAlbums")}
-            titleNotFound="featuredAlbums"
-          >
-            {featuredAlbums.items.map((album, i) => (
-              <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
-            ))}
-          </SwiperListComponent>
+      <SwiperListComponent
+        title={t("latestAlbums")}
+        titleNotFound="latestAlbums"
+        isLoading={isLoading}
+      >
+        {latestAlbums.items.map((album, i) => (
+          <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
+        ))}
+      </SwiperListComponent>
 
-          <SwiperListComponent
-            title={t("latestAlbums")}
-            titleNotFound="latestAlbums"
-          >
-            {[
-              latestAlbums.items[0],
-              latestAlbums.items[1],
-              latestAlbums.items[2],
-            ].map((album, i) => (
-              <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
-            ))}
-          </SwiperListComponent>
-
-          <SwiperListComponent
-            title={t("featuredArtists")}
-            isArtistComponent={true}
-            titleNotFound="artistAlbums"
-          >
-            {featuredArtists.items.map((artist, i) => (
-              <ItemArtistComponent key={i} artist={artist} />
-            ))}
-          </SwiperListComponent>
-        </>
-      )}
+      <SwiperListComponent
+        title={t("featuredArtists")}
+        isArtistComponent={true}
+        titleNotFound="artistAlbums"
+        isLoading={isLoading}
+      >
+        {featuredArtists.items.map((artist, i) => (
+          <ItemArtistComponent key={i} artist={artist} />
+        ))}
+      </SwiperListComponent>
     </main>
   );
 }

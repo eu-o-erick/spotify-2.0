@@ -1,8 +1,6 @@
 "use client";
 
 import SearchComponent from "@/components/Search";
-import LoadingSearchComponent from "@/components/Search/Loading";
-import NoResultsSearchComponent from "@/components/Search/NoResults";
 import NothingYetSearchComponent from "@/components/Search/NothingYet";
 import ResultsSearchComponent from "@/components/Search/ResultsSearch";
 import { fetchSpotifySearch } from "@/services/spotifySearch";
@@ -21,16 +19,14 @@ export default function SearchPage() {
   const [pagesAlbums, setPagesAlbums] = useState(0);
   const [pagesArtists, setPagesArtists] = useState(0);
 
-  const [loading, setLoading] = useState(true);
-
-  const noResults = query && !dataAlbums.length && !dataArtists.length;
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    setIsLoading(true);
     setDataAlbums([]);
     setDataArtists([]);
 
-    if (!query) return setLoading(false);
+    if (!query) return setIsLoading(false);
 
     const fetchResults = async () => {
       const { albums, artists, totalPagesAlbums, totalPagesArtists } =
@@ -42,7 +38,7 @@ export default function SearchPage() {
       setPagesAlbums(totalPagesAlbums);
       setPagesArtists(totalPagesArtists);
 
-      setLoading(false);
+      setIsLoading(false);
     };
 
     fetchResults();
@@ -52,19 +48,16 @@ export default function SearchPage() {
     <main className="flex-1 mb-28">
       <SearchComponent />
 
-      {!query && <NothingYetSearchComponent />}
-
-      {loading && <LoadingSearchComponent />}
-
-      {noResults && !loading && <NoResultsSearchComponent query={query} />}
-
-      {query && !noResults && (
+      {!query ? (
+        <NothingYetSearchComponent />
+      ) : (
         <ResultsSearchComponent
-          query={query!}
+          query={query}
           dataArtists={dataArtists}
           dataAlbums={dataAlbums}
           pagesAlbums={pagesAlbums}
           pagesArtists={pagesArtists}
+          isLoading={isLoading}
         />
       )}
     </main>

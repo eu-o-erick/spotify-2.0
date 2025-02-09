@@ -66,12 +66,14 @@
     "prev": "Précédent"
   },
   "EmptyCarousel": {
-    "featuredAlbums": "Aucun album en vedette disponible pour le moment.",
+    "featuredAlbums": "Aucun album en vedette disponible.",
     "latestAlbums": "Aucun album récent trouvé.",
     "featuredArtists": "Aucun artiste en vedette disponible.",
-    "artistAlbums": "Aucun album trouvé pour cet artiste.",
+    "artistAlbums": "Cet artiste n'a pas d'albums à afficher.",
     "similarArtists": "Aucun artiste similaire trouvé.",
-    "artistsFound": "Aucun artiste correspondant trouvé."
+    "artistsFound": "Aucun artiste ne correspond à votre recherche.",
+    "searchAlbums": "Aucun album ne correspond à votre recherche.",
+    "searchArtists": "Aucun artiste ne correspond à votre recherche."
   },
   "PrivacyPage": {
     "title": "Politique de confidentialité",

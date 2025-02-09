@@ -50,12 +50,14 @@
     "prev": "Anterior"
   },
   "EmptyCarousel": {
-    "featuredAlbums": "Nenhum álbum em destaque disponível no momento.",
+    "featuredAlbums": "Nenhum álbum em destaque disponível.",
     "latestAlbums": "Nenhum álbum recente encontrado.",
     "featuredArtists": "Nenhum artista em destaque disponível.",
-    "artistAlbums": "Nenhum álbum encontrado para este artista.",
-    "similarArtists": "Nenhum artista similar encontrado.",
-    "artistsFound": "Nenhum artista correspondente foi encontrado."
+    "artistAlbums": "Este artista não tem álbuns para mostrar.",
+    "similarArtists": "Nenhum artista semelhante encontrado.",
+    "artistsFound": "Nenhum artista corresponde à sua pesquisa.",
+    "searchAlbums": "Nenhum álbum corresponde à sua pesquisa.",
+    "searchArtists": "Nenhum artista corresponde à sua pesquisa."
   },
   "FooterComponent": {
     "nav": {

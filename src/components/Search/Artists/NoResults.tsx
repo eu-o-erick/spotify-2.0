@@ -1,5 +1,6 @@
 "use client";
 
+import EmptyCarouselComponent from "@/components/EmptyCarousel";
 import { useTranslations } from "next-intl";
 
 export default function NoResultsSearchArtistsComponent({
@@ -10,11 +11,13 @@ export default function NoResultsSearchArtistsComponent({
   const t = useTranslations("SearchPage");
 
   return (
-    <h2 className="container text-zinc-500 text-xl mt-20 mb-80 font-light">
-      {t("nothingFoundArtists")}{" "}
-      <span className="font-semibold">{decodeURIComponent(query)}</span>
-      {". "}
-      {t("tryAgain")}
-    </h2>
+    <div className="container">
+      <EmptyCarouselComponent
+        isArtistComponent={true}
+        titleNotFound={`${t("nothingFoundArtists")} ${decodeURIComponent(
+          query
+        )} ${t("tryAgain")}`}
+      />
+    </div>
   );
 }

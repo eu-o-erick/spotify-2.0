@@ -2,8 +2,6 @@
 
 import PaginationComponent from "@/components/Pagination";
 import SearchComponent from "@/components/Search";
-import LoadingSearchArtistsComponent from "@/components/Search/Artists/Loading";
-import NoResultsSearchArtistsComponent from "@/components/Search/Artists/NoResults";
 import ResultsSearchArtistsComponent from "@/components/Search/Artists/ResultsSearch";
 import NothingYetSearchComponent from "@/components/Search/NothingYet";
 import { fetchSpotifySearch } from "@/services/spotifySearch";
@@ -18,19 +16,15 @@ export default function SearchPage() {
 
   const [dataArtists, setDataArtists] = useState<TSearchArtist[]>([]);
   const [pagesArtists, setPagesArtists] = useState(0);
-  const [loading, setLoading] = useState(true);
-
-  const noResults = query && !dataArtists.length;
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    setIsLoading(true);
     setDataArtists([]);
 
-    if (!query) return setLoading(false);
+    if (!query) return setIsLoading(false);
 
     const fetchResults = async () => {
-      setLoading(true);
-
       const { artists, totalPagesArtists } = await fetchSpotifySearch(
         "artists",
         query,
@@ -41,7 +35,7 @@ export default function SearchPage() {
       setDataArtists(artists);
       setPagesArtists(totalPagesArtists);
 
-      setLoading(false);
+      setIsLoading(false);
     };
 
     fetchResults();
@@ -51,26 +45,23 @@ export default function SearchPage() {
     <main className="flex-1 mb-28">
       <SearchComponent />
 
-      {!query && <NothingYetSearchComponent />}
-
-      {loading && <LoadingSearchArtistsComponent />}
-
-      {noResults && !loading && (
-        <NoResultsSearchArtistsComponent query={query} />
-      )}
-
-      {query && !noResults && (
+      {!query ? (
+        <NothingYetSearchComponent />
+      ) : (
         <>
           <ResultsSearchArtistsComponent
             query={query!}
             dataArtists={dataArtists}
+            isLoading={isLoading}
           />
-          <PaginationComponent
-            page={page}
-            query={query}
-            artistId={null}
-            totalPages={pagesArtists}
-          />
+          {!isLoading && (
+            <PaginationComponent
+              page={page}
+              query={query}
+              artistId={null}
+              totalPages={pagesArtists}
+            />
+          )}
         </>
       )}
     </main>

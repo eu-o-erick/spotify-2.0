@@ -12,19 +12,20 @@ export default function ListArtistAlbums({
   dataAlbums,
   name,
   totalPages,
+  isLoading,
 }: {
   type: string;
   artistId: string;
   page: string;
   name: string;
-  dataAlbums: TReleasesArtistAlbums[];
+  dataAlbums: TReleasesArtistAlbums[] | undefined | null;
   totalPages: number;
+  isLoading: boolean;
 }) {
   return (
     <>
-      <ListAlbumsComponent>
-        {" "}
-        {dataAlbums?.map(({ releases }, i) => (
+      <ListAlbumsComponent isLoading={isLoading}>
+        {(dataAlbums ?? []).map(({ releases }, i) => (
           <ItemAlbumComponent
             key={i}
             album={releases.items[0]}

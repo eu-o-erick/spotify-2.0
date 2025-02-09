@@ -8,9 +8,11 @@ import { useTranslations } from "next-intl";
 export default function ResultsSearchArtistsComponent({
   query,
   dataArtists,
+  isLoading,
 }: {
   query: string;
   dataArtists: TSearchArtist[];
+  isLoading: boolean;
 }) {
   const t = useTranslations("SearchPage");
 
@@ -21,7 +23,7 @@ export default function ResultsSearchArtistsComponent({
         <span className="font-semibold">{decodeURIComponent(query)}</span>
       </h2>
 
-      <ListAlbumsComponent>
+      <ListAlbumsComponent isLoading={isLoading} isArtistComponent={true}>
         {dataArtists.map((artist, i) => (
           <ItemArtistComponent key={i} artist={artist} />
         ))}

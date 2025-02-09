@@ -8,14 +8,8 @@ import { TReleasesArtistAlbums } from "@/types/TDataArtistAlbums";
 import TitleArtistAlbums from "@/components/Search/Artists/Albums/Title";
 import ListArtistAlbums from "@/components/Search/Artists/Albums/ListArtistAlbums";
 import FilterAlbums from "@/components/Search/Artists/Albums/ChangeType";
-import NotFoundComponent from "@/components/NotFound";
-import { useTranslations } from "next-intl";
-import ListItemsComponentSkeleton from "@/components/Skeletons/List";
-import AlbumComponentSkeleton from "@/components/Skeletons/AlbumItem";
 
 export default function SearchPage() {
-  const t = useTranslations("ArtistPage.albumsNotFound");
-
   const searchParams = useSearchParams();
 
   const type = searchParams.get("type");
@@ -27,19 +21,17 @@ export default function SearchPage() {
     TReleasesArtistAlbums[] | undefined | null
   >(null);
   const [totalPages, setTotalPages] = useState(0);
-  const [loading, setLoading] = useState(true);
-
-  const noResults = artistId && !dataAlbums?.length;
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    setIsLoading(true);
     setDataAlbums(null);
 
     if ((type !== "albums" && type !== "singles") || !artistId)
-      return setLoading(false);
+      return setIsLoading(false);
 
     const fetchResults = async () => {
-      setLoading(true);
+      setIsLoading(true);
 
       const data = await fetchSpotifyArtistAlbums(
         artistId!,
@@ -55,7 +47,7 @@ export default function SearchPage() {
         setTotalPages(data?.totalPagesSingles ?? 0);
       }
 
-      setLoading(false);
+      setIsLoading(false);
     };
 
     fetchResults();
@@ -67,22 +59,15 @@ export default function SearchPage() {
 
       <FilterAlbums artistId={artistId!} type={type ?? ""} name={name ?? ""} />
 
-      {loading ? (
-        <ListItemsComponentSkeleton>
-          <AlbumComponentSkeleton />
-        </ListItemsComponentSkeleton>
-      ) : noResults ? (
-        <NotFoundComponent title={t("title")} description={t("description")} />
-      ) : (
-        <ListArtistAlbums
-          artistId={artistId!}
-          type={type ?? ""}
-          dataAlbums={dataAlbums!}
-          page={page ?? "1"}
-          totalPages={totalPages}
-          name={name ?? ""}
-        />
-      )}
+      <ListArtistAlbums
+        artistId={artistId!}
+        type={type ?? ""}
+        dataAlbums={dataAlbums}
+        page={page ?? "1"}
+        totalPages={totalPages}
+        name={name ?? ""}
+        isLoading={isLoading}
+      />
     </main>
   );
 }

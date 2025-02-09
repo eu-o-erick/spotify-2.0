@@ -7,6 +7,9 @@ import { MdNavigateNext } from "react-icons/md";
 import DropDownComponent from "../DropDown";
 import EmptyCarouselComponent from "../EmptyCarousel";
 import { cn } from "@/lib/cn";
+import CarouselListComponentSkeleton from "../Skeletons/CarouselList";
+import AlbumComponentSkeleton from "../Skeletons/AlbumItem";
+import ArtistComponentSkeleton from "../Skeletons/ArtistItem";
 
 export default function SwiperListComponent({
   children,
@@ -14,6 +17,7 @@ export default function SwiperListComponent({
   isArtistComponent,
   titleNotFound,
   dropDownOptions,
+  isLoading,
 }: {
   children: React.ReactNode[];
   title: string;
@@ -24,6 +28,7 @@ export default function SwiperListComponent({
     setState: React.Dispatch<React.SetStateAction<string>>;
     options: string[];
   };
+  isLoading?: boolean;
 }) {
   const swiperRef = useRef<null | SwiperTypes>(null);
 
@@ -75,7 +80,7 @@ export default function SwiperListComponent({
           )}
 
           <div
-            className={cn("flex gap-2", {
+            className={cn("flex gap-2 pt-1", {
               "opacity-20 pointer-events-none": !isMoreThanSlidesPerView,
             })}
           >
@@ -100,7 +105,15 @@ export default function SwiperListComponent({
         </div>
       </div>
 
-      {!children.length ? (
+      {isLoading ? (
+        <CarouselListComponentSkeleton>
+          {isArtistComponent ? (
+            <ArtistComponentSkeleton />
+          ) : (
+            <AlbumComponentSkeleton />
+          )}
+        </CarouselListComponentSkeleton>
+      ) : !children.length ? (
         <EmptyCarouselComponent
           isArtistComponent={isArtistComponent}
           titleNotFound={titleNotFound}

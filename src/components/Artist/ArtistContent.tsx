@@ -7,17 +7,55 @@ import { Link } from "@/i18n/routing";
 import { useSearchParams } from "next/navigation";
 import { TArtist } from "@/types/TArtist";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { TAlbumArtist } from "@/types/TAlbum";
 
 const options = ["popularReleases", "singles", "albums"];
 
-export default function ArtistContent({ dataArtist }: { dataArtist: TArtist }) {
+export default function ArtistContent({
+  dataArtist,
+  isLoading,
+}: {
+  dataArtist: TArtist | null;
+  isLoading: boolean;
+}) {
   const searchParams = useSearchParams();
   const artistId = searchParams.get("id");
 
+  const [seeAllResulst, setSeeAllResulst] = useState(false);
   const [type, setType] = useState("popularReleases");
+  const [delay, setDelay] = useState(false);
+
+  const [data, setData] = useState<
+    {
+      releases: {
+        items: TAlbumArtist[];
+      };
+    }[]
+  >([]);
 
   const t = useTranslations("ArtistPage");
+
+  useEffect(() => {
+    setSeeAllResulst(
+      (dataArtist?.discography?.singles?.totalCount ?? 0) > 10 ||
+        (dataArtist?.discography?.albums?.totalCount ?? 0) > 10
+    );
+  }, [dataArtist]);
+
+  useEffect(() => {
+    setData([]);
+    setDelay(true);
+
+    setTimeout(() => {
+      setData(
+        dataArtist?.discography?.[
+          type as "popularReleases" | "singles" | "albums"
+        ].items ?? []
+      );
+      setDelay(false);
+    }, 300);
+  }, [dataArtist, type]);
 
   return (
     <section className="container">
@@ -25,10 +63,9 @@ export default function ArtistContent({ dataArtist }: { dataArtist: TArtist }) {
         title={t("artistAlbums")}
         titleNotFound={"artistAlbums"}
         dropDownOptions={{ state: type, setState: setType, options }}
+        isLoading={delay || isLoading}
       >
-        {dataArtist.discography?.[
-          type as "popularReleases" | "singles" | "albums"
-        ].items.map(({ releases }, i) => (
+        {data.map(({ releases }, i) => (
           <ItemAlbumComponent
             key={i}
             album={releases.items[0]}
@@ -37,8 +74,7 @@ export default function ArtistContent({ dataArtist }: { dataArtist: TArtist }) {
         ))}
       </SwiperListComponent>
 
-      {(dataArtist.discography?.singles.totalCount > 10 ||
-        dataArtist.discography?.albums.totalCount > 10) && (
+      {seeAllResulst && (
         <div className="container -mt-6 pb-24 flex flex-col items-end max-sm:-mt-8 max-sm:pb-20">
           <Link
             className="hover:underline opacity-60 hover:opacity-90 transition-all max-sm:px-2 max-sm:text-xs"
@@ -47,7 +83,7 @@ export default function ArtistContent({ dataArtist }: { dataArtist: TArtist }) {
               query: {
                 artistId,
                 type: "albums",
-                name: encodeURIComponent(dataArtist.profile.name),
+                name: encodeURIComponent(dataArtist?.profile.name ?? ""),
               },
             }}
           >
@@ -60,10 +96,13 @@ export default function ArtistContent({ dataArtist }: { dataArtist: TArtist }) {
         title={t("similarArtists")}
         isArtistComponent={true}
         titleNotFound="artistsFound"
+        isLoading={isLoading}
       >
-        {dataArtist.relatedContent.relatedArtists.items.map((artist, i) => (
-          <ItemArtistComponent key={i} artist={artist} isPageArtist={true} />
-        ))}
+        {(dataArtist?.relatedContent.relatedArtists.items ?? []).map(
+          (artist, i) => (
+            <ItemArtistComponent key={i} artist={artist} isPageArtist={true} />
+          )
+        )}
       </SwiperListComponent>
     </section>
   );

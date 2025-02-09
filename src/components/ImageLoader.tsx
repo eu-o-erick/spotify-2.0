@@ -14,9 +14,7 @@ export default function ImageLoader({
   const [loading, setLoading] = useState(true);
 
   const handleLoad = () => {
-    setTimeout(() => {
-      setLoading(false);
-    }, Math.random() * 1000 * 3);
+    setLoading(false);
   };
 
   return (

@@ -67,12 +67,14 @@
     "prev": "previous"
   },
   "EmptyCarousel": {
-    "featuredAlbums": "No featured albums available at the moment.",
-    "latestAlbums": "No recent albums found.",
+    "featuredAlbums": "No featured albums available.",
+    "latestAlbums": "No latest albums found.",
     "featuredArtists": "No featured artists available.",
-    "artistAlbums": "No albums found for this artist.",
+    "artistAlbums": "This artist has no albums to display.",
     "similarArtists": "No similar artists found.",
-    "artistsFound": "No matching artists were found."
+    "artistsFound": "No artists matched your search.",
+    "searchAlbums": "No albums matched your search.",
+    "searchArtists": "No artists matched your search."
   },
   "PrivacyPage": {
     "title": "Privacy Policy",

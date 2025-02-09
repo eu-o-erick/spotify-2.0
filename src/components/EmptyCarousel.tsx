@@ -16,7 +16,7 @@ export default function EmptyCarouselComponent({
   const t = useTranslations("EmptyCarousel");
 
   return (
-    <div className="relative ">
+    <div className="relative w-full">
       <CarouselListComponentSkeleton className="opacity-10">
         {isArtistComponent ? (
           <ArtistComponentSkeleton />

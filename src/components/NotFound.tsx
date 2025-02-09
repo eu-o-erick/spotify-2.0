@@ -12,7 +12,7 @@ export default function NotFoundComponent({
   description?: string;
 }) {
   const locale = useLocale();
-  const t = useTranslations("error404");
+  const t = useTranslations("Error404");
 
   function goToHome() {
     redirect({
