@@ -26,6 +26,7 @@ export const simplifyArtist = (artist: TArtist): TArtist => ({
   },
   discography: {
     popularReleases: {
+      totalCount: artist.discography.popularReleases?.totalCount,
       items:
         artist.discography.popularReleases?.items?.map(({ releases }) => ({
           releases: {
@@ -34,6 +35,7 @@ export const simplifyArtist = (artist: TArtist): TArtist => ({
         })) ?? [],
     },
     singles: {
+      totalCount: artist.discography.singles?.totalCount,
       items:
         artist.discography.singles?.items?.map(({ releases }) => ({
           releases: {
@@ -42,6 +44,7 @@ export const simplifyArtist = (artist: TArtist): TArtist => ({
         })) ?? [],
     },
     albums: {
+      totalCount: artist.discography.albums?.totalCount,
       items:
         artist.discography.albums?.items?.map(({ releases }) => ({
           releases: {

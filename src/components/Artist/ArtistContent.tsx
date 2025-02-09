@@ -37,21 +37,24 @@ export default function ArtistContent({ dataArtist }: { dataArtist: TArtist }) {
         ))}
       </SwiperListComponent>
 
-      <div className="container -mt-6 pb-24 flex flex-col items-end max-sm:-mt-8 max-sm:pb-20">
-        <Link
-          className="hover:underline opacity-60 hover:opacity-90 transition-all max-sm:px-2 max-sm:text-xs"
-          href={{
-            pathname: "/artist/albums",
-            query: {
-              artistId,
-              type: "albums",
-              name: encodeURIComponent(dataArtist.profile.name),
-            },
-          }}
-        >
-          {t("seeAllResulst")}
-        </Link>
-      </div>
+      {(dataArtist.discography?.singles.totalCount > 10 ||
+        dataArtist.discography?.albums.totalCount > 10) && (
+        <div className="container -mt-6 pb-24 flex flex-col items-end max-sm:-mt-8 max-sm:pb-20">
+          <Link
+            className="hover:underline opacity-60 hover:opacity-90 transition-all max-sm:px-2 max-sm:text-xs"
+            href={{
+              pathname: "/artist/albums",
+              query: {
+                artistId,
+                type: "albums",
+                name: encodeURIComponent(dataArtist.profile.name),
+              },
+            }}
+          >
+            {t("seeAllResulst")}
+          </Link>
+        </div>
+      )}
 
       <SwiperListComponent
         title={t("similarArtists")}

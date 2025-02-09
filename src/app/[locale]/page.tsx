@@ -58,7 +58,11 @@ export default function HomePage() {
             title={t("latestAlbums")}
             titleNotFound="latestAlbums"
           >
-            {latestAlbums.items.map((album, i) => (
+            {[
+              latestAlbums.items[0],
+              latestAlbums.items[1],
+              latestAlbums.items[2],
+            ].map((album, i) => (
               <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
             ))}
           </SwiperListComponent>

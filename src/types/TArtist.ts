@@ -28,6 +28,7 @@ export type TArtist = {
   };
   discography: {
     popularReleases: {
+      totalCount: number;
       items: {
         releases: {
           items: TAlbumArtist[];
@@ -35,6 +36,7 @@ export type TArtist = {
       }[];
     };
     singles: {
+      totalCount: number;
       items: {
         releases: {
           items: TAlbumArtist[];
@@ -42,6 +44,7 @@ export type TArtist = {
       }[];
     };
     albums: {
+      totalCount: number;
       items: {
         releases: {
           items: TAlbumArtist[];

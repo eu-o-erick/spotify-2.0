@@ -14,7 +14,9 @@ export default function ImageLoader({
   const [loading, setLoading] = useState(true);
 
   const handleLoad = () => {
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, Math.random() * 1000 * 3);
   };
 
   return (
@@ -33,7 +35,7 @@ export default function ImageLoader({
         alt={alt}
         width={500}
         height={500}
-        onLoadingComplete={handleLoad}
+        onLoad={handleLoad}
         className={cn(
           "relative pointer-events-auto shadow-strong max-lg:rounded-sm",
           className,

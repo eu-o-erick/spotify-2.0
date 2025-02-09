@@ -22,5 +22,5 @@ export type TResultsSearch = {
   albums: TSearchAlbum[];
   artists: TSearchArtist[];
   totalPagesAlbums: number;
-  tatalPagesArtists: number;
+  totalPagesArtists: number;
 };

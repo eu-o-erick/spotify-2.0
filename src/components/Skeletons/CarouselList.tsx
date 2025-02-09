@@ -20,12 +20,12 @@ export default function CarouselListComponentSkeleton({
           <li key={i}>{children}</li>
         ))}
       </ul>
-      <ul className={cn(`grid grid-cols-3 md:hidden max-xs:hidden`, className)}>
+      <ul className={cn(`grid grid-cols-3 md:hidden max-sm:hidden`, className)}>
         {new Array(3).fill(0).map((_, i) => (
           <li key={i}>{children}</li>
         ))}
       </ul>
-      <ul className={cn(`hidden grid-cols-2 max-xs:grid`, className)}>
+      <ul className={cn(`hidden grid-cols-2 max-sm:grid`, className)}>
         {new Array(2).fill(0).map((_, i) => (
           <li key={i}>{children}</li>
         ))}

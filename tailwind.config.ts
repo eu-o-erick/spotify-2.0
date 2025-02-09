@@ -9,13 +9,10 @@ export default {
   theme: {
     extend: {
       screens: {
-        xs: "500px",
-      },
-      colors: {
-        main: "var(--background-color)",
-        primary: "var(--primary-color)",
-        secondary: "var(--secondary-color)",
-        white: "var(--white)",
+        sm: "500px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
       },
       container: {
         center: true,
@@ -25,6 +22,12 @@ export default {
           lg: "1024px",
           xl: "1280px",
         },
+      },
+      colors: {
+        main: "var(--background-color)",
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
+        white: "var(--white)",
       },
       boxShadow: {
         strong: "4px 4px 4px rgba(0, 0, 0, 0.2)",

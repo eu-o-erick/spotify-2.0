@@ -27,15 +27,19 @@ export const fetchSpotifySearch = async (
       albums: cachedData.albums?.items || [],
       artists: cachedData.artists?.items || [],
       totalPagesAlbums:
-        Math.ceil(
-          (cachedData.albums?.totalCount ?? 0) /
-            (cachedData.albums?.pagingInfo?.limit ?? 0)
-        ) ?? 0,
-      tatalPagesArtists:
-        Math.ceil(
-          (cachedData.artists?.totalCount ?? 0) /
-            (cachedData.artists?.pagingInfo?.limit ?? 0)
-        ) ?? 0,
+        type === "multi"
+          ? Math.ceil((cachedData.albums?.totalCount ?? 0) / 12) ?? 0
+          : Math.ceil(
+              (cachedData.albums?.totalCount ?? 0) /
+                (cachedData.albums?.pagingInfo?.limit ?? 0)
+            ) ?? 0,
+      totalPagesArtists:
+        type === "multi"
+          ? Math.ceil((cachedData.artists?.totalCount ?? 0) / 12) ?? 0
+          : Math.ceil(
+              (cachedData.artists?.totalCount ?? 0) /
+                (cachedData.artists?.pagingInfo?.limit ?? 0)
+            ) ?? 0,
     };
   }
 
@@ -47,12 +51,14 @@ export const fetchSpotifySearch = async (
     const { data, error }: { data: TDataSearch; error: string | undefined } =
       await response.json();
 
+    console.log("data: ", data);
+
     if (error)
       return {
         albums: [],
         artists: [],
         totalPagesAlbums: 0,
-        tatalPagesArtists: 0,
+        totalPagesArtists: 0,
       };
 
     saveSearchToCache(data, type, query, artistId, page);
@@ -61,14 +67,19 @@ export const fetchSpotifySearch = async (
       albums: data.albums?.items || [],
       artists: data.artists?.items || [],
       totalPagesAlbums:
-        Math.ceil(
-          (data.albums?.totalCount ?? 0) / (data.albums?.pagingInfo?.limit ?? 0)
-        ) ?? 0,
-      tatalPagesArtists:
-        Math.ceil(
-          (data.artists?.totalCount ?? 0) /
-            (data.artists?.pagingInfo?.limit ?? 0)
-        ) ?? 0,
+        type === "multi"
+          ? Math.ceil((data.albums?.totalCount ?? 0) / 12) ?? 0
+          : Math.ceil(
+              (data.albums?.totalCount ?? 0) /
+                (data.albums?.pagingInfo?.limit ?? 0)
+            ) ?? 0,
+      totalPagesArtists:
+        type === "multi"
+          ? Math.ceil((data.artists?.totalCount ?? 0) / 12) ?? 0
+          : Math.ceil(
+              (data.artists?.totalCount ?? 0) /
+                (data.artists?.pagingInfo?.limit ?? 0)
+            ) ?? 0,
     };
   } catch (err) {
     console.error("Error fetching data:", err);
@@ -77,7 +88,7 @@ export const fetchSpotifySearch = async (
       albums: [],
       artists: [],
       totalPagesAlbums: 0,
-      tatalPagesArtists: 0,
+      totalPagesArtists: 0,
     };
   }
 };

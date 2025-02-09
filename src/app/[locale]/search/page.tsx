@@ -33,14 +33,14 @@ export default function SearchPage() {
     if (!query) return setLoading(false);
 
     const fetchResults = async () => {
-      const { albums, artists, totalPagesAlbums, tatalPagesArtists } =
+      const { albums, artists, totalPagesAlbums, totalPagesArtists } =
         await fetchSpotifySearch("multi", query, null, page);
 
       setDataAlbums(albums);
       setDataArtists(artists);
 
       setPagesAlbums(totalPagesAlbums);
-      setPagesArtists(tatalPagesArtists);
+      setPagesArtists(totalPagesArtists);
 
       setLoading(false);
     };

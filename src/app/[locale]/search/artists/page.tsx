@@ -31,7 +31,7 @@ export default function SearchPage() {
     const fetchResults = async () => {
       setLoading(true);
 
-      const { artists, tatalPagesArtists } = await fetchSpotifySearch(
+      const { artists, totalPagesArtists } = await fetchSpotifySearch(
         "artists",
         query,
         null,
@@ -39,7 +39,7 @@ export default function SearchPage() {
       );
 
       setDataArtists(artists);
-      setPagesArtists(tatalPagesArtists);
+      setPagesArtists(totalPagesArtists);
 
       setLoading(false);
     };
