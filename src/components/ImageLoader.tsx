@@ -34,9 +34,13 @@ export default function ImageLoader({
         width={500}
         height={500}
         onLoadingComplete={handleLoad}
-        className={cn("relative pointer-events-auto", className, {
-          "absolute pointer-events-none opacity-0": loading,
-        })}
+        className={cn(
+          "relative pointer-events-auto shadow-strong max-lg:rounded-sm",
+          className,
+          {
+            "absolute pointer-events-none opacity-0": loading,
+          }
+        )}
       />
     </div>
   );

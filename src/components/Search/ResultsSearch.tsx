@@ -26,13 +26,17 @@ export default function ResultsSearchComponent({
 
   return (
     <>
-      <h2 className="container text-zinc-500 text-xl mb-14 font-light max-[500px]:px-2">
+      <h2 className="container text-zinc-500 text-xl mb-14 font-light max-xs:px-2">
         {t("response")}{" "}
         <span className="font-semibold">{decodeURIComponent(query)}</span>
       </h2>
 
       <section className="container pb-10 flex flex-col items-end">
-        <SwiperListComponent title={t("artistsFound")}>
+        <SwiperListComponent
+          title={t("artistsFound")}
+          isArtistComponent={true}
+          titleNotFound="artistsFound"
+        >
           {dataArtists.map((artist, i) => (
             <ItemArtistComponent key={i} artist={artist} />
           ))}
@@ -40,7 +44,7 @@ export default function ResultsSearchComponent({
 
         {pagesArtists > 1 && (
           <Link
-            className="hover:underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
+            className="hover:underline opacity-60 hover:opacity-90 transition-all max-xs:px-2"
             href={{ pathname: "/search/artists", query: { q: query } }}
           >
             {t("seeAllArtists")}
@@ -49,7 +53,7 @@ export default function ResultsSearchComponent({
       </section>
 
       <section className="container py-10 flex flex-col items-end">
-        <h2 className="container text-2xl max-md:text-xl mb-7 max-[500px]:px-2">
+        <h2 className="container text-2xl max-md:text-xl mb-7 max-xs:px-2">
           {t("albumsFound")}
         </h2>
         <ListAlbumsComponent>
@@ -60,7 +64,7 @@ export default function ResultsSearchComponent({
 
         {pagesAlbums > 1 && (
           <Link
-            className="hover:underline opacity-60 hover:opacity-90 transition-all max-[500px]:px-2"
+            className="hover:underline opacity-60 hover:opacity-90 transition-all max-xs:px-2"
             href={{ pathname: "/search/albums", query: { q: query } }}
           >
             {t("seeAllAlbums")}

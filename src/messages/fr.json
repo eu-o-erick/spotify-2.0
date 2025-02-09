@@ -25,7 +25,7 @@
     "singles": "Singles",
     "albums": "Albums"
   },
-  "error404": {
+  "Error404": {
     "title": "Page Introuvable",
     "description": "Désolé, nous n'avons pas trouvé ce que vous cherchiez. Essayez une nouvelle recherche ou retournez à la page d'accueil.",
     "button": "Retour à l'Accueil"
@@ -47,7 +47,7 @@
     "categories": ["Catégories :", "Albums", "et", "Artistes"]
   },
   "ArtistPage": {
-    "ArtistAlbums": "Albums de l'Artiste",
+    "artistAlbums": "Albums de l'Artiste",
     "similarArtists": "Artistes Similaires",
     "seeAllResulst": "voir tous les résultats",
     "albums": "Albums",
@@ -64,6 +64,14 @@
   "PaginationComponent": {
     "next": "Suivant",
     "prev": "Précédent"
+  },
+  "EmptyCarousel": {
+    "featuredAlbums": "Aucun album en vedette disponible pour le moment.",
+    "latestAlbums": "Aucun album récent trouvé.",
+    "featuredArtists": "Aucun artiste en vedette disponible.",
+    "artistAlbums": "Aucun album trouvé pour cet artiste.",
+    "similarArtists": "Aucun artiste similaire trouvé.",
+    "artistsFound": "Aucun artiste correspondant trouvé."
   },
   "PrivacyPage": {
     "title": "Politique de confidentialité",

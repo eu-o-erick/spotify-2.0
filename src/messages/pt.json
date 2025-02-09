@@ -25,13 +25,13 @@
     "singles": "Singles",
     "albums": "Álbuns"
   },
-  "error404": {
+  "Error404": {
     "title": "Página Não Encontrada",
     "description": "Desculpe, não encontramos o que você estava procurando. Tente buscar novamente ou volte para a página inicial.",
     "button": "Voltar para a Página Inicial"
   },
   "ArtistPage": {
-    "ArtistAlbums": "Álbuns do Artista",
+    "artistAlbums": "Álbuns do Artista",
     "similarArtists": "Artistas Semelhantes",
     "seeAllResulst": "ver todos os resultados",
     "albums": "Álbuns",
@@ -48,6 +48,14 @@
   "PaginationComponent": {
     "next": "Próximo",
     "prev": "Anterior"
+  },
+  "EmptyCarousel": {
+    "featuredAlbums": "Nenhum álbum em destaque disponível no momento.",
+    "latestAlbums": "Nenhum álbum recente encontrado.",
+    "featuredArtists": "Nenhum artista em destaque disponível.",
+    "artistAlbums": "Nenhum álbum encontrado para este artista.",
+    "similarArtists": "Nenhum artista similar encontrado.",
+    "artistsFound": "Nenhum artista correspondente foi encontrado."
   },
   "FooterComponent": {
     "nav": {

@@ -45,19 +45,29 @@ export default function HomePage() {
         </div>
       ) : (
         <>
-          <SwiperListComponent title={t("featuredAlbums")}>
+          <SwiperListComponent
+            title={t("featuredAlbums")}
+            titleNotFound="featuredAlbums"
+          >
             {featuredAlbums.items.map((album, i) => (
               <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
             ))}
           </SwiperListComponent>
 
-          <SwiperListComponent title={t("latestAlbums")}>
+          <SwiperListComponent
+            title={t("latestAlbums")}
+            titleNotFound="latestAlbums"
+          >
             {latestAlbums.items.map((album, i) => (
               <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
             ))}
           </SwiperListComponent>
 
-          <SwiperListComponent title={t("featuredArtists")}>
+          <SwiperListComponent
+            title={t("featuredArtists")}
+            isArtistComponent={true}
+            titleNotFound="artistAlbums"
+          >
             {featuredArtists.items.map((artist, i) => (
               <ItemArtistComponent key={i} artist={artist} />
             ))}

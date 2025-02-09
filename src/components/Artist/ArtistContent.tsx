@@ -22,7 +22,8 @@ export default function ArtistContent({ dataArtist }: { dataArtist: TArtist }) {
   return (
     <section className="container">
       <SwiperListComponent
-        title={t("ArtistAlbums")}
+        title={t("artistAlbums")}
+        titleNotFound={"artistAlbums"}
         dropDownOptions={{ state: type, setState: setType, options }}
       >
         {dataArtist.discography?.[
@@ -52,7 +53,11 @@ export default function ArtistContent({ dataArtist }: { dataArtist: TArtist }) {
         </Link>
       </div>
 
-      <SwiperListComponent title={t("similarArtists")}>
+      <SwiperListComponent
+        title={t("similarArtists")}
+        isArtistComponent={true}
+        titleNotFound="artistsFound"
+      >
         {dataArtist.relatedContent.relatedArtists.items.map((artist, i) => (
           <ItemArtistComponent key={i} artist={artist} isPageArtist={true} />
         ))}

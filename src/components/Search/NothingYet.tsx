@@ -7,7 +7,7 @@ export default function NothingYetSearchComponent() {
 
   return (
     <div>
-      <h2 className="text-center text-zinc-600 text-2xl mt-36 mb-56 max-[500px]:px-2">
+      <h2 className="text-center text-zinc-600 text-2xl mt-36 mb-56 max-xs:px-2">
         {t("nothingYet")}
       </h2>
     </div>
