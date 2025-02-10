@@ -10,6 +10,7 @@ interface Props {
   state: string;
   setState: React.Dispatch<React.SetStateAction<string>>;
   options: string[];
+  minW?: string;
 }
 
 export default function ContentDropDown({
@@ -18,6 +19,7 @@ export default function ContentDropDown({
   state,
   setState,
   options,
+  minW,
 }: Props) {
   const t = useTranslations("DropDown");
 
@@ -29,10 +31,12 @@ export default function ContentDropDown({
   return (
     <div
       className={cn(
-        "absolute right-0 top-full z-10 bg-secondary shadow-sm w-full transition-all min-w-32",
+        "absolute right-0 top-full z-10 bg-secondary shadow-sm w-full transition-all",
         {
           "opacity-0 pointer-events-none": !isOpen,
-        }
+          "min-w-32": !minW,
+        },
+        minW
       )}
     >
       <SeparatorComponent className="bg-primary" />

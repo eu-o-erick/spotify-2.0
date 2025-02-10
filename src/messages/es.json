@@ -23,7 +23,10 @@
   "DropDown": {
     "popularReleases": "Populares",
     "singles": "Sencillos",
-    "albums": "Álbumes"
+    "albums": "Álbumes",
+    "default": "Predeterminado",
+    "topRated": "Mejor valorado",
+    "custom": "Personalizado"
   },
   "Error404": {
     "title": "Página No Encontrada",

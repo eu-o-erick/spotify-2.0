@@ -8,21 +8,33 @@ interface Props {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   state: string;
+  children?: React.ReactNode;
+  minW?: string;
 }
 
-export default function ButtonDropDown({ isOpen, setIsOpen, state }: Props) {
+export default function ButtonDropDown({
+  isOpen,
+  setIsOpen,
+  state,
+  children,
+  minW,
+}: Props) {
   const t = useTranslations("DropDown");
 
   return (
     <button
       onClick={() => setIsOpen(!isOpen)}
       className={cn(
-        "flex items-center justify-end gap-4 py-2 px-5 max-sm:px-3 min-w-32 text-zinc-400",
+        "flex items-center justify-end gap-4 py-2 px-5 max-sm:px-3 text-zinc-400",
         {
           "bg-secondary": isOpen,
-        }
+          "min-w-32": !minW,
+        },
+        minW
       )}
     >
+      {children}
+
       <span className="font-extralight text-sm">{t(state)}</span>
       <IoIosArrowDown
         className={cn("w-4 h-4 transition-all", {

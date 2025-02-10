@@ -23,7 +23,10 @@
   "DropDown": {
     "popularReleases": "Popular",
     "singles": "Singles",
-    "albums": "Albums"
+    "albums": "Albums",
+    "default": "Default",
+    "topRated": "Top Rated",
+    "custom": "Custom"
   },
   "Error404": {
     "title": "Page Not Found",

@@ -23,7 +23,10 @@
   "DropDown": {
     "popularReleases": "Populaires",
     "singles": "Singles",
-    "albums": "Albums"
+    "albums": "Albums",
+    "default": "Par défaut",
+    "topRated": "Mieux noté",
+    "custom": "Personnalisé"
   },
   "Error404": {
     "title": "Page Introuvable",
