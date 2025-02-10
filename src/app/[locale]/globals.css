@@ -29,3 +29,12 @@ h4 {
     var(--background-color) 90%
   );
 }
+
+.album-item-container:hover .album-image {
+  box-shadow: none;
+}
+
+.album-link:hover .album-title {
+  text-decoration: underline;
+  color: var(--white);
+}

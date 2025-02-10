@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
 
     const { albums } = await response.json();
 
-    if (!albums || albums.length === 0) {
+    if (!albums || !albums[0]) {
       return NextResponse.json({ error: "Album not found" }, { status: 404 });
     }
 

@@ -1,7 +1,7 @@
 "use client";
 
 import ArtistContent from "@/components/Artist/ArtistContent";
-import DescriptionArtist from "@/components/Artist/Description";
+import InfoArtist from "@/components/Artist/Info";
 import NotFoundComponent from "@/components/NotFound";
 import { fetchSpotifyArtist } from "@/services/spotifyGetArtist";
 import { TArtist } from "@/types/TArtist";
@@ -41,7 +41,7 @@ export default function ArtistPage() {
         <NotFoundComponent title={t("title")} description={t("description")} />
       ) : (
         <>
-          <DescriptionArtist dataArtist={dataArtist} isLoading={isLoading} />
+          <InfoArtist dataArtist={dataArtist} isLoading={isLoading} />
           <ArtistContent dataArtist={dataArtist} isLoading={isLoading} />
         </>
       )}

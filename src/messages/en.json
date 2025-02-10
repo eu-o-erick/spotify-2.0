@@ -62,6 +62,14 @@
       "description": "We couldn't find any albums for this artist. Please try another search or check back later."
     }
   },
+  "AlbumPage": {
+    "title": "Album Not Found",
+    "description": "We couldn't find the album you were looking for. Try searching again!",
+    "songs": "songs",
+    "hr": "hr",
+    "min": "min",
+    "sec": "sec"
+  },
   "PaginationComponent": {
     "next": "next",
     "prev": "previous"

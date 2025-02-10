@@ -6,7 +6,7 @@ import SpotifyButton from "../SpotifyButton";
 import { TArtist } from "@/types/TArtist";
 import ImageLoader from "../ImageLoader";
 
-export default function DescriptionArtist({
+export default function InfoArtist({
   dataArtist,
   isLoading,
 }: {
@@ -23,8 +23,8 @@ export default function DescriptionArtist({
               <div className="bg-secondary rounded-[4px] w-[300px] h-[300px] max-lg:w-48 max-lg:h-48 max-lg:rounded-sm" />
 
               <div className="flex items-end gap-1.5 sm:hidden">
-                <span className="bg-secondary h-4 w-14 rounded-sm" />
-                <span className="bg-secondary w-16 h-5 rounded-full" />
+                <span className="bg-secondary h-3 w-11 rounded-sm" />
+                <span className="bg-secondary w-14 h-5 rounded-full" />
               </div>
             </div>
 
@@ -42,8 +42,8 @@ export default function DescriptionArtist({
                 </div>
 
                 <div className="flex items-end gap-1 max-sm:hidden">
-                  <span className="bg-secondary h-4 w-14 rounded-sm" />
-                  <span className="bg-secondary w-20 h-6 rounded-full" />
+                  <span className="bg-secondary h-4 w-14 rounded-sm max-lg:h-3 max-lg:w-11" />
+                  <span className="bg-secondary w-20 h-6 max-lg:h-5 max-lg:w-16 rounded-full" />
                 </div>
               </div>
 
