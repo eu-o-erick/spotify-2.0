@@ -74,8 +74,8 @@ export default function InfoAlbum({
               <h1 className="text-4xl max-lg:text-xl">{dataAlbum.name}</h1>
 
               <div className="flex flex-col gap-5 mt-3 max-lg:mt-1 max-lg:gap-3 max-sm:gap-2 max-sm:flex-col-reverse">
-                <p className="text-sm text-zinc-500 font-normal max-lg:text-xs">
-                  <span className="capitalize text-zinc-400">
+                <p className="text-sm text-zinc-400 font-normal max-lg:text-xs">
+                  <span className="capitalize text-zinc-300">
                     {dataAlbum.album_type}
                   </span>
                   <span className="mx-1.5">•</span>
@@ -114,7 +114,7 @@ export default function InfoAlbum({
                     <Fragment key={i}>
                       <li
                         key={i}
-                        className="text-zinc-500 hover:underline hover:text-zinc-400"
+                        className="text-zinc-300 hover:underline hover:text-zinc-200"
                       >
                         <Link
                           href={{
@@ -126,7 +126,7 @@ export default function InfoAlbum({
                         </Link>
                       </li>
                       {i < dataAlbum.artists.length - 1 && (
-                        <span className="text-zinc-400 mx-3 max-lg:mx-1.5">
+                        <span className="text-zinc-200 mx-3 max-lg:mx-1.5">
                           •
                         </span>
                       )}

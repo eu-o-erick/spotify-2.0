@@ -23,10 +23,7 @@
   "DropDown": {
     "popularReleases": "Populares",
     "singles": "Singles",
-    "albums": "Álbuns",
-    "default": "Padrão",
-    "topRated": "Avaliação",
-    "custom": "Personalizado"
+    "albums": "Álbuns"
   },
   "Error404": {
     "title": "Página Não Encontrada",
@@ -54,7 +51,12 @@
     "songs": "músicas",
     "hr": "h",
     "min": "min",
-    "sec": "seg"
+    "sec": "seg",
+    "default": "Padrão",
+    "topRated": "Avaliação",
+    "titleSong": "título",
+    "preview": "prévia",
+    "rating": "avaliação"
   },
   "PaginationComponent": {
     "next": "Próximo",

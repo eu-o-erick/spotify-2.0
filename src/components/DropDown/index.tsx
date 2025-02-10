@@ -9,7 +9,6 @@ interface Props {
   state: string;
   setState: React.Dispatch<React.SetStateAction<string>>;
   options: string[];
-  children?: React.ReactNode;
   minW?: string;
 }
 
@@ -17,8 +16,7 @@ export default function DropDownComponent({
   state,
   setState,
   options,
-  children,
-  minW,
+  minW = "w-32 max-sm:w-28",
 }: Props) {
   const [isOpen, setIsOpen, dropdownRef] = useClickOutside<HTMLDivElement>();
 
@@ -29,9 +27,7 @@ export default function DropDownComponent({
         setIsOpen={setIsOpen}
         state={state}
         minW={minW}
-      >
-        {children}
-      </ButtonDropDown>
+      />
 
       <ContentDropDown
         isOpen={isOpen}

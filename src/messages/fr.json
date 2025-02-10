@@ -23,10 +23,7 @@
   "DropDown": {
     "popularReleases": "Populaires",
     "singles": "Singles",
-    "albums": "Albums",
-    "default": "Par défaut",
-    "topRated": "Mieux noté",
-    "custom": "Personnalisé"
+    "albums": "Albums"
   },
   "Error404": {
     "title": "Page Introuvable",
@@ -70,7 +67,12 @@
     "songs": "chansons",
     "hr": "h",
     "min": "min",
-    "sec": "sec"
+    "sec": "sec",
+    "topRated": "Mieux noté",
+    "custom": "Personnalisé",
+    "titleSong": "titre",
+    "preview": "aperçu",
+    "rating": "note"
   },
   "PaginationComponent": {
     "next": "Suivant",

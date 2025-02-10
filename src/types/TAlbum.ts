@@ -15,22 +15,24 @@ export type TAlbum = {
     name: string;
   }[];
   tracks: {
-    items: {
-      artists: {
-        name: string;
-      }[];
-      disc_number: number;
-      duration_ms: number;
-      explicit: boolean;
-      name: string;
-      preview_url: string;
-      track_number: number;
-    }[];
+    items: TTrack[];
   };
   copyrights: {
     text: string;
     type: string;
   }[];
+};
+
+export type TTrack = {
+  artists: {
+    name: string;
+  }[];
+  disc_number: number;
+  duration_ms: number;
+  explicit: boolean;
+  name: string;
+  preview_url: string;
+  track_number: number;
 };
 
 export type TAlbumArtist = {

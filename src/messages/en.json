@@ -23,10 +23,7 @@
   "DropDown": {
     "popularReleases": "Popular",
     "singles": "Singles",
-    "albums": "Albums",
-    "default": "Default",
-    "topRated": "Top Rated",
-    "custom": "Custom"
+    "albums": "Albums"
   },
   "Error404": {
     "title": "Page Not Found",
@@ -71,7 +68,12 @@
     "songs": "songs",
     "hr": "hr",
     "min": "min",
-    "sec": "sec"
+    "sec": "sec",
+    "default": "Default",
+    "topRated": "Top Rated",
+    "titleSong": "title",
+    "preview": "preview",
+    "rating": "rating"
   },
   "PaginationComponent": {
     "next": "next",
