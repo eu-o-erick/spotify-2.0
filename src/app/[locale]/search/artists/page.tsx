@@ -1,7 +1,6 @@
 "use client";
 
 import PaginationComponent from "@/components/Pagination";
-import SearchComponent from "@/components/Search";
 import ResultsSearchArtistsComponent from "@/components/Search/Artists/ResultsSearch";
 import NothingYetSearchComponent from "@/components/Search/NothingYet";
 import { fetchSpotifySearch } from "@/services/spotifySearch";
@@ -42,9 +41,7 @@ export default function SearchPage() {
   }, [query, page]);
 
   return (
-    <main className="flex-1 mb-28">
-      <SearchComponent />
-
+    <main className="flex-1 my-28 container max-sm:my-16">
       {!query ? (
         <NothingYetSearchComponent />
       ) : (

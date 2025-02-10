@@ -1,6 +1,5 @@
 "use client";
 
-import SearchComponent from "@/components/Search";
 import NothingYetSearchComponent from "@/components/Search/NothingYet";
 import ResultsSearchComponent from "@/components/Search/ResultsSearch";
 import { fetchSpotifySearch } from "@/services/spotifySearch";
@@ -45,9 +44,7 @@ export default function SearchPage() {
   }, [query, page]);
 
   return (
-    <main className="flex-1 mb-28">
-      <SearchComponent />
-
+    <main className="flex-1 my-28 container max-sm:my-16">
       {!query ? (
         <NothingYetSearchComponent />
       ) : (

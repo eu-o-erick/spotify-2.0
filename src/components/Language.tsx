@@ -82,26 +82,30 @@ export default function SwitchLanguages() {
       >
         <SeparatorComponent className="bg-primary" />
 
-        <ul className="flex flex-col py-1 gap-1 max-sm:gap-0">
+        <ul className="flex flex-col max-sm:gap-0">
           {LANGUAGES.map((option, i) => (
             <li key={i} className="text-sm max-sm:text-xs">
-              {option.value !== language.value && (
-                <button
-                  type="button"
-                  onClick={() => setLanguage(option)}
-                  className="flex items-center w-full py-2 px-5 gap-2 hover:bg-primary max-sm:px-3"
-                >
-                  <div className="w-5 h-5 max-sm:w-4 max-sm:h-4 flex items-center">
-                    <Image
-                      src={`/flags/${option.value}.png`}
-                      width={20}
-                      height={20}
-                      alt={`${option.label} flag`}
-                    />
-                  </div>
-                  <span>{option.label}</span>
-                </button>
-              )}
+              <button
+                type="button"
+                onClick={() => setLanguage(option)}
+                className={cn(
+                  "flex items-center w-full py-2 px-5 gap-2 hover:bg-primary max-sm:px-3",
+                  {
+                    "bg-zinc-200 bg-opacity-10 opacity-60 cursor-not-allowed":
+                      option.value === language.value,
+                  }
+                )}
+              >
+                <div className="w-5 h-5 max-sm:w-4 max-sm:h-4 flex items-center">
+                  <Image
+                    src={`/flags/${option.value}.png`}
+                    width={20}
+                    height={20}
+                    alt={`${option.label} flag`}
+                  />
+                </div>
+                <span>{option.label}</span>
+              </button>
             </li>
           ))}
         </ul>

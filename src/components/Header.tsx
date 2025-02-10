@@ -6,7 +6,7 @@ import SwitchLanguages from "./Language";
 
 export default function HeaderComponent() {
   return (
-    <header className="container py-6 flex justify-between max-sm:py-4 max-sm:px-4">
+    <header className="container py-4 flex justify-between max-sm:py-4 max-sm:px-4">
       <Link className="flex items-center gap-2 max-md:gap-1" href={"/"}>
         <div className="w-7 h-7 max-md:w-8 max-md:h-8">
           <Image src="/logo.png" width={30} height={30} alt="logo" />

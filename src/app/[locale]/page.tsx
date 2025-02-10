@@ -37,16 +37,6 @@ export default function HomePage() {
       </SwiperListComponent>
 
       <SwiperListComponent
-        title={t("featuredAlbums")}
-        titleNotFound="featuredAlbums"
-        isLoading={isLoading}
-      >
-        {featuredAlbums.items.map((album, i) => (
-          <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
-        ))}
-      </SwiperListComponent>
-
-      <SwiperListComponent
         title={t("latestAlbums")}
         titleNotFound="latestAlbums"
         isLoading={isLoading}

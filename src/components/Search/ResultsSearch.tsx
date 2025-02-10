@@ -27,7 +27,11 @@ export default function ResultsSearchComponent({
   const t = useTranslations("SearchPage");
 
   return (
-    <section>
+    <section className="container">
+      <h2 className="text-zinc-500 text-xl mb-14 font-light max-sm:px-2">
+        {t("response")}{" "}
+        <span className="font-semibold">{decodeURIComponent(query)}</span>
+      </h2>
       <div className="container pb-10 flex flex-col items-end">
         <SwiperListComponent
           title={t("artistsFound")}

@@ -36,18 +36,22 @@ export default function ContentDropDown({
       )}
     >
       <SeparatorComponent className="bg-primary" />
-      <ul className="flex flex-col py-1 max-sm:gap-0">
+      <ul className="flex flex-col">
         {options.map((option, i) => (
-          <li key={i} className="text-sm max-sm:text-xs">
-            {option !== state && (
-              <button
-                type="button"
-                onClick={() => handlerClick(option)}
-                className="text-end w-full py-2 px-5 hover:bg-primary max-sm:px-3 font-extralight"
-              >
-                <span>{t(option)}</span>
-              </button>
-            )}
+          <li
+            key={i}
+            className={cn("text-sm max-sm:text-xs", {
+              "bg-zinc-200 bg-opacity-10 opacity-60 cursor-not-allowed":
+                option === state,
+            })}
+          >
+            <button
+              type="button"
+              onClick={() => handlerClick(option)}
+              className="text-end w-full py-2 px-5 hover:bg-primary max-sm:px-3 font-extralight"
+            >
+              <span>{t(option)}</span>
+            </button>
           </li>
         ))}
       </ul>

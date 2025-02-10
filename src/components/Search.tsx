@@ -38,7 +38,7 @@ export default function SearchComponent() {
       <BgGradient />
 
       <div className="container relative">
-        <div className="mx-auto text-center max-w-[540px] max-md:max-w-[460px]">
+        <div className="mx-auto text-center max-w-[560px] max-md:max-w-[460px]">
           <h1 className="text-4xl mb-6 mx-4 max-sm:text-2xl max-sm:mb-4">
             {t("title")}
           </h1>
