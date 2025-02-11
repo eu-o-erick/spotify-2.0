@@ -3,6 +3,7 @@
 import InfoAlbum from "@/components/Album/Info";
 import SortTracksComponent from "@/components/Album/Sort";
 import TrackListComponent from "@/components/Album/TrackList";
+import MusicController from "@/components/Album/Controller";
 import NotFoundComponent from "@/components/NotFound";
 import { fetchSpotifyAlbum } from "@/services/spotifyGetAlbum";
 import { TAlbum } from "@/types/TAlbum";
@@ -37,7 +38,7 @@ export default function AlbumPage() {
   }, [id]);
 
   return (
-    <main className="flex-1 mb-28">
+    <main className="flex-1 28">
       {!dataAlbum && !isLoading ? (
         <NotFoundComponent title={t("title")} description={t("description")} />
       ) : (
@@ -50,6 +51,8 @@ export default function AlbumPage() {
             isLoading={isLoading}
             tracks={dataAlbum?.tracks.items}
           />
+
+          <MusicController album={dataAlbum} />
         </Fragment>
       )}
     </main>

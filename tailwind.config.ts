@@ -31,6 +31,7 @@ export default {
       },
       boxShadow: {
         strong: "4px 4px 4px rgba(0, 0, 0, 0.2)",
+        up: "0 -6px 6px rgba(0, 0, 0, 0.1)",
       },
     },
   },
