@@ -20,7 +20,7 @@ export default function TitleArtistAlbums({
           pathname: "/artist",
           query: { id: artistId },
         }}
-        className="inline text-zinc-400 hover:text-zinc-300 transition-all hover:underline"
+        className="inline text-zinc-400 md:hover:text-zinc-300 transition-all md:hover:underline max-md:active:text-zinc-300 max-md:active:underline"
       >
         {decodeURIComponent(name)}
       </Link>

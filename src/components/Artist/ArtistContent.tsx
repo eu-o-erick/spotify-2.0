@@ -77,7 +77,7 @@ export default function ArtistContent({
       {seeAllResulst && (
         <div className="container -mt-6 pb-24 flex flex-col items-end max-sm:-mt-8 max-sm:pb-20">
           <Link
-            className="hover:underline opacity-60 hover:opacity-90 transition-all max-sm:px-2 max-sm:text-xs"
+            className="md:hover:underline opacity-60 md:hover:opacity-90 max-md:active:underline max-md:active:opacity-100 transition-all max-sm:px-2 max-sm:text-xs"
             href={{
               pathname: "/artist/albums",
               query: {

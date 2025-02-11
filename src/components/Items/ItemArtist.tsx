@@ -16,7 +16,7 @@ export default function ItemArtistComponent({
     : (artist as TSearchArtist).data;
 
   return (
-    <div className="select-none rounded-md hover:bg-[#ffffff05] transition-all">
+    <div className="select-none rounded-md md:hover:bg-[#ffffff05] transition-all">
       <Link
         href={{
           pathname: `/artist`,
@@ -24,7 +24,7 @@ export default function ItemArtistComponent({
         }}
         className="select-none flex flex-col px-3 pt-3 pb-5 group"
       >
-        <div className="relative w-full rounded-full shadow-strong aspect-square overflow-hidden group-hover:shadow-none max-md:shadow-sm">
+        <div className="relative w-full rounded-full shadow-strong aspect-square overflow-hidden md:group-hover:shadow-none max-md:shadow-sm">
           <ImageLoader
             alt={`cover '${data.profile.name}'`}
             src={
@@ -34,7 +34,7 @@ export default function ItemArtistComponent({
           />
         </div>
 
-        <p className="mt-2 line-clamp-1 max-md:text-[14px] text-zinc-300 group-hover:text-white group-hover:underline transition-all">
+        <p className="mt-2 line-clamp-1 max-md:text-[14px] text-zinc-300 group-hover:text-white md:group-hover:underline md:group-active:underline transition-all">
           {data.profile.name}
         </p>
       </Link>

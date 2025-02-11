@@ -14,7 +14,7 @@ export default function ButtonComponent({
   return (
     <button
       className={cn(
-        "bg-white py-2.5 px-5 rounded-full text-[14px] opacity-90 text-main hover:opacity-100 transition-all max-sm:text-sm max-sm:py-2 max-sm:px-3",
+        "bg-white py-2.5 px-5 rounded-full text-[14px] opacity-90 text-main hover:opacity-100 md:opacity-100 transition-all max-sm:text-sm max-sm:py-2 max-sm:px-3",
         className
       )}
       onClick={() => handle()}

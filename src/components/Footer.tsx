@@ -13,11 +13,11 @@ export default function FooterComponent() {
         <div>
           <nav className="mb-6">
             <ul className="flex items-center gap-8 text-sm underline max-lg:gap-6 max-sm:text-xs">
-              <li className="opacity-80 hover:opacity-100">
+              <li className="opacity-80 hover:opacity-100 md:opacity-100">
                 <Link href={"/"}>{t("nav.home")}</Link>
               </li>
               <li className="w-px h-5 bg-secondary" />
-              <li className="opacity-80 hover:opacity-100">
+              <li className="opacity-80 hover:opacity-100 md:opacity-100">
                 <Link href={"/search"}>{t("nav.search")}</Link>
               </li>
             </ul>
@@ -25,13 +25,13 @@ export default function FooterComponent() {
 
           <nav className="mb-16 max-sm:mb-14">
             <ul className="flex items-center gap-8 text-sm underline max-lg:gap-6 max-sm:text-xs">
-              <li className="opacity-60 hover:opacity-80">
+              <li className="opacity-70 hover:opacity-100 md:opacity-100">
                 <Link href={"/terms-and-conditions"}>
                   {t("nav.termsAndConditions")}
                 </Link>
               </li>
               <li className="w-px h-5 bg-secondary" />
-              <li className="opacity-60 hover:opacity-80">
+              <li className="opacity-70 hover:opacity-100 md:opacity-100">
                 <Link href={"/privacy-policy"}>{t("nav.privacyPolicy")}</Link>
               </li>
             </ul>

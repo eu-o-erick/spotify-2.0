@@ -90,7 +90,7 @@ export default function SwitchLanguages() {
                   <button
                     type="button"
                     onClick={() => setLanguage(option)}
-                    className="flex items-center w-full py-2 px-5 gap-2 hover:bg-primary max-sm:px-3"
+                    className="flex items-center w-full py-2 px-5 gap-2 md:hover:bg-primary max-sm:px-3"
                   >
                     <div className="w-5 h-5 max-sm:w-4 max-sm:h-4 flex items-center">
                       <Image

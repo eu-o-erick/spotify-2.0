@@ -114,7 +114,7 @@ export default function InfoAlbum({
                     <Fragment key={i}>
                       <li
                         key={i}
-                        className="text-zinc-300 hover:underline hover:text-zinc-200"
+                        className="text-zinc-300 md:hover:underline md:hover:text-zinc-200 max-md:active:text-zinc-200 max-md:active:underline"
                       >
                         <Link
                           href={{

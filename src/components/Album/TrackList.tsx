@@ -38,7 +38,9 @@ export default function TrackListComponent({
 
           <tbody>
             {isLoading ? (
-              <>loading</>
+              <tr className="h-7">
+                <td>loading</td>
+              </tr>
             ) : (
               tracks?.map((track, i) => (
                 <TrackItemComponent track={track} key={i} />

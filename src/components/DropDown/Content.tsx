@@ -47,7 +47,7 @@ export default function ContentDropDown({
                 <button
                   type="button"
                   onClick={() => handlerClick(option)}
-                  className="text-end w-full py-2 px-5 hover:bg-primary max-sm:px-3 font-extralight"
+                  className="text-end w-full py-2 px-5 md:hover:bg-primary max-sm:px-3 font-extralight"
                 >
                   <span>{t(option)}</span>
                 </button>
