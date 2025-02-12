@@ -1,37 +1,51 @@
 "use client";
 
-import SeparatorComponent from "../../Separator";
-import { cn } from "@/lib/cn";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
-import { setIsPlaying, setIsVisible } from "@/store/slices/playingTrack";
-import ImageLoader from "../../ImageLoader";
-import { TAlbum, TTrack } from "@/types/TAlbum";
-import { IoClose } from "react-icons/io5";
+import { setIsPlaying, setPlayingTrack } from "@/store/slices/playingTrack";
+import { TTrack } from "@/types/TAlbum";
 import { useEffect, useRef, useState } from "react";
-import { BsExplicitFill } from "react-icons/bs";
 
-export default function MusicController({ album }: { album: TAlbum | null }) {
+export default function ProgressbarControllerComponent({
+  volume,
+  track,
+  audioRef,
+}: {
+  volume: number;
+  track: TTrack | null;
+  audioRef: React.RefObject<HTMLAudioElement | null>;
+}) {
   const dispatch = useDispatch();
+  const progressBarRef = useRef<HTMLDivElement>(null);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  const [track, setTrack] = useState<TTrack | null>(null);
-  const [volume, setVolume] = useState<number>(0.4);
-
-  const { indexCurrentTrack, isPlaying, isVisible } = useSelector(
-    (state: RootState) => state.track
-  );
+  const isPlaying = useSelector((state: RootState) => state.track.isPlaying);
 
   useEffect(() => {
-    setTrack(album?.tracks.items[indexCurrentTrack] ?? null);
-  }, [album, indexCurrentTrack]);
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      if (isDragging) {
+        e.preventDefault();
+        handleProgressChange(e);
+      }
+    };
 
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = volume;
+    const handleGlobalMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    if (isDragging) {
+      document.addEventListener("mousemove", handleGlobalMouseMove);
+      document.addEventListener("mouseup", handleGlobalMouseUp);
     }
-  }, [volume]);
+
+    return () => {
+      document.removeEventListener("mousemove", handleGlobalMouseMove);
+      document.removeEventListener("mouseup", handleGlobalMouseUp);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isDragging]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,87 +55,115 @@ export default function MusicController({ album }: { album: TAlbum | null }) {
         audioRef.current?.pause();
       }
     }, 100);
-  }, [isPlaying]);
+  }, [isPlaying, audioRef]);
 
   useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume;
+    }
+  }, [volume, audioRef]);
+
+  useEffect(() => {
+    setCurrentTime(0);
+    setDuration(30);
+
     setTimeout(() => {
       if (isPlaying) {
         audioRef.current?.play();
       }
     }, 100);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [track]);
 
-  const handleMusicEnd = () => {
-    dispatch(setIsPlaying(false));
+  useEffect(() => {
+    return () => {
+      dispatch(setIsPlaying(false));
+      dispatch(setPlayingTrack(-1));
+      setCurrentTime(0);
+      setDuration(30);
+    };
+  }, [dispatch]);
+
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.ceil(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   };
 
-  const handleSetIsVisible = () => {
-    dispatch(setIsVisible(false));
-    dispatch(setIsPlaying(false));
+  const handleTimeUpdate = () => {
+    if (audioRef.current && !isDragging) {
+      setCurrentTime(audioRef.current.currentTime || 0);
+      setDuration(audioRef.current.duration || 30);
+    }
   };
 
-  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const volume = parseFloat(e.target.value);
-    setVolume(volume);
+  const handleProgressChange = (
+    e: MouseEvent | React.MouseEvent<HTMLDivElement>
+  ) => {
+    if (!progressBarRef.current || !audioRef.current) return;
+
+    const rect = progressBarRef.current.getBoundingClientRect();
+    const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+    const width = rect.width;
+
+    const newTime = Math.min((x / width) * duration, duration);
+    audioRef.current.currentTime = newTime;
+    setCurrentTime(newTime);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    if (!progressBarRef.current || !audioRef.current) return;
+
+    const rect = progressBarRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const width = rect.width;
+
+    const newTime = (x / width) * duration;
+    audioRef.current.currentTime = newTime;
+    setCurrentTime(newTime);
+
+    setIsDragging(true);
   };
 
   return (
-    <div
-      className={cn(
-        "sticky bottom-0 left-0 w-full bg-main shadow-up transition-all opacity-0 z-20",
-        {
-          "opacity-100 -translate-y-0": isVisible,
-        }
-      )}
-    >
-      <SeparatorComponent className="bg-primary" />
+    <div className="flex items-center gap-2 w-full max-lg:hidden">
+      <span className="text-xs text-zinc-400 w-10 text-right">
+        {formatTime(currentTime)}
+      </span>
 
-      <div className="grid grid-cols-3 items-center justify-between px-6 py-4 mx-auto">
-        <div className="flex items-center  gap-3">
-          <ImageLoader
-            src={album?.images?.[0].url ?? "/no-image.webp"}
-            alt="cover album"
-            className="w-12 h-12 !shadow-sm rounded-sm"
-          />
-
-          <div className="">
-            <h3 className="font-normal">{track?.name}</h3>
-            <p className="text-[13px] flex items-center gap-1 text-zinc-400">
-              {track?.explicit && <BsExplicitFill />}
-              {track?.artists.map((artist) => artist.name).join(", ")}
-            </p>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-center">
-          <audio
-            ref={audioRef}
-            src={track?.preview_url}
-            onEnded={handleMusicEnd}
-            controls
-          />
-        </div>
-
-        <div className="flex items-center justify-end">
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            value={volume}
-            onChange={handleVolumeChange}
-            className="w-24"
-          />
-
-          <button
-            type="button"
-            onClick={handleSetIsVisible}
-            className="text-2xl"
-          >
-            <IoClose />
-          </button>
-        </div>
+      <div
+        className="group relative flex-1 h-1 bg-zinc-600 rounded-full cursor-pointer"
+        ref={progressBarRef}
+        onMouseDown={handleMouseDown}
+      >
+        <div
+          className="absolute h-full bg-zinc-200 group-hover:bg-green-500 transition-colors rounded-full"
+          style={{ width: `${(currentTime / duration) * 100}%` }}
+        />
+        <div
+          className="absolute w-3 h-3 bg-white rounded-full -translate-y-1/2 top-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+          style={{
+            left: `${(currentTime / duration) * 100}%`,
+            transform: "translate(-50%, -50%)",
+          }}
+        />
       </div>
+
+      <span className="text-xs text-zinc-400 w-10">{formatTime(duration)}</span>
+
+      <audio
+        className="hidden"
+        ref={audioRef}
+        src={track?.preview_url}
+        onPause={() => dispatch(setIsPlaying(false))}
+        onPlay={() => dispatch(setIsPlaying(true))}
+        onEnded={() => dispatch(setIsPlaying(false))}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleTimeUpdate}
+      />
     </div>
   );
 }

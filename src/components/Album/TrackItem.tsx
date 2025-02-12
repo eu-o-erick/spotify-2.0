@@ -9,11 +9,7 @@ import RatingInput from "./RatingInput";
 import { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setIsPlaying,
-  setIsVisible,
-  setPlayingTrack,
-} from "@/store/slices/playingTrack";
+import { setIsPlaying, setPlayingTrack } from "@/store/slices/playingTrack";
 import { RootState } from "@/store";
 import { cn } from "@/lib/cn";
 
@@ -28,11 +24,6 @@ export default function TrackItemComponent({ track }: { track: TTrack }) {
   const isPlaying = useSelector((state: RootState) => state.track.isPlaying);
 
   const handleSetTrack = () => {
-    dispatch(setIsVisible(true));
-
-    console.log("indexCurrentTrack", indexCurrentTrack);
-    console.log("track_number", track.track_number);
-
     if (indexCurrentTrack + 1 === track.track_number) {
       dispatch(setIsPlaying(!isPlaying));
     } else {
