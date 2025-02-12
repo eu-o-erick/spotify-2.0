@@ -24,7 +24,7 @@ export default function TrackItemComponent({ track }: { track: TTrack }) {
   const isPlaying = useSelector((state: RootState) => state.track.isPlaying);
 
   const handleSetTrack = () => {
-    if (indexCurrentTrack + 1 === track.track_number) {
+    if (indexCurrentTrack === track.track_number - 1) {
       dispatch(setIsPlaying(!isPlaying));
     } else {
       dispatch(setPlayingTrack(track.track_number - 1));

@@ -48,14 +48,12 @@ export default function ProgressbarControllerComponent({
   }, [isDragging]);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (isPlaying) {
-        audioRef.current?.play();
-      } else {
-        audioRef.current?.pause();
-      }
-    }, 100);
-  }, [isPlaying, audioRef]);
+    if (isPlaying) {
+      audioRef.current?.play();
+    } else {
+      audioRef.current?.pause();
+    }
+  }, [isPlaying, audioRef, track]);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -66,20 +64,12 @@ export default function ProgressbarControllerComponent({
   useEffect(() => {
     setCurrentTime(0);
     setDuration(30);
-
-    setTimeout(() => {
-      if (isPlaying) {
-        audioRef.current?.play();
-      }
-    }, 100);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [track]);
 
   useEffect(() => {
     return () => {
       dispatch(setIsPlaying(false));
-      dispatch(setPlayingTrack(-1));
+      dispatch(setPlayingTrack(0));
       setCurrentTime(0);
       setDuration(30);
     };

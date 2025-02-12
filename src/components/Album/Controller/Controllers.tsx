@@ -61,14 +61,7 @@ export default function ControllersControllerComponent({
 
       <button
         onClick={togglePlay}
-        className={cn(
-          "bg-zinc-200 text-zinc-700 rounded-full p-1.5 transition-all",
-          {
-            "max-md:active:text-zinc-800 md:hover:text-zinc-800":
-              currentTrackIndex !== tracks - 1,
-            "cursor-not-allowed": currentTrackIndex === tracks - 1,
-          }
-        )}
+        className="bg-zinc-200 text-zinc-700 rounded-full p-1.5 transition-all"
       >
         {isPlaying ? (
           <IoPause className="text-lg" />

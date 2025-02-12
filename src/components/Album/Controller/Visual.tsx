@@ -16,7 +16,7 @@ export default function VisualMusicControllerComponent({
       <ImageLoader
         src={albumCover ?? "/no-image.webp"}
         alt="cover album"
-        className="w-12 h-12 !shadow-sm rounded-sm max-md:w-10 max-md:h-10"
+        className="w-12 h-12 !shadow-sm rounded-sm max-md:w-10 max-md:h-10 select-none"
       />
 
       <div className="">
