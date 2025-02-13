@@ -64,8 +64,6 @@ export default function ProgressbarControllerComponent({
   useEffect(() => {
     setCurrentTime(0);
     setDuration(30);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [track]);
 
   useEffect(() => {
@@ -75,7 +73,6 @@ export default function ProgressbarControllerComponent({
       setCurrentTime(0);
       setDuration(30);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   const formatTime = (time: number) => {
