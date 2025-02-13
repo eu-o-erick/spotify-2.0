@@ -56,7 +56,8 @@
     "topRated": "Avaliação",
     "titleSong": "título",
     "preview": "prévia",
-    "rating": "avaliação"
+    "rating": "avaliação",
+    "disc": "Disco"
   },
   "PaginationComponent": {
     "next": "Próximo",

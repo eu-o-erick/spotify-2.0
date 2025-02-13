@@ -12,19 +12,23 @@ export default function VisualMusicControllerComponent({
   albumCover: string | undefined;
 }) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 max-sm:gap-1.5">
       <ImageLoader
         src={albumCover ?? "/no-image.webp"}
         alt="cover album"
-        className="w-12 h-12 !shadow-sm rounded-sm max-md:w-10 max-md:h-10 select-none"
+        className="w-12 h-12 !shadow-sm rounded-sm max-md:w-10 max-md:h-10 flex-1"
       />
 
-      <div className="">
-        <h3 className="font-normal max-md:text-sm">{track?.name}</h3>
-        <p className="text-[13px] flex items-center gap-1 text-zinc-400 max-md:text-xs">
+      <div className="flex flex-col flex-1">
+        <h3 className="font-normal max-md:text-sm line-clamp-1">
+          {track?.name}
+        </h3>
+        <div className="flex items-center gap-1 text-[13px] text-zinc-400 max-md:text-xs">
           {track?.explicit && <BsExplicitFill />}
-          {track?.artists.map((artist) => artist.name).join(", ")}
-        </p>
+          <p className="line-clamp-1">
+            {track?.artists.map((artist) => artist.name).join(", ")}
+          </p>
+        </div>
       </div>
     </div>
   );

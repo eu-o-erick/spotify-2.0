@@ -64,6 +64,8 @@ export default function ProgressbarControllerComponent({
   useEffect(() => {
     setCurrentTime(0);
     setDuration(30);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [track]);
 
   useEffect(() => {
@@ -73,6 +75,7 @@ export default function ProgressbarControllerComponent({
       setCurrentTime(0);
       setDuration(30);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   const formatTime = (time: number) => {
@@ -119,22 +122,26 @@ export default function ProgressbarControllerComponent({
   };
 
   return (
-    <div className="flex items-center gap-2 w-full max-lg:hidden">
-      <span className="text-xs text-zinc-400 w-10 text-right">
+    <div className="flex items-center gap-2 w-full max-lg:absolute max-lg:bottom-0 max-lg:left-0">
+      <span className="text-xs text-zinc-400 w-10 text-right max-lg:hidden">
         {formatTime(currentTime)}
       </span>
 
       <div
-        className="group relative flex-1 h-1 bg-zinc-600 rounded-full cursor-pointer"
+        className="group relative flex-1 h-1 bg-zinc-600 rounded-full cursor-pointer max-lg:h-px max-lg:cursor-default max-lg:bg-zinc-700"
         ref={progressBarRef}
-        onMouseDown={handleMouseDown}
+        onMouseDown={(e) => {
+          if (window.innerWidth >= 1024) {
+            handleMouseDown(e);
+          }
+        }}
       >
         <div
-          className="absolute h-full bg-zinc-200 group-hover:bg-green-500 transition-colors rounded-full"
+          className="absolute h-full bg-zinc-200 lg:group-hover:bg-green-500 transition-colors rounded-full max-lg:bg-zinc-500"
           style={{ width: `${(currentTime / duration) * 100}%` }}
         />
         <div
-          className="absolute w-3 h-3 bg-white rounded-full -translate-y-1/2 top-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute w-3 h-3 bg-white rounded-full -translate-y-1/2 top-1/2 opacity-0 lg:group-hover:opacity-100 transition-opacity"
           style={{
             left: `${(currentTime / duration) * 100}%`,
             transform: "translate(-50%, -50%)",
@@ -142,7 +149,9 @@ export default function ProgressbarControllerComponent({
         />
       </div>
 
-      <span className="text-xs text-zinc-400 w-10">{formatTime(duration)}</span>
+      <span className="text-xs text-zinc-400 w-10 max-lg:hidden">
+        {formatTime(duration)}
+      </span>
 
       <audio
         className="hidden"

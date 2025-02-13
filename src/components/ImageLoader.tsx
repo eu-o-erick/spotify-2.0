@@ -35,12 +35,13 @@ export default function ImageLoader({
         height={500}
         onLoad={handleLoad}
         className={cn(
-          "relative pointer-events-auto shadow-strong max-lg:rounded-sm",
+          "relative pointer-events-auto shadow-strong max-lg:rounded-sm select-none",
           className,
           {
             "absolute pointer-events-none opacity-0": loading,
           }
         )}
+        draggable={false}
       />
     </div>
   );

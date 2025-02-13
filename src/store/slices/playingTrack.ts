@@ -15,10 +15,13 @@ export const playingTrackSlice = createSlice({
   initialState,
   reducers: {
     setPlayingTrack: (state, action: PayloadAction<number>) => {
+      console.log("setPlayingTrack", action.payload);
+
       state.indexCurrentTrack = action.payload;
-      state.isPlaying = true;
     },
     setIsPlaying: (state, action: PayloadAction<boolean>) => {
+      console.log("setIsPlaying", action.payload);
+
       state.isPlaying = action.payload;
     },
   },

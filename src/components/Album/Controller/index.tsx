@@ -13,6 +13,7 @@ import ControllersControllerComponent from "./Controllers";
 export default function MusicController({ album }: { album: TAlbum | null }) {
   const [track, setTrack] = useState<TTrack | null>(null);
   const [volume, setVolume] = useState<number>(0.01);
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const { indexCurrentTrack } = useSelector((state: RootState) => state.track);
@@ -25,7 +26,7 @@ export default function MusicController({ album }: { album: TAlbum | null }) {
     <div className="sticky bottom-0 left-0 bg-main shadow-up transition-all z-20 -translate-y-0">
       <SeparatorComponent className="bg-primary" />
 
-      <div className="grid grid-cols-3 items-center justify-between px-6 py-4 mx-auto max-lg:grid-cols-[1.8fr_.6fr_.6fr] max-md:grid-cols-[1.5fr_.5fr] max-md:px-4">
+      <div className="grid grid-cols-3 items-center justify-between px-6 py-4 mx-auto max-lg:grid-cols-[1.8fr_.6fr_.6fr] max-md:grid-cols-[1.5fr_.5fr] max-md:p-3">
         <VisualMusicControllerComponent
           albumCover={album?.images?.[0].url}
           track={track}

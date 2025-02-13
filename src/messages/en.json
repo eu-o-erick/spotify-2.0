@@ -73,7 +73,8 @@
     "topRated": "Top Rated",
     "titleSong": "title",
     "preview": "preview",
-    "rating": "rating"
+    "rating": "rating",
+    "disc": "Disc"
   },
   "PaginationComponent": {
     "next": "next",

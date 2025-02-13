@@ -9,7 +9,6 @@ import {
   IoPlay,
   IoPause,
 } from "react-icons/io5";
-import { cn } from "@/lib/cn";
 
 export default function ControllersControllerComponent({
   tracks,
@@ -26,14 +25,22 @@ export default function ControllersControllerComponent({
   );
 
   const handlePrevTrack = () => {
-    if (currentTrackIndex > 0) {
+    if (
+      audioRef.current &&
+      (audioRef.current.currentTime > 5 || currentTrackIndex === 0)
+    ) {
+      audioRef.current.currentTime = 0;
+    } else {
       dispatch(setPlayingTrack(currentTrackIndex - 1));
     }
+
+    dispatch(setIsPlaying(true));
   };
 
   const handleNextTrack = () => {
     if (currentTrackIndex < tracks - 1) {
       dispatch(setPlayingTrack(currentTrackIndex + 1));
+      dispatch(setIsPlaying(true));
     }
   };
 
@@ -46,40 +53,26 @@ export default function ControllersControllerComponent({
   };
 
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center gap-4 max-sm:gap-1">
       <button
         onClick={handlePrevTrack}
-        className={cn("text-zinc-400 rounded-full p-1.5 transition-all", {
-          "md:hover:bg-zinc-200 md:hover:bg-opacity-5 max-md:active:text-zinc-500":
-            currentTrackIndex !== 0,
-          "cursor-not-allowed": currentTrackIndex === 0,
-        })}
-        disabled={currentTrackIndex === 0}
+        className="text-zinc-400 rounded-full p-1.5 transition-all md:hover:bg-zinc-200 md:hover:bg-opacity-5 max-md:active:text-zinc-400 max-md:p-1"
       >
-        <IoPlaySkipBack className="text-base" />
+        <IoPlaySkipBack className="text-base max-md:text-sm" />
       </button>
 
       <button
         onClick={togglePlay}
-        className="bg-zinc-200 text-zinc-700 rounded-full p-1.5 transition-all"
+        className="bg-zinc-200 text-zinc-700 rounded-full p-1.5 transition-all text-lg max-md:text-base max-md:p-1"
       >
-        {isPlaying ? (
-          <IoPause className="text-lg" />
-        ) : (
-          <IoPlay className="text-lg" />
-        )}
+        {isPlaying ? <IoPause /> : <IoPlay />}
       </button>
 
       <button
         onClick={handleNextTrack}
-        className={cn("text-zinc-400 rounded-full p-1.5 transition-all", {
-          "md:hover:bg-zinc-200 md:hover:bg-opacity-5 max-md:active:text-zinc-400":
-            currentTrackIndex !== tracks - 1,
-          "cursor-not-allowed": currentTrackIndex === tracks - 1,
-        })}
-        disabled={currentTrackIndex === tracks - 1}
+        className="text-zinc-400 rounded-full p-1.5 transition-all md:hover:bg-zinc-200 md:hover:bg-opacity-5 max-md:active:text-zinc-400 max-md:p-1"
       >
-        <IoPlaySkipForward className="text-base" />
+        <IoPlaySkipForward className="text-base max-md:text-sm" />
       </button>
     </div>
   );

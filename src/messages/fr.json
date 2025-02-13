@@ -68,11 +68,12 @@
     "hr": "h",
     "min": "min",
     "sec": "sec",
+    "default": "Par défaut",
     "topRated": "Mieux noté",
-    "custom": "Personnalisé",
     "titleSong": "titre",
     "preview": "aperçu",
-    "rating": "note"
+    "rating": "note",
+    "disc": "Disque"
   },
   "PaginationComponent": {
     "next": "Suivant",
