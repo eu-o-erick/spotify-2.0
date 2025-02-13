@@ -53,12 +53,12 @@ export default function ControllersControllerComponent({
   };
 
   return (
-    <div className="flex items-center justify-center gap-4 max-sm:gap-1">
+    <div className="flex items-center justify-center gap-2 max-md:gap-1">
       <button
         onClick={handlePrevTrack}
         className="text-zinc-400 rounded-full p-1.5 transition-all md:hover:bg-zinc-200 md:hover:bg-opacity-5 max-md:active:text-zinc-400 max-md:p-1"
       >
-        <IoPlaySkipBack className="text-base max-md:text-sm" />
+        <IoPlaySkipBack className="text-lg max-md:text-base" />
       </button>
 
       <button
@@ -72,7 +72,7 @@ export default function ControllersControllerComponent({
         onClick={handleNextTrack}
         className="text-zinc-400 rounded-full p-1.5 transition-all md:hover:bg-zinc-200 md:hover:bg-opacity-5 max-md:active:text-zinc-400 max-md:p-1"
       >
-        <IoPlaySkipForward className="text-base max-md:text-sm" />
+        <IoPlaySkipForward className="text-lg max-md:text-base" />
       </button>
     </div>
   );
