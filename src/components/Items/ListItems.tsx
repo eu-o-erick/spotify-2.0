@@ -36,7 +36,13 @@ export default function ListAlbumsComponent({
   }
 
   return (
-    <ul className="mb-16 max-md:mb-10 grid grid-cols-6 content-between gap-y-4 gap-x-1 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2">
+    <ul
+      className="
+      mb-16 max-md:mb-10 grid grid-cols-6 content-between lg:gap-y-4 lg:gap-x-1
+      max-lg:grid-cols-4 max-md:grid-cols-3
+      max-sm:grid-cols-2  max-sm:gap-0
+      "
+    >
       {children}
     </ul>
   );

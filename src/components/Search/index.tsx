@@ -1,8 +1,8 @@
 "use client";
 
 import { BsSearch } from "react-icons/bs";
-import BgGradient from "./BgGradient";
-import ButtonComponent from "./Button";
+import BgGradient from "../BgGradient";
+import ButtonComponent from "../Button";
 import { useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 import { redirect } from "@/i18n/routing";
@@ -39,7 +39,7 @@ export default function SearchComponent() {
 
       <div className="container relative">
         <div className="mx-auto text-center max-w-[560px] max-md:max-w-[460px]">
-          <h1 className="text-4xl mb-6 mx-4 max-sm:text-2xl max-sm:mb-4">
+          <h1 className="text-4xl mb-6 mx-4 max-md:text-2xl max-sm:mb-4">
             {t("title")}
           </h1>
 

@@ -11,6 +11,7 @@ import { cn } from "@/lib/cn";
 import InfoTrackComponent from "./Info";
 import PlayPauseTrackItemComponent from "./PlayPause";
 import { setIsPlaying, setPlayingTrack } from "@/store/slices/playingTrack";
+import ButtonsRatingInput from "./InputButtons";
 
 export default function TrackItemComponent({
   track,
@@ -43,7 +44,6 @@ export default function TrackItemComponent({
           "bg-zinc-500 bg-opacity-5": index === indexCurrentTrack,
         }
       )}
-      onClick={handleSetTrack}
     >
       <td className="rounded-s-lg">
         <div className="flex items-center justify-center w-14">
@@ -65,13 +65,16 @@ export default function TrackItemComponent({
       <InfoTrackComponent track={track} />
 
       <td className="rounded-e-lg">
-        <div className="flex gap-4 items-center justify-end">
-          <RatingStars rating={rating} />
+        <div className="flex gap-1 items-center justify-end">
+          <RatingStars rating={rating} setRating={setRating} />
+
           <RatingInput
             trackNumber={index}
             rating={rating}
             setRating={setRating}
           />
+
+          <ButtonsRatingInput setRating={setRating} />
         </div>
       </td>
     </tr>

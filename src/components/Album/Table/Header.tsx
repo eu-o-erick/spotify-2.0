@@ -17,7 +17,7 @@ export default function TrackListHeaderComponent() {
           {t("titleSong")}
         </th>
 
-        <th className="text-start text-xs font-light opacity-80 pl-6 w-52">
+        <th className="text-start text-xs font-light opacity-80 w-20">
           {t("rating")}
         </th>
       </tr>

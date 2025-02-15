@@ -1,7 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { useRef } from "react";
 
 export default function RatingInput({
   trackNumber,
@@ -12,40 +9,22 @@ export default function RatingInput({
   rating: string | number;
   setRating: React.Dispatch<React.SetStateAction<string | number>>;
 }) {
-  const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = parseFloat(e.target.value);
+    const inputValue = e.target.value.replace(",", ".");
+    let value = parseFloat(inputValue);
+
+    if (isNaN(value)) {
+      setRating("");
+      return;
+    }
+
     if (value < 0) value = 0;
     if (value > 5) value = 5;
+
+    value = Math.round(value * 10) / 10;
     setRating(value);
-  };
-
-  const handleIncrement = () => {
-    setRating((prev) => {
-      const newValue = Math.min(5, (typeof prev === "string" ? 0 : prev) + 0.1);
-      return parseFloat(newValue.toFixed(1));
-    });
-  };
-
-  const handleDecrement = () => {
-    setRating((prev) => {
-      const newValue = Math.max(0, (typeof prev === "string" ? 0 : prev) - 0.1);
-      return newValue === 0 ? "" : parseFloat(newValue.toFixed(1));
-    });
-  };
-
-  const startContinuousAction = (action: () => void) => {
-    action();
-    const id = setInterval(action, 150);
-    setIntervalId(id);
-  };
-
-  const stopContinuousAction = () => {
-    if (intervalId) {
-      clearInterval(intervalId);
-      setIntervalId(null);
-    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -56,6 +35,7 @@ export default function RatingInput({
       "ArrowLeft",
       "ArrowRight",
       "Delete",
+      ",",
     ];
     const isNumber = /^[0-9.]$/.test(e.key);
 
@@ -76,8 +56,15 @@ export default function RatingInput({
   };
 
   return (
-    <div className="flex items-center">
+    <div
+      className="
+        flex items-end justify-center gap-0.5 bg-zinc-500 bg-opacity-5 rounded-md px-2 py-1.5
+        md:group-hover:bg-zinc-800 md:group-hover:bg-opacity-20 cursor-pointer
+      "
+      onClick={() => inputRef.current?.focus()}
+    >
       <input
+        ref={inputRef}
         type="number"
         step="0.1"
         min="0"
@@ -87,36 +74,15 @@ export default function RatingInput({
         onKeyDown={handleKeyDown}
         id={`track${trackNumber}`}
         className="
-          w-10 text-center focus:outline-none bg-secondary rounded-md p-1 shadow-sm
-          placeholder:opacity-20 md:group-hover:bg-primary md:group-hover:shadow-none
+          text-end focus:outline-none leading-3 bg-transparent w-6 placeholder:opacity-20 cursor-pointer
           [&::-webkit-inner-spin-button]:appearance-none 
           [&::-webkit-outer-spin-button]:appearance-none
         "
         placeholder="0"
       />
 
-      <div className="flex flex-col mx-2">
-        <button
-          onMouseDown={() => startContinuousAction(handleIncrement)}
-          onTouchStart={() => startContinuousAction(handleIncrement)}
-          onMouseUp={stopContinuousAction}
-          onMouseLeave={stopContinuousAction}
-          onTouchEnd={stopContinuousAction}
-          className="flex justify-center items-center text-zinc-400 active:text-zinc-500 transition-all"
-        >
-          <IoIosArrowUp />
-        </button>
-
-        <button
-          onMouseDown={() => startContinuousAction(handleDecrement)}
-          onTouchStart={() => startContinuousAction(handleDecrement)}
-          onMouseUp={stopContinuousAction}
-          onMouseLeave={stopContinuousAction}
-          onTouchEnd={stopContinuousAction}
-          className="flex justify-center items-center text-zinc-400 active:text-zinc-500 transition-all"
-        >
-          <IoIosArrowDown />
-        </button>
+      <div className="text-xs leading-3 font-semibold text-zinc-500 realative mb-1">
+        /5
       </div>
     </div>
   );

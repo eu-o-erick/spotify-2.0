@@ -20,10 +20,8 @@ export default function VisualMusicControllerComponent({
       />
 
       <div className="flex flex-col flex-1">
-        <h3 className="font-normal max-md:text-sm line-clamp-1">
-          {track?.name}
-        </h3>
-        <div className="flex items-center gap-1 text-[13px] text-zinc-400 max-md:text-xs">
+        <h3 className="font-normal line-clamp-1">{track?.name}</h3>
+        <div className="flex items-center gap-1 text-[13px] text-zinc-400 max-md:hidden">
           {track?.explicit && <BsExplicitFill />}
           <p className="line-clamp-1">
             {track?.artists.map((artist) => artist.name).join(", ")}

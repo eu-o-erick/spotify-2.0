@@ -40,7 +40,7 @@ export default function InfoAlbum({
   return (
     <section className="relative mb-20">
       <BgGradient />{" "}
-      <div className="relative z-[2] container pt-24 pb-11 flex gap-6 max-lg:pt-16 max-sm:px-3 max-sm:py-8 max-sm:flex-col max-sm:gap-4">
+      <div className="relative z-[2] container pt-24 pb-11 flex gap-6 max-lg:pt-16 max-sm:py-8 max-sm:flex-col max-sm:gap-4 max-sm:px-2">
         {isLoading && (
           <div className="relative animate-pulse w-full flex gap-6 max-sm:flex-col max-sm:gap-4">
             <div className="bg-secondary rounded-[4px] w-[300px] h-[300px] object-cover max-lg:w-48 max-lg:h-48" />

@@ -126,9 +126,11 @@ export default function SwiperListComponent({
           breakpoints={{
             500: {
               slidesPerView: 3,
+              spaceBetween: 0,
             },
             768: {
               slidesPerView: 4,
+              spaceBetween: 0,
             },
             1024: {
               slidesPerView: 6,

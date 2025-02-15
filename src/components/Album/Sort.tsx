@@ -15,7 +15,7 @@ export default function SortTracksComponent({
   const t = useTranslations("AlbumPage");
 
   return (
-    <section className="container flex justify-end items-center gap-2 max-sm:px-2 text-white ">
+    <section className="container flex justify-end items-center gap-2 text-white max-sm:px-2">
       <button
         type="button"
         onClick={() => setSortBy("default")}

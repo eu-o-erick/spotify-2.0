@@ -1,9 +1,8 @@
-"use client";
-
 import PaginationComponent from "@/components/Pagination";
 import { TReleasesArtistAlbums } from "@/types/TDataArtistAlbums";
 import ListAlbumsComponent from "@/components/Items/ListItems";
 import ItemAlbumComponent from "@/components/Items/ItemAlbum";
+import { Fragment } from "react";
 
 export default function ListArtistAlbums({
   type,
@@ -23,7 +22,7 @@ export default function ListArtistAlbums({
   isLoading: boolean;
 }) {
   return (
-    <>
+    <Fragment>
       <ListAlbumsComponent isLoading={isLoading}>
         {(dataAlbums ?? []).map(({ releases }, i) => (
           <ItemAlbumComponent
@@ -45,6 +44,6 @@ export default function ListArtistAlbums({
       ) : (
         <></>
       )}
-    </>
+    </Fragment>
   );
 }
