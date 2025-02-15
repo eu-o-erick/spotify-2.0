@@ -10,6 +10,8 @@ import { TAlbum } from "@/types/TAlbum";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
+import CreditsAlbumComponent from "@/components/Album/Credits";
+import DownloadButtonComponent from "@/components/Album/DownloadButton";
 
 export default function AlbumPage() {
   const t = useTranslations("AlbumPage");
@@ -51,6 +53,10 @@ export default function AlbumPage() {
             isLoading={isLoading}
             tracks={dataAlbum?.tracks.items}
           />
+
+          <DownloadButtonComponent />
+
+          <CreditsAlbumComponent copyrights={dataAlbum?.copyrights} />
 
           <MusicController album={dataAlbum} />
         </Fragment>

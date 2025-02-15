@@ -73,7 +73,8 @@
     "titleSong": "titre",
     "preview": "aperçu",
     "rating": "note",
-    "disc": "Disque"
+    "disc": "Disque",
+    "downloadImage": "Télécharger l'image"
   },
   "PaginationComponent": {
     "next": "Suivant",

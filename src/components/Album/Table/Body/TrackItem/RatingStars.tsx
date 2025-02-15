@@ -16,11 +16,11 @@ export default function RatingStars({
 
   const getRatingColor = (value: number) => {
     const colors = {
-      1: [250, 204, 21],
-      2: [190, 242, 100],
+      1: [239, 68, 68],
+      2: [234, 179, 8],
       3: [163, 230, 53],
-      4: [132, 204, 22],
-      5: [34, 197, 94],
+      4: [34, 197, 94],
+      5: [16, 185, 129],
     };
 
     const lowerPoint = Math.floor(value);

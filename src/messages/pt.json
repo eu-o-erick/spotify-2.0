@@ -57,7 +57,8 @@
     "titleSong": "título",
     "preview": "prévia",
     "rating": "avaliação",
-    "disc": "Disco"
+    "disc": "Disco",
+    "downloadImage": "Baixar Imagem"
   },
   "PaginationComponent": {
     "next": "Próximo",
