@@ -10,6 +10,7 @@ import latestAlbums from "@/data/latest_albums.json";
 import featuredArtists from "@/data/featured_artists.json";
 import ItemArtistComponent from "@/components/Items/ItemArtist";
 import { useEffect, useState } from "react";
+import SideAd from "@/components/SideAd";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
@@ -24,6 +25,18 @@ export default function HomePage() {
 
   return (
     <main className="flex-1 mb-20">
+      <SideAd
+        dataAdClient="ca-pub-7668134418009541"
+        dataAdSlot="9104137892"
+        side="left"
+      />
+
+      <SideAd
+        dataAdClient="ca-pub-7668134418009541"
+        dataAdSlot="5593026462"
+        side="right"
+      />
+
       <SearchComponent />
 
       <SwiperListComponent

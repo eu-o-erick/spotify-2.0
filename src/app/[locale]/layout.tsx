@@ -11,6 +11,7 @@ import "swiper/css";
 import Header from "@/components/Header";
 import Separator from "@/components/Separator";
 import Footer from "@/components/Footer";
+import AdSense from "@/components/AdSense";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -38,7 +39,9 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
 
   return (
     <html lang={locale} className="min-h-screen">
-      <meta name="google-adsense-account" content="ca-pub-7668134418009541" />
+      <head>
+        <AdSense pId="7668134418009541" />
+      </head>
       <body
         className={`${dmSans.className} antialiased min-h-screen flex flex-col`}
       >
