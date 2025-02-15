@@ -2,7 +2,7 @@
 
 import InfoAlbum from "@/components/Album/Info";
 import SortTracksComponent from "@/components/Album/Sort";
-import TrackListComponent from "@/components/Album/TrackList";
+import TrackTableComponent from "@/components/Album/Table";
 import MusicController from "@/components/Album/Controller";
 import NotFoundComponent from "@/components/NotFound";
 import { fetchSpotifyAlbum } from "@/services/spotifyGetAlbum";
@@ -47,7 +47,7 @@ export default function AlbumPage() {
 
           <SortTracksComponent sortBy={sortBy} setSortBy={setSortBy} />
 
-          <TrackListComponent
+          <TrackTableComponent
             isLoading={isLoading}
             tracks={dataAlbum?.tracks.items}
           />

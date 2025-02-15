@@ -1,8 +1,8 @@
 "use client";
 
 import { TTrack } from "@/types/TAlbum";
-import RatingStars from "../RatingStars";
-import RatingInput from "../RatingInput";
+import RatingStars from "./RatingStars";
+import RatingInput from "./RatingInput";
 import { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
