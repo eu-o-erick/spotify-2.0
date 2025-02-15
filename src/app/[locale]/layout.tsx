@@ -38,6 +38,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
 
   return (
     <html lang={locale} className="min-h-screen">
+      <meta name="google-adsense-account" content="ca-pub-7668134418009541" />
       <body
         className={`${dmSans.className} antialiased min-h-screen flex flex-col`}
       >
