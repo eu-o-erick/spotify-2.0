@@ -75,7 +75,8 @@
     "preview": "vista previa",
     "rating": "calificación",
     "disc": "Disco",
-    "downloadImage": "Descargar Imagen"
+    "downloadImage": "Descargar Imagen",
+    "noTracks": "No hay pistas disponibles"
   },
   "PaginationComponent": {
     "next": "Siguiente",

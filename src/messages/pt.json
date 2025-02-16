@@ -58,7 +58,8 @@
     "preview": "prévia",
     "rating": "avaliação",
     "disc": "Disco",
-    "downloadImage": "Baixar Imagem"
+    "downloadImage": "Baixar Imagem",
+    "noTracks": "Nenhuma faixa disponível"
   },
   "PaginationComponent": {
     "next": "Próximo",

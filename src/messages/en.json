@@ -75,7 +75,8 @@
     "preview": "preview",
     "rating": "rating",
     "disc": "Disc",
-    "downloadImage": "Download Image"
+    "downloadImage": "Download Image",
+    "noTracks": "No tracks available"
   },
   "PaginationComponent": {
     "next": "next",
