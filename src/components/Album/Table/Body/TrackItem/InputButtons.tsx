@@ -41,10 +41,16 @@ export default function ButtonsRatingInput({
     <div className="flex flex-col mx-2">
       <button
         onMouseDown={() => startContinuousAction(handleIncrement)}
-        onTouchStart={() => startContinuousAction(handleIncrement)}
+        onTouchStart={(e) => {
+          e.preventDefault();
+          startContinuousAction(handleIncrement);
+        }}
         onMouseUp={stopContinuousAction}
         onMouseLeave={stopContinuousAction}
-        onTouchEnd={stopContinuousAction}
+        onTouchEnd={(e) => {
+          e.preventDefault();
+          stopContinuousAction();
+        }}
         className="flex justify-center items-center text-zinc-400 active:text-zinc-500 transition-all"
       >
         <IoIosArrowUp />
@@ -52,10 +58,16 @@ export default function ButtonsRatingInput({
 
       <button
         onMouseDown={() => startContinuousAction(handleDecrement)}
-        onTouchStart={() => startContinuousAction(handleDecrement)}
+        onTouchStart={(e) => {
+          e.preventDefault();
+          startContinuousAction(handleDecrement);
+        }}
         onMouseUp={stopContinuousAction}
         onMouseLeave={stopContinuousAction}
-        onTouchEnd={stopContinuousAction}
+        onTouchEnd={(e) => {
+          e.preventDefault();
+          stopContinuousAction();
+        }}
         className="flex justify-center items-center text-zinc-400 active:text-zinc-500 transition-all"
       >
         <IoIosArrowDown />

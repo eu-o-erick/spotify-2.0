@@ -10,7 +10,6 @@ import latestAlbums from "@/data/latest_albums.json";
 import featuredArtists from "@/data/featured_artists.json";
 import ItemArtistComponent from "@/components/Items/ItemArtist";
 import { useEffect, useState } from "react";
-import SideAd from "@/components/SideAd";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
@@ -24,51 +23,41 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className="flex-1 mb-20">
-      <SideAd
-        dataAdClient="ca-pub-7668134418009541"
-        dataAdSlot="9104137892"
-        side="left"
-      />
-
-      <SideAd
-        dataAdClient="ca-pub-7668134418009541"
-        dataAdSlot="5593026462"
-        side="right"
-      />
-
+    <main className="flex-1 mb-20 ">
       <SearchComponent />
 
-      <SwiperListComponent
-        title={t("featuredAlbums")}
-        titleNotFound="featuredAlbums"
-        isLoading={isLoading}
-      >
-        {featuredAlbums.items.map((album, i) => (
-          <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
-        ))}
-      </SwiperListComponent>
+      <section className="relative">
+        <SwiperListComponent
+          title={t("featuredAlbums")}
+          titleNotFound="featuredAlbums"
+          isLoading={isLoading}
+        >
+          {featuredAlbums.items.map((album, i) => (
+            <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
+          ))}
+        </SwiperListComponent>
 
-      <SwiperListComponent
-        title={t("latestAlbums")}
-        titleNotFound="latestAlbums"
-        isLoading={isLoading}
-      >
-        {latestAlbums.items.map((album, i) => (
-          <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
-        ))}
-      </SwiperListComponent>
+        <SwiperListComponent
+          title={t("latestAlbums")}
+          titleNotFound="latestAlbums"
+          isLoading={isLoading}
+        >
+          {latestAlbums.items.map((album, i) => (
+            <ItemAlbumComponent key={i} album={album} isPageArtist={false} />
+          ))}
+        </SwiperListComponent>
 
-      <SwiperListComponent
-        title={t("featuredArtists")}
-        isArtistComponent={true}
-        titleNotFound="artistAlbums"
-        isLoading={isLoading}
-      >
-        {featuredArtists.items.map((artist, i) => (
-          <ItemArtistComponent key={i} artist={artist} />
-        ))}
-      </SwiperListComponent>
+        <SwiperListComponent
+          title={t("featuredArtists")}
+          isArtistComponent={true}
+          titleNotFound="artistAlbums"
+          isLoading={isLoading}
+        >
+          {featuredArtists.items.map((artist, i) => (
+            <ItemArtistComponent key={i} artist={artist} />
+          ))}
+        </SwiperListComponent>
+      </section>
     </main>
   );
 }
