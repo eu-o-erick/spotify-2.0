@@ -20,7 +20,7 @@ export default function InfoArtist({
         {isLoading && (
           <>
             <div className="flex justify-between items-start animate-pulse">
-              <div className="bg-secondary rounded-[4px] w-[300px] h-[300px] max-lg:w-48 max-lg:h-48 max-lg:rounded-sm" />
+              <div className="bg-secondary rounded-[4px] w-[300px] h-[300px] max-lg:w-56 max-lg:h-56 max-lg:rounded-sm" />
 
               <div className="flex items-end gap-1.5 sm:hidden">
                 <span className="bg-secondary h-3 w-11 rounded-sm" />
@@ -38,7 +38,7 @@ export default function InfoArtist({
 
                   <span className="bg-secondary h-8 w-64 rounded-sm mt-6 mb-4 max-lg:mt-2 max-sm:h-6 max-sm:w-44 max-sm:mt-7 max-sm:mb-3" />
 
-                  <span className="bg-secondary h-5 w-48 rounded-sm max-sm:h-4 max-sm:w-32" />
+                  <span className="bg-secondary h-5 w-40 rounded-sm" />
                 </div>
 
                 <div className="flex items-end gap-1 max-sm:hidden">
@@ -64,7 +64,7 @@ export default function InfoArtist({
                   dataArtist.visuals.avatarImage?.sources?.[0]?.url ??
                   "/no-image.webp"
                 }
-                className="rounded-[4px] w-[300px] h-[300px] object-cover max-lg:w-48 max-lg:h-48"
+                className="rounded-[4px] w-[300px] h-[300px] object-cover max-lg:w-56 max-lg:h-56"
               />
 
               <SpotifyButton
@@ -85,11 +85,11 @@ export default function InfoArtist({
                     </p>
                   )}
 
-                  <h1 className="mt-4 mb-2 text-4xl font-light max-lg:mt-2 max-lg:text-2xl max-sm:mt-6">
+                  <h1 className="mt-4 mb-2 text-4xl max-lg:mt-2 max-lg:text-2xl max-sm:mt-6">
                     {dataArtist.profile.name}
                   </h1>
 
-                  <p className="text-sm font-medium opacity-80 max-lg:text-xs max-lg:font-normal">
+                  <p className="text-sm font-medium opacity-80 max-lg:font-normal">
                     {formatNumber(dataArtist.stats.followers)} followers
                   </p>
                 </div>
