@@ -3,7 +3,7 @@
 import { TTrack } from "@/types/TAlbum";
 import RatingStars from "./RatingStars";
 import RatingInput from "./RatingInput";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
@@ -28,18 +28,36 @@ export default function TrackItemComponent({
 
   const dispatch = useDispatch();
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const handleSetTrack = () => {
     if (indexCurrentTrack === index) {
       dispatch(setIsPlaying(!isPlaying));
     } else {
       dispatch(setPlayingTrack(index));
+      dispatch(setIsPlaying(true));
+    }
+  };
+
+  const handleRowClick = (e: React.MouseEvent) => {
+    if (!(e.target as HTMLElement).closest(".rating-area")) {
+      handleSetTrack();
+    }
+  };
+
+  const handleRatingAreaClick = (e: React.MouseEvent) => {
+    const target = e.target as HTMLElement;
+
+    if (target.classList.contains("rating-area")) {
+      inputRef.current?.focus();
     }
   };
 
   return (
     <tr
+      onClick={handleRowClick}
       className={cn(
-        "md:hover:rounded-md md:hover:bg-secondary group transition-all",
+        "group transition-all cursor-pointer hover:bg-zinc-400 hover:bg-opacity-5",
         {
           "bg-zinc-500 bg-opacity-5": index === indexCurrentTrack,
         }
@@ -64,17 +82,20 @@ export default function TrackItemComponent({
 
       <InfoTrackComponent track={track} />
 
-      <td className="rounded-e-lg">
+      <td className="rounded-e-lg rating-area" onClick={handleRatingAreaClick}>
         <div className="flex gap-1 items-center justify-end">
           <RatingStars rating={rating} setRating={setRating} />
 
-          <RatingInput
-            trackNumber={index}
-            rating={rating}
-            setRating={setRating}
-          />
+          <div className="flex items-center">
+            <RatingInput
+              inputRef={inputRef}
+              trackNumber={index}
+              rating={rating}
+              setRating={setRating}
+            />
 
-          <ButtonsRatingInput setRating={setRating} />
+            <ButtonsRatingInput setRating={setRating} />
+          </div>
         </div>
       </td>
     </tr>

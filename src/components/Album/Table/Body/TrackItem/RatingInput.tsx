@@ -1,16 +1,14 @@
-import { useRef } from "react";
-
 export default function RatingInput({
   trackNumber,
   rating,
   setRating,
+  inputRef,
 }: {
   trackNumber: number;
   rating: string | number;
   setRating: React.Dispatch<React.SetStateAction<string | number>>;
+  inputRef: React.RefObject<HTMLInputElement | null>;
 }) {
-  const inputRef = useRef<HTMLInputElement>(null);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value.replace(",", ".");
     let value = parseFloat(inputValue);

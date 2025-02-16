@@ -12,7 +12,9 @@ import ControllersControllerComponent from "./Controllers";
 
 export default function MusicController({ album }: { album: TAlbum | null }) {
   const [track, setTrack] = useState<TTrack | null>(null);
-  const [volume, setVolume] = useState<number>(0.01);
+  const [volume, setVolume] = useState<number>(
+    process.env.NODE_ENV === "development" ? 0.01 : 0.4
+  );
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
