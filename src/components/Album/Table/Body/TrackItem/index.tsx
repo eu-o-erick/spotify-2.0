@@ -57,14 +57,14 @@ export default function TrackItemComponent({
     <tr
       onClick={handleRowClick}
       className={cn(
-        "group transition-all cursor-pointer hover:bg-zinc-400 hover:bg-opacity-5",
+        "group transition-all cursor-pointer md:hover:bg-zinc-400 hover:bg-opacity-5",
         {
           "bg-zinc-500 bg-opacity-5": index === indexCurrentTrack,
         }
       )}
     >
-      <td className="rounded-s-lg">
-        <div className="flex items-center justify-center w-14">
+      <td className="sm:rounded-s-lg">
+        <div className="flex items-center justify-center w-14 max-sm:w-10">
           <PlayPauseTrackItemComponent
             index={index}
             handleSetTrack={handleSetTrack}
@@ -72,7 +72,7 @@ export default function TrackItemComponent({
 
           <span
             className={cn("font-bold text-zinc-500 w-4 md:group-hover:hidden", {
-              hidden: index === indexCurrentTrack && isPlaying,
+              hidden: index === indexCurrentTrack,
             })}
           >
             {track.track_number}
@@ -82,7 +82,10 @@ export default function TrackItemComponent({
 
       <InfoTrackComponent track={track} />
 
-      <td className="rounded-e-lg rating-area" onClick={handleRatingAreaClick}>
+      <td
+        className="sm:rounded-e-lg rating-area"
+        onClick={handleRatingAreaClick}
+      >
         <div className="flex gap-1 items-center justify-end">
           <RatingStars rating={rating} setRating={setRating} />
 

@@ -20,18 +20,18 @@ export default function PlayPauseTrackItemComponent({
 
   return (
     <div
-      className={cn("hidden items-center md:group-hover:flex", {
-        flex: index === indexCurrentTrack && isPlaying,
+      className={cn("hidden items-center md:group-hover:flex max-sm:-ml-1", {
+        flex: index === indexCurrentTrack,
       })}
     >
       <button
         type="button"
-        className="relative w-6 h-6 rounded-full md:hover:bg-zinc-100 md:hover:text-main max-md:active:text-zinc-500 hover:bg-opacity-5 transition-all"
+        className="relative w-5 h-5 max-sm:w-4 max-sm:h-4 rounded-full md:hover:bg-zinc-100 md:hover:text-main max-md:active:text-zinc-500 hover:bg-opacity-5 transition-all"
         onClick={handleSetTrack}
       >
         <GiPauseButton
           className={cn(
-            "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 transition-opacity",
+            "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 max-sm:w-3 max-sm:h-3 transition-opacity",
             {
               "opacity-0": indexCurrentTrack !== index || !isPlaying,
             }
@@ -40,7 +40,7 @@ export default function PlayPauseTrackItemComponent({
 
         <FaPlay
           className={cn(
-            "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 transition-opacity",
+            "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 max-sm:w-3 max-sm:h-3 transition-opacity",
             {
               "opacity-0": indexCurrentTrack === index && isPlaying,
             }

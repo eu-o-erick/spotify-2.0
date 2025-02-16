@@ -8,7 +8,7 @@ export default function TrackListHeaderComponent() {
   return (
     <thead className="border-b border-zinc-600 ">
       <tr className="h-12 ">
-        <td className="rounded-s-lg opacity-80 w-14">
+        <td className="rounded-s-lg opacity-80 w-14 max-sm:w-10">
           <div className="flex items-center justify-center">
             <span className="text-xs font-light w-4">#</span>
           </div>
