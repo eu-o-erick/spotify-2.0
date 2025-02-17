@@ -9,10 +9,10 @@ export default function FooterComponent() {
   return (
     <footer className="relative pt-12 max-sm:pt-8">
       <BgGradient />
-      <div className="relative container grid grid-cols-2 grid-rows-1 pb-6 max-sm:grid-cols-1 max-sm:px-2">
+      <div className="relative container grid grid-cols-2 grid-rows-1 pb-6 max-sm:grid-cols-1 max-md:px-2">
         <div>
           <nav className="mb-6">
-            <ul className="flex items-center gap-8 text-sm underline max-lg:gap-6 max-sm:text-xs">
+            <ul className="flex items-center gap-8 text-sm underline max-lg:gap-6 max-md:text-xs">
               <li className="opacity-80 hover:opacity-100 md:opacity-100">
                 <Link href={"/"}>{t("nav.home")}</Link>
               </li>
@@ -24,7 +24,7 @@ export default function FooterComponent() {
           </nav>
 
           <nav className="mb-16 max-sm:mb-14">
-            <ul className="flex items-center gap-8 text-sm underline max-lg:gap-6 max-sm:text-xs">
+            <ul className="flex items-center gap-8 text-sm underline max-lg:gap-6 max-md:text-xs">
               <li className="opacity-70 hover:opacity-100 md:opacity-100">
                 <Link href={"/terms-and-conditions"}>
                   {t("nav.termsAndConditions")}
@@ -76,8 +76,8 @@ export default function FooterComponent() {
         </div>
       </div>
       <div className="relative bg-primary">
-        <div className="container py-2 max-sm:px-2">
-          <ul className="flex items-center gap-8 text-xs max-sm:text-[10px] max-sm:gap-4">
+        <div className="container py-2 max-md:px-2">
+          <ul className="flex items-center gap-8 text-xs max-md:text-[10px] max-sm:gap-4">
             <li className="max-sm:w-[54px]">© 2025 Abcdefgz</li>
             <li className="w-px h-6 bg-white opacity-20" />
             <li>{t("disclaimer")}</li>

@@ -67,10 +67,10 @@ export default function SwiperListComponent({
 
   return (
     <section className="container mb-16 max-md:mb-10">
-      <div className="flex justify-between items-end mb-7 max-md:mb-4 max-sm:px-2">
+      <div className="flex justify-between items-end mb-7 max-md:mb-4 max-md:px-2">
         <h2 className="text-2xl max-md:text-xl">{title}</h2>
 
-        <div className="flex items-end gap-x-6 gap-y-2 max-sm:flex-col ">
+        <div className="flex items-center gap-x-6 gap-y-2 max-sm:flex-col  max-sm:items-end">
           {dropDownOptions && (
             <DropDownComponent
               state={dropDownOptions.state}
@@ -80,7 +80,7 @@ export default function SwiperListComponent({
           )}
 
           <div
-            className={cn("flex gap-2 pt-1", {
+            className={cn("flex gap-2", {
               "opacity-20 pointer-events-none": !isMoreThanSlidesPerView,
             })}
           >

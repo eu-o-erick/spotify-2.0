@@ -28,7 +28,7 @@ export default function ResultsSearchComponent({
 
   return (
     <section className="container">
-      <h2 className="text-zinc-500 text-xl mb-14 font-light max-sm:px-2">
+      <h2 className="text-zinc-500 text-xl mb-14 font-light max-md:px-2">
         {t("response")}{" "}
         <span className="font-semibold">{decodeURIComponent(query)}</span>
       </h2>
@@ -46,7 +46,7 @@ export default function ResultsSearchComponent({
 
         {pagesArtists > 1 && (
           <Link
-            className="md:hover:underline opacity-60 md:hover:opacity-90 max-md:active:underline max-md:active:opacity-90 transition-all max-sm:px-2"
+            className="md:hover:underline opacity-60 md:hover:opacity-90 max-md:active:underline max-md:active:opacity-90 transition-all max-md:px-2"
             href={{ pathname: "/search/artists", query: { q: query } }}
           >
             {t("seeAllArtists")}
@@ -55,7 +55,7 @@ export default function ResultsSearchComponent({
       </div>
 
       <div className="container py-10 flex flex-col items-end">
-        <h2 className="container text-2xl max-md:text-xl mb-7 max-sm:px-2">
+        <h2 className="container text-2xl max-md:text-xl mb-7 max-md:px-2">
           {t("albumsFound")}
         </h2>
 
@@ -67,7 +67,7 @@ export default function ResultsSearchComponent({
 
         {pagesAlbums > 1 && (
           <Link
-            className="md:hover:underline opacity-60 md:hover:opacity-90 max-md:active:underline max-md:active:opacity-90 transition-all max-sm:px-2"
+            className="md:hover:underline opacity-60 md:hover:opacity-90 max-md:active:underline max-md:active:opacity-90 transition-all max-md:px-2"
             href={{ pathname: "/search/albums", query: { q: query } }}
           >
             {t("seeAllAlbums")}

@@ -13,7 +13,7 @@ export default function TitleArtistAlbums({
   const t = useTranslations("SearchPage");
 
   return (
-    <h2 className="font-light text-zinc-500 text-xl max-sm:gap-1 max-sm:text-base max-sm:px-2">
+    <h2 className="font-light text-zinc-500 text-xl max-sm:gap-1 max-sm:text-base max-md:px-2">
       {t("browseAlbumsAndSingles")}{" "}
       <Link
         href={{

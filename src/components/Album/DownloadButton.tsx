@@ -6,7 +6,7 @@ export default function DownloadButtonComponent() {
   const t = useTranslations("AlbumPage");
 
   return (
-    <div className="container flex justify-end my-10 max-sm:px-2">
+    <div className="container flex justify-end my-10 max-md:px-2">
       <ButtonComponent
         label={t("downloadImage")}
         handle={() => {}}

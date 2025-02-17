@@ -18,7 +18,7 @@ export default function ResultsSearchArtistsComponent({
 
   return (
     <section className="container">
-      <h2 className="text-zinc-500 text-xl mb-14 font-light max-sm:px-2">
+      <h2 className="text-zinc-500 text-xl mb-14 font-light max-md:px-2">
         {t("artistsResponse")}{" "}
         <span className="font-semibold">{decodeURIComponent(query)}</span>
       </h2>

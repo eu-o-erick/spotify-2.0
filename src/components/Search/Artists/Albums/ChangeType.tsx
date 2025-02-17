@@ -14,7 +14,7 @@ export default function FilterAlbums({
   name: string;
 }) {
   return (
-    <div className="flex justify-end gap-3 text-sm my-4 max-sm:text-xs max-sm:mb-2 max-sm:gap-2 max-sm:px-2">
+    <div className="flex justify-end gap-3 text-sm my-4 max-sm:text-xs max-sm:mb-2 max-sm:gap-2 max-md:px-2">
       {TYPES.map((TYPE, i) => {
         if (TYPE === type) {
           return (

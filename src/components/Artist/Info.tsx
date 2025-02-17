@@ -14,7 +14,7 @@ export default function InfoArtist({
   isLoading: boolean;
 }) {
   return (
-    <section className="relative mb-20 max-sm:px-2">
+    <section className="relative mb-20 max-md:px-2">
       <BgGradient />{" "}
       <div className="relative z-[2] container pt-24 pb-11 flex gap-6 max-lg:pt-16 max-sm:py-8 max-sm:flex-col max-sm:gap-4">
         {isLoading && (
