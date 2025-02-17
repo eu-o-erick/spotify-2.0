@@ -8,8 +8,6 @@ export const fetchSpotifyAlbum = async (albumId: string) => {
   const cachedAlbum = getAlbumFromCache(albumId);
 
   if (cachedAlbum) {
-    console.log("pegou pelo cache");
-
     return cachedAlbum;
   }
 
@@ -20,8 +18,6 @@ export const fetchSpotifyAlbum = async (albumId: string) => {
 
     const { album, error }: { album: TAlbum; error: string | undefined } =
       await response.json();
-
-    console.log("fez a requisição");
 
     if (error) return null;
 

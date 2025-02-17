@@ -22,6 +22,7 @@ export default function SpotifyButton({
           height={20}
           className="max-lg:h-5 max-lg:w-16 max-sm:h-[18px] max-sm:w-14"
           alt={`spotify logo`}
+          unoptimized
         />
       </a>
     </div>

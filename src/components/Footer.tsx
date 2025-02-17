@@ -41,14 +41,38 @@ export default function FooterComponent() {
             <p className="max-sm:text-sm">contact@damain.com</p>
 
             <div className="flex items-center gap-1 sm:hidden">
-              <Image src="/logo.png" width={35} height={35} alt="logo" />
-              <Image src="/name.png" width={110} height={37} alt="logo" />
+              <Image
+                src="/logo.png"
+                width={35}
+                height={35}
+                alt="logo"
+                unoptimized
+              />
+              <Image
+                src="/name.png"
+                width={110}
+                height={37}
+                alt="logo"
+                unoptimized
+              />
             </div>
           </div>
         </div>
         <div className="flex justify-end items-start gap-2 max-sm:hidden">
-          <Image src="/logo.png" width={40} height={40} alt="logo" />
-          <Image src="/name.png" width={120} height={40} alt="logo" />
+          <Image
+            src="/logo.png"
+            width={40}
+            height={40}
+            alt="logo"
+            unoptimized
+          />
+          <Image
+            src="/name.png"
+            width={120}
+            height={40}
+            alt="logo"
+            unoptimized
+          />
         </div>
       </div>
       <div className="relative bg-primary">

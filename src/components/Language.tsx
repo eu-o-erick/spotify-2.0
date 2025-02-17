@@ -61,6 +61,7 @@ export default function SwitchLanguages() {
             width={20}
             height={20}
             alt={`${language.label} flag`}
+            unoptimized
           />
 
           <span className="text-sm max-sm:text-xs">{language.label}</span>
@@ -98,6 +99,7 @@ export default function SwitchLanguages() {
                         width={20}
                         height={20}
                         alt={`${option.label} flag`}
+                        unoptimized
                       />
                     </div>
                     <span>{option.label}</span>

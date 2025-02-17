@@ -18,7 +18,7 @@ export default function SideAd({
         {}
       );
     } catch (err) {
-      console.log("erro adsense:", err);
+      console.error("erro adsense:", err);
     }
   }, []);
 
