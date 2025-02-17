@@ -39,25 +39,10 @@ export default function TrackItemComponent({
     }
   };
 
-  const handleRowClick = (e: React.MouseEvent) => {
-    if (!(e.target as HTMLElement).closest(".rating-area")) {
-      handleSetTrack();
-    }
-  };
-
-  const handleRatingAreaClick = (e: React.MouseEvent) => {
-    const target = e.target as HTMLElement;
-
-    if (target.classList.contains("rating-area")) {
-      inputRef.current?.focus();
-    }
-  };
-
   return (
     <tr
-      onClick={handleRowClick}
       className={cn(
-        "group transition-all cursor-pointer md:hover:bg-zinc-400 hover:bg-opacity-5",
+        "group transition-all cursor-pointer md:hover:bg-zinc-400 md:hover:bg-opacity-5",
         {
           "bg-zinc-500 bg-opacity-5": index === indexCurrentTrack,
         }
@@ -70,22 +55,20 @@ export default function TrackItemComponent({
             handleSetTrack={handleSetTrack}
           />
 
-          <span
+          <button
             className={cn("font-bold text-zinc-500 w-4 md:group-hover:hidden", {
               hidden: index === indexCurrentTrack,
             })}
+            onClick={handleSetTrack}
           >
             {track.track_number}
-          </span>
+          </button>
         </div>
       </td>
 
-      <InfoTrackComponent track={track} />
+      <InfoTrackComponent track={track} handleSetTrack={handleSetTrack} />
 
-      <td
-        className="sm:rounded-e-lg rating-area"
-        onClick={handleRatingAreaClick}
-      >
+      <td className="sm:rounded-e-lg">
         <div className="flex gap-1 items-center justify-end">
           <RatingStars rating={rating} setRating={setRating} />
 

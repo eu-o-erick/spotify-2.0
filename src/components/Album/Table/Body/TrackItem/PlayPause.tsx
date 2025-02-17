@@ -26,7 +26,7 @@ export default function PlayPauseTrackItemComponent({
     >
       <button
         type="button"
-        className="relative w-5 h-5 max-sm:w-4 max-sm:h-4 rounded-full md:hover:bg-zinc-100 md:hover:text-main max-md:active:text-zinc-500 hover:bg-opacity-5 transition-all"
+        className="relative w-5 h-5 max-sm:w-4 max-sm:h-4 rounded-full  max-md:active:text-zinc-300 hover:bg-opacity-5 transition-all"
         onClick={handleSetTrack}
       >
         <GiPauseButton

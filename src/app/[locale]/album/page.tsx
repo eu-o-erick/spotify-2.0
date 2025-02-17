@@ -1,7 +1,6 @@
 "use client";
 
 import InfoAlbum from "@/components/Album/Info";
-import SortTracksComponent from "@/components/Album/Sort";
 import TrackTableComponent from "@/components/Album/Table";
 import MusicController from "@/components/Album/Controller";
 import NotFoundComponent from "@/components/NotFound";
@@ -20,7 +19,6 @@ export default function AlbumPage() {
 
   const [dataAlbum, setDataAlbum] = useState<TAlbum | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [sortBy, setSortBy] = useState("custom");
 
   useEffect(() => {
     setIsLoading(true);
@@ -46,8 +44,6 @@ export default function AlbumPage() {
       ) : (
         <Fragment>
           <InfoAlbum isLoading={isLoading} dataAlbum={dataAlbum} />
-
-          <SortTracksComponent sortBy={sortBy} setSortBy={setSortBy} />
 
           <TrackTableComponent
             isLoading={isLoading}

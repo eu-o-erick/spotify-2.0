@@ -42,6 +42,7 @@ export default function ImageLoader({
           }
         )}
         draggable={false}
+        unoptimized
       />
     </div>
   );
