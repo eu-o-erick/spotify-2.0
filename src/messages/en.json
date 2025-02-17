@@ -32,8 +32,8 @@
   },
   "FooterComponent": {
     "nav": {
-      "home": "HOME",
-      "search": "SEARCH",
+      "home": "Home",
+      "search": "Search",
       "termsAndConditions": "Terms and Conditions",
       "privacyPolicy": "Privacy Policy"
     },

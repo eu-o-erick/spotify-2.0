@@ -3,7 +3,7 @@
 import { TTrack } from "@/types/TAlbum";
 import RatingStars from "./RatingStars";
 import RatingInput from "./RatingInput";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
@@ -16,15 +16,44 @@ import ButtonsRatingInput from "./InputButtons";
 export default function TrackItemComponent({
   track,
   index,
+  albumId,
 }: {
   track: TTrack;
   index: number;
+  albumId: string;
 }) {
-  const [rating, setRating] = useState<number | string>("");
-
   const { indexCurrentTrack, isPlaying } = useSelector(
     (state: RootState) => state.track
   );
+
+  const [rating, setRating] = useState<number | string>(() => {
+    if (typeof window !== "undefined") {
+      const albumRatings = JSON.parse(
+        localStorage.getItem(`album_${albumId}_ratings`) || "{}"
+      );
+      return albumRatings[track.id] || "";
+    }
+    return "";
+  });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const albumRatings = JSON.parse(
+        localStorage.getItem(`album_${albumId}_ratings`) || "{}"
+      );
+
+      if (rating !== "") {
+        albumRatings[track.id] = rating;
+      } else {
+        delete albumRatings[track.id];
+      }
+
+      localStorage.setItem(
+        `album_${albumId}_ratings`,
+        JSON.stringify(albumRatings)
+      );
+    }
+  }, [rating, track.id, albumId]);
 
   const dispatch = useDispatch();
 

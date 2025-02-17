@@ -18,9 +18,15 @@ export default function ListAlbumsComponent({
     return (
       <CarouselListComponentSkeleton>
         {isArtistComponent ? (
-          <ArtistComponentSkeleton />
+          <>
+            <ArtistComponentSkeleton />
+            <ArtistComponentSkeleton />
+          </>
         ) : (
-          <AlbumComponentSkeleton />
+          <>
+            <AlbumComponentSkeleton />
+            <AlbumComponentSkeleton />
+          </>
         )}
       </CarouselListComponentSkeleton>
     );

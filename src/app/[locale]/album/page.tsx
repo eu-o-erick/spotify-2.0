@@ -48,6 +48,7 @@ export default function AlbumPage() {
           <TrackTableComponent
             isLoading={isLoading}
             tracks={dataAlbum?.tracks.items}
+            albumId={dataAlbum?.id ?? ""}
           />
 
           <DownloadButtonComponent />

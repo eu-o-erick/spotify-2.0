@@ -54,12 +54,14 @@ export default function SearchPage() {
             dataAlbums={dataAlbums}
             isLoading={isLoading}
           />
-          <PaginationComponent
-            query={query}
-            artistId={artistId}
-            page={page}
-            totalPages={pagesAlbums}
-          />
+          {!isLoading && (
+            <PaginationComponent
+              query={query}
+              artistId={artistId}
+              page={page}
+              totalPages={pagesAlbums}
+            />
+          )}
         </>
       )}
     </main>

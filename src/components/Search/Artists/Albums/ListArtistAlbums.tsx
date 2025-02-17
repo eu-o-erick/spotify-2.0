@@ -33,7 +33,7 @@ export default function ListArtistAlbums({
         ))}
       </ListAlbumsComponent>
 
-      {totalPages > 1 ? (
+      {totalPages > 1 && !isLoading && (
         <PaginationComponent
           artistId={artistId}
           type={type}
@@ -41,8 +41,6 @@ export default function ListArtistAlbums({
           name={name}
           totalPages={totalPages}
         />
-      ) : (
-        <></>
       )}
     </Fragment>
   );

@@ -77,8 +77,8 @@
   },
   "FooterComponent": {
     "nav": {
-      "home": "INÍCIO",
-      "search": "PESQUISAR",
+      "home": "Início",
+      "search": "Pesquisar",
       "termsAndConditions": "Termos e Condições",
       "privacyPolicy": "Política de Privacidade"
     },

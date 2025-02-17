@@ -32,6 +32,7 @@ export const simplifyAlbum = (album: TAlbum): TAlbum => ({
         name: track.name,
         preview_url: track.preview_url,
         track_number: track.track_number,
+        id: track.id,
       })) ?? [],
   },
   copyrights: album.copyrights?.map((copy) => ({

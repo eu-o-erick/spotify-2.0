@@ -7,9 +7,11 @@ import TrackItemComponent from "./TrackItem";
 export default function TableBodyComponent({
   tracks,
   isLoading,
+  albumId,
 }: {
   tracks: TTrack[] | undefined;
   isLoading: boolean;
+  albumId: string;
 }) {
   return (
     <tbody>
@@ -19,7 +21,12 @@ export default function TableBodyComponent({
         tracks?.map((track, i) => (
           <Fragment key={i}>
             <DiscComponent track={track} tracks={tracks} i={i} />
-            <TrackItemComponent track={track} key={i} index={i} />
+            <TrackItemComponent
+              track={track}
+              key={track.id}
+              index={i}
+              albumId={albumId}
+            />
           </Fragment>
         ))
       )}

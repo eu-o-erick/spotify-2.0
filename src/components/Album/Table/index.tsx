@@ -6,9 +6,11 @@ import { useTranslations } from "next-intl";
 export default function TrackTableComponent({
   tracks,
   isLoading,
+  albumId,
 }: {
   tracks: TTrack[] | undefined;
   isLoading: boolean;
+  albumId: string;
 }) {
   const t = useTranslations("AlbumPage");
 
@@ -20,7 +22,11 @@ export default function TrackTableComponent({
         <table className="w-full">
           <TrackListHeaderComponent />
 
-          <TableBodyComponent tracks={tracks} isLoading={isLoading} />
+          <TableBodyComponent
+            tracks={tracks}
+            isLoading={isLoading}
+            albumId={albumId}
+          />
         </table>
       )}
     </div>

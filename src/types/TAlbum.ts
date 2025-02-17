@@ -33,6 +33,7 @@ export type TTrack = {
   name: string;
   preview_url: string;
   track_number: number;
+  id: string;
 };
 
 export type TAlbumArtist = {

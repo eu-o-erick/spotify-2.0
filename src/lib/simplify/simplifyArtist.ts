@@ -65,7 +65,8 @@ export const simplifyArtist = (artist: TArtist): TArtist => ({
             avatarImage: {
               sources: [
                 {
-                  url: artistRelated.visuals.avatarImage.sources?.[0].url ?? "",
+                  url:
+                    artistRelated.visuals.avatarImage?.sources?.[0].url ?? "",
                 },
               ],
             },
