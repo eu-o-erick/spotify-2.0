@@ -11,6 +11,7 @@ import { useSearchParams } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
 import CreditsAlbumComponent from "@/components/Album/Credits";
 import DownloadButtonComponent from "@/components/Album/DownloadButton";
+import ImageDownloadComponent from "@/components/ImageDownload";
 
 export default function AlbumPage() {
   const t = useTranslations("AlbumPage");
@@ -51,11 +52,13 @@ export default function AlbumPage() {
             albumId={dataAlbum?.id ?? ""}
           />
 
-          <DownloadButtonComponent />
+          <DownloadButtonComponent dataAlbum={dataAlbum} />
 
           <CreditsAlbumComponent copyrights={dataAlbum?.copyrights} />
 
           <MusicController album={dataAlbum} />
+
+          {dataAlbum && <ImageDownloadComponent dataAlbum={dataAlbum} />}
         </Fragment>
       )}
     </main>

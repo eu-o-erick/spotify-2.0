@@ -17,11 +17,10 @@ export default function TrackTableComponent({
   return (
     <div className="container py-10">
       {!isLoading && (!tracks || !tracks.length) ? (
-        <h4 className="text-zinc-500 text-center py-10">{t("noTracks")}</h4>
+        <h4 className="text-zinc-400 text-center">{t("noTracks")}</h4>
       ) : (
         <table className="w-full">
           <TrackListHeaderComponent />
-
           <TableBodyComponent
             tracks={tracks}
             isLoading={isLoading}
