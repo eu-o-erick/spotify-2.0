@@ -2,7 +2,10 @@ import { useTranslations } from "next-intl";
 import ButtonComponent from "../Button";
 import { HiDownload } from "react-icons/hi";
 import { TAlbum } from "@/types/TAlbum";
-import html2canvas from "html2canvas";
+import domtoimage from "dom-to-image";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsDownloading } from "@/store/slices/isDownloading ";
+import { RootState } from "@/store";
 
 export default function DownloadButtonComponent({
   dataAlbum,
@@ -11,25 +14,31 @@ export default function DownloadButtonComponent({
 }) {
   const t = useTranslations("AlbumPage");
 
+  const isDownloading = useSelector(
+    (state: RootState) => state.isDownloading.value
+  );
+
+  const dispatch = useDispatch();
+
   const handleDownloadImage = async () => {
     const trackTable = document.querySelector(".track-table");
     if (!trackTable || !dataAlbum) return;
 
-    try {
-      const canvas = await html2canvas(trackTable as HTMLElement, {
-        backgroundColor: "#313131",
-        useCORS: true,
-        allowTaint: true,
-        scale: 2,
-      });
+    dispatch(setIsDownloading(true));
 
-      const link = document.createElement("a");
-      link.download = `${dataAlbum.name}.png`;
-      link.href = canvas.toDataURL("image/png");
-      link.click();
-    } catch (error) {
-      console.error(error);
-    }
+    setTimeout(async () => {
+      try {
+        const dataUrl = await domtoimage.toPng(trackTable as HTMLElement);
+        const link = document.createElement("a");
+        link.href = dataUrl;
+        link.download = `${dataAlbum.name}.png`;
+        link.click();
+      } catch (error) {
+        console.error(error);
+      } finally {
+        dispatch(setIsDownloading(false));
+      }
+    }, 100);
   };
 
   return (
@@ -38,6 +47,7 @@ export default function DownloadButtonComponent({
         label={t("downloadImage")}
         handle={handleDownloadImage}
         className="rounded-md"
+        isLoading={isDownloading}
       >
         <HiDownload className="text-main relative top-0.5 w-4 h-4" />
       </ButtonComponent>

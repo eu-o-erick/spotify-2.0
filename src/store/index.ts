@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { rootReducer } from "./slices/playingTrack";
+import { playingTrackSlice } from "./slices/playingTrack";
+import { isDownloadingSlice } from "./slices/isDownloading ";
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    track: playingTrackSlice.reducer,
+    isDownloading: isDownloadingSlice.reducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

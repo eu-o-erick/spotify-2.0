@@ -24,7 +24,3 @@ export const playingTrackSlice = createSlice({
 });
 
 export const { setPlayingTrack, setIsPlaying } = playingTrackSlice.actions;
-
-export const rootReducer = {
-  track: playingTrackSlice.reducer,
-};
